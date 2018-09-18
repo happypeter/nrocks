@@ -2,6 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import classNames from 'classnames'
 import Header from './Header'
+import Footer from '../shared/Footer'
 
 const styles = theme => ({
   root: {},
@@ -21,6 +22,7 @@ class Layout extends React.Component {
       <div className={s.root}>
         <Header />
         <div className={classNames(s.content)}>{children}</div>
+        <Footer />
       </div>
     )
   }
