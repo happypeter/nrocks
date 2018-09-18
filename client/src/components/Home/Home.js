@@ -1,6 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { MAX_WIDTH } from '../../constants/GlobalStyle'
+import Books from './Books'
 
 const styles = theme => ({
   hero: {
@@ -37,7 +38,9 @@ class Home extends React.Component {
       <div>
         <div className={s.hero}>Nervos 图书馆</div>
         <div className={s.content}>
-          <div className={s.listWrap}>home page</div>
+          <div className={s.listWrap}>
+            <Books />
+          </div>
         </div>
       </div>
     )
