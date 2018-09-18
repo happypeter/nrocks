@@ -7,8 +7,7 @@ import Footer from '../shared/Footer'
 const styles = theme => ({
   root: {},
   content: {
-    backgroundColor: theme.palette.background.default,
-    paddingTop: theme.spacing.unit * 8
+    backgroundColor: theme.palette.background.default
   }
 })
 

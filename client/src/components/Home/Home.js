@@ -3,7 +3,12 @@ import { withStyles } from '@material-ui/core/styles'
 import { MAX_WIDTH } from '../../constants/GlobalStyle'
 
 const styles = theme => ({
-  root: {
+  hero: {
+    textAlign: 'center',
+    backgroundColor: '#eff3f6',
+    padding: theme.spacing.unit * 10
+  },
+  content: {
     padding: theme.spacing.unit * 2,
     width: '100%',
     maxWidth: MAX_WIDTH,
@@ -30,7 +35,10 @@ class Home extends React.Component {
     const { classes: s } = this.props
     return (
       <div>
-        <div className={s.listWrap}>home page</div>
+        <div className={s.hero}>Nervos 图书馆</div>
+        <div className={s.content}>
+          <div className={s.listWrap}>home page</div>
+        </div>
       </div>
     )
   }
