@@ -5,6 +5,8 @@ import {
   MuiThemeProvider,
   createGenerateClassName
 } from '@material-ui/core/styles'
+import fs from 'fs-extra'
+import path from 'path'
 import theme from './src/theme'
 
 export default {
@@ -12,15 +14,37 @@ export default {
     title: 'nervos'
   }),
   getRoutes: async () => {
+    const courses = JSON.parse(
+      fs.readFileSync(path.resolve('docs/index.json'), 'utf8')
+    )
     return [
       {
         path: '/',
-        component: 'src/containers/HomeContainer'
+        component: 'src/containers/HomeContainer',
+        getData: () => ({ courses })
       },
-      {
-        is404: true,
-        component: 'src/containers/404'
-      }
+      ...courses.map(course => {
+        const episodes = JSON.parse(
+          fs.readFileSync(path.resolve(`docs/${course.id}/toc.json`), 'utf8')
+        )
+        return {
+          path: `/${course.id}`,
+          component: 'src/containers/CourseContainer',
+          getData: () => ({ episodes, course }),
+          children: episodes.map(episode => ({
+            path: `/${episode.id}`,
+            component: 'src/containers/EpisodeContainer',
+            getData: () => ({
+              episode,
+              markdown: fs.readFileSync(
+                path.resolve(`docs/${course.id}/${episode.id}.md`),
+                'utf8'
+              )
+            })
+          }))
+        }
+      }),
+      { is404: true, component: 'src/containers/404' }
     ]
   },
   renderToHtml: (render, Comp, meta) => {
