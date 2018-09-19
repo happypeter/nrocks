@@ -1,7 +1,7 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { withRouteData } from 'react-static'
 import Episode from '../components/Episode'
 
 const EpisodeContainer = props => <Episode {...props} />
 
-export default connect()(EpisodeContainer)
+export default withRouteData(EpisodeContainer)

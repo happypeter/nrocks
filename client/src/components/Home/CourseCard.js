@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import { Link } from 'react-static'
 
 const styles = theme => ({
   root: {
-    width: '25%'
+    width: '25%',
+    padding: theme.spacing.unit * 2,
+    textDecoration: 'none'
   },
   book: {
     display: 'flex',
@@ -36,28 +39,24 @@ const styles = theme => ({
   },
   title: {
     textAlign: 'center'
-  },
-  id: {
-    textAlign: 'center'
   }
 })
 
-class Books extends Component {
+class CourseCard extends Component {
   render() {
-    const { classes: s } = this.props
+    const { classes: s, course } = this.props
     return (
-      <div className={s.root}>
+      <Link className={s.root} to={course.id}>
         <div className={s.book}>
           <div className={s.line} />
           <div className={s.cover}>
-            <div className={s.pic}>{/* <img src={imgUrl} /> */}</div>
-            <h2 className={s.title}>book</h2>
-            <span className={s.id}>BookId: 1</span>
+            <div className={s.pic} />
+            <h2 className={s.title}>{course.title}</h2>
           </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }
 
-export default withStyles(styles)(Books)
+export default withStyles(styles)(CourseCard)

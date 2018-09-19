@@ -1,3 +1,3 @@
 rm -rf dist
-npm run build
-npm run serve
+yarn build
+yarn serve

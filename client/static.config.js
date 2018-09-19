@@ -5,7 +5,7 @@ import {
   MuiThemeProvider,
   createGenerateClassName
 } from '@material-ui/core/styles'
-import fs from 'fs-extra'
+import fs from 'fs'
 import path from 'path'
 import theme from './src/theme'
 

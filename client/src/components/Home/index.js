@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { MAX_WIDTH } from '../../constants/GlobalStyle'
-import Books from './Books'
+import CourseCard from './CourseCard'
 
 const styles = theme => ({
   hero: {
@@ -16,6 +16,7 @@ const styles = theme => ({
     margin: '24px auto'
   },
   listWrap: {
+    display: 'flex',
     [theme.breakpoints.up('md')]: {
       width: 700,
       margin: '0 auto'
@@ -33,13 +34,15 @@ const styles = theme => ({
 
 class Home extends React.Component {
   render() {
-    const { classes: s } = this.props
+    const { classes: s, courses } = this.props
     return (
       <div>
         <div className={s.hero}>Nervos 图书馆</div>
         <div className={s.content}>
           <div className={s.listWrap}>
-            <Books />
+            {courses.map(course => (
+              <CourseCard key={course.id} course={course} />
+            ))}
           </div>
         </div>
       </div>
