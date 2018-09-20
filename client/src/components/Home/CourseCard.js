@@ -1,59 +1,34 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Card from '@material-ui/core/Card'
+import CardMedia from '@material-ui/core/CardMedia'
+import CardContent from '@material-ui/core/CardContent'
+import { Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-static'
 
 const styles = theme => ({
-  root: {
-    width: '25%',
-    padding: theme.spacing.unit * 2,
-    textDecoration: 'none'
+  card: {
+    cursor: 'pointer',
+    margin: theme.spacing.unit * 2
   },
-  book: {
-    display: 'flex',
-    width: '100%',
-    height: 350,
-    background: '#A7CBD0'
-  },
-  line: {
-    width: 19,
-    background: '#D47490',
-    marginLeft: 14
-  },
-  cover: {
-    display: 'flex',
-    flexGrow: 1,
-    height: '100%',
-    padding: '40px 0',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    color: '#353131'
-  },
-  pic: {
-    display: 'flex',
-    alignItems: 'center',
-    width: 153,
-    height: 153,
-    background: '#fff',
-    margin: '0 auto',
-    borderRadius: '50%'
-  },
-  title: {
-    textAlign: 'center'
+  media: {
+    height: 0,
+    paddingTop: '56.25%',
+    borderBottom: '1px solid #ececec'
   }
 })
 
-class CourseCard extends Component {
+class CourseCard extends React.Component {
   render() {
-    const { classes: s, course } = this.props
+    const { course, classes: s } = this.props
     return (
-      <Link className={s.root} to={course.id}>
-        <div className={s.book}>
-          <div className={s.line} />
-          <div className={s.cover}>
-            <div className={s.pic} />
-            <h2 className={s.title}>{course.title}</h2>
-          </div>
-        </div>
+      <Link to={`/${course.id}`}>
+        <Card className={s.card}>
+          <CardMedia image="/petercoin.svg" className={s.media} />
+          <CardContent>
+            <Typography>{course.title}</Typography>
+          </CardContent>
+        </Card>
       </Link>
     )
   }

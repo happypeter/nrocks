@@ -2,7 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import Hero from './Hero'
-import CourseCard from './CourseCard'
+import CourseList from './CourseList'
 import Footer from '../shared/Footer'
 
 const styles = theme => ({
@@ -10,7 +10,7 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     width: '100%',
     maxWidth: MAX_WIDTH,
-    margin: '24px auto'
+    margin: '0 auto'
   },
   listWrap: {
     display: 'flex',
@@ -37,9 +37,7 @@ class Home extends React.Component {
         <Hero />
         <div className={s.content}>
           <div className={s.listWrap}>
-            {courses.map(course => (
-              <CourseCard key={course.id} course={course} />
-            ))}
+            <CourseList courses={courses} />
           </div>
         </div>
         <Footer />
