@@ -18,7 +18,7 @@ const styles = theme => ({
     width: DRAWER_WIDTH,
     padding: theme.spacing.unit * 3,
     height: `calc(100vh - ${HEADER_HEIGHT}px)`,
-    backgroundColor: '#eff3f6',
+    background: '#a7cbd0',
     flexShrink: 0,
     position: 'fixed',
     left: 0,

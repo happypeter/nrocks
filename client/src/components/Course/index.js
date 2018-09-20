@@ -9,7 +9,7 @@ import Footer from '../shared/Footer'
 const styles = theme => ({
   header: {
     padding: `${theme.spacing.unit * 10}px 0`,
-    backgroundColor: '#eff3f6',
+    backgroundColor: '#a7cbd0',
     textAlign: 'center',
     fontSize: 24,
     marginTop: HEADER_HEIGHT
