@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-static'
-import { HEADER_HEIGHT, MAX_WIDTH } from '../../constants/GlobalStyle'
+import {
+  HEADER_HEIGHT,
+  MAX_WIDTH,
+  DRAWER_WIDTH
+} from '../../constants/GlobalStyle'
 import Doc from './Doc'
 
 const styles = theme => ({
@@ -11,7 +15,7 @@ const styles = theme => ({
     marginTop: HEADER_HEIGHT
   },
   left: {
-    width: 260,
+    width: DRAWER_WIDTH,
     padding: theme.spacing.unit * 4,
     height: `calc(100vh - ${HEADER_HEIGHT}px)`,
     backgroundColor: '#eff3f6',
@@ -20,6 +24,10 @@ const styles = theme => ({
     left: 0,
     top: HEADER_HEIGHT,
     bottom: 0
+  },
+  rightWrapper: {
+    width: `calc(100% - 260px)`,
+    marginLeft: DRAWER_WIDTH
   },
   right: {
     width: '100%',
@@ -48,11 +56,13 @@ class Episode extends Component {
             </Link>
           ))}
         </div>
-        <div className={s.right}>
-          <div className={s.title}>
-            <Typography variant="headline">{episode.title}</Typography>
+        <div className={s.rightWrapper}>
+          <div className={s.right}>
+            <div className={s.title}>
+              <Typography variant="headline">{episode.title}</Typography>
+            </div>
+            <Doc markdown={markdown} />
           </div>
-          <Doc markdown={markdown} />
         </div>
       </div>
     )
