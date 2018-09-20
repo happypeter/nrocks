@@ -3,14 +3,16 @@ import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-static'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import { MAX_WIDTH } from '../../constants/GlobalStyle'
+import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
+import Footer from '../shared/Footer'
 
 const styles = theme => ({
   header: {
     padding: `${theme.spacing.unit * 10}px 0`,
     backgroundColor: '#eff3f6',
     textAlign: 'center',
-    fontSize: 24
+    fontSize: 24,
+    marginTop: HEADER_HEIGHT
   },
   list: {
     width: '100%',
@@ -37,13 +39,18 @@ class Course extends Component {
         </div>
         <div className={s.list}>
           {episodes.map(ep => (
-            <Link to={`${course.id}/${ep.id}`} className={s.listItem}>
-              <Paper key={ep.id} className={s.paper}>
+            <Link
+              to={`${course.id}/${ep.id}`}
+              className={s.listItem}
+              key={ep.id}
+            >
+              <Paper className={s.paper}>
                 <Typography>{ep.title}</Typography>
               </Paper>
             </Link>
           ))}
         </div>
+        <Footer />
       </div>
     )
   }

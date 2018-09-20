@@ -35,6 +35,8 @@ export default {
             path: `/${episode.id}`,
             component: 'src/containers/EpisodeContainer',
             getData: () => ({
+              course,
+              episodes,
               episode,
               markdown: fs.readFileSync(
                 path.resolve(`docs/${course.id}/${episode.id}.md`),

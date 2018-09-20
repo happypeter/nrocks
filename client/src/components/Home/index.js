@@ -1,13 +1,15 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { MAX_WIDTH } from '../../constants/GlobalStyle'
+import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import CourseCard from './CourseCard'
+import Footer from '../shared/Footer'
 
 const styles = theme => ({
   hero: {
     textAlign: 'center',
     backgroundColor: '#eff3f6',
-    padding: theme.spacing.unit * 10
+    padding: theme.spacing.unit * 10,
+    marginTop: HEADER_HEIGHT
   },
   content: {
     padding: theme.spacing.unit * 2,
@@ -45,6 +47,7 @@ class Home extends React.Component {
             ))}
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

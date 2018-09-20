@@ -23,7 +23,7 @@ class Header extends Component {
     const { classes: s, width } = this.props
     const elevation = width === 'xs' || width === 'sm' ? 1 : 0
     return (
-      <AppBar className={s.appBar} elevation={elevation} position="static">
+      <AppBar className={s.appBar} elevation={elevation} position="fixed">
         <Toolbar className={s.toolbar}>
           <Link to="/">
             <Typography variant="title">Nervos</Typography>
