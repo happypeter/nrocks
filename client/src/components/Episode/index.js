@@ -16,7 +16,7 @@ const styles = theme => ({
   },
   left: {
     width: DRAWER_WIDTH,
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing.unit * 3,
     height: `calc(100vh - ${HEADER_HEIGHT}px)`,
     backgroundColor: '#eff3f6',
     flexShrink: 0,
@@ -24,6 +24,11 @@ const styles = theme => ({
     left: 0,
     top: HEADER_HEIGHT,
     bottom: 0
+  },
+  listItem: {
+    display: 'block',
+    textDecoration: 'none',
+    paddingBottom: theme.spacing.unit * 2
   },
   rightWrapper: {
     width: `calc(100% - 260px)`,
