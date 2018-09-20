@@ -5,6 +5,7 @@ import withWidth from '@material-ui/core/withWidth'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import { Link } from 'react-static'
 import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import AppSearch from './AppSearch'
 
@@ -24,7 +25,9 @@ class Header extends Component {
     return (
       <AppBar className={s.appBar} elevation={elevation} position="static">
         <Toolbar className={s.toolbar}>
-          <Typography variant="title">Nervos</Typography>
+          <Link to="/">
+            <Typography variant="title">Nervos</Typography>
+          </Link>
           <AppSearch />
         </Toolbar>
       </AppBar>
