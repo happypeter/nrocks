@@ -51,6 +51,9 @@ class Episode extends Component {
     return (
       <div className={s.root}>
         <div className={s.left}>
+          <div>
+            <Link to={`/${course.id}`}>{course.title}</Link>
+          </div>
           {episodes.map(ep => (
             <Link
               to={`/${course.id}/${ep.id}`}
