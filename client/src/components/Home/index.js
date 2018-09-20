@@ -1,16 +1,11 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
+import Hero from './Hero'
 import CourseCard from './CourseCard'
 import Footer from '../shared/Footer'
 
 const styles = theme => ({
-  hero: {
-    textAlign: 'center',
-    backgroundColor: '#eff3f6',
-    padding: theme.spacing.unit * 10,
-    marginTop: HEADER_HEIGHT
-  },
   content: {
     padding: theme.spacing.unit * 2,
     width: '100%',
@@ -39,7 +34,7 @@ class Home extends React.Component {
     const { classes: s, courses } = this.props
     return (
       <div>
-        <div className={s.hero}>Nervos 图书馆</div>
+        <Hero />
         <div className={s.content}>
           <div className={s.listWrap}>
             {courses.map(course => (

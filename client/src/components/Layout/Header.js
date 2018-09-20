@@ -10,11 +10,14 @@ import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import AppSearch from './AppSearch'
 
 const styles = theme => ({
-  appBar: { backgroundColor: '#00bcd4' },
+  appBar: { backgroundColor: '#eff3f6' },
   toolbar: {
     height: HEADER_HEIGHT,
     display: 'flex',
     justifyContent: 'space-between'
+  },
+  home: {
+    textDecoration: 'none'
   }
 })
 
@@ -25,8 +28,8 @@ class Header extends Component {
     return (
       <AppBar className={s.appBar} elevation={elevation} position="fixed">
         <Toolbar className={s.toolbar}>
-          <Link to="/">
-            <Typography variant="title">Nervos</Typography>
+          <Link to="/" className={s.home}>
+            <Typography variant="subheading">首页</Typography>
           </Link>
           <AppSearch />
         </Toolbar>
