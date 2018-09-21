@@ -108,9 +108,9 @@ const styles = theme => ({
     marginRight: theme.spacing.unit * 2,
     marginLeft: theme.spacing.unit,
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade('#00bcd4', 0.8),
+    backgroundColor: fade('#00b1b3', 0.8),
     '&:hover': {
-      backgroundColor: '#00bcd4'
+      backgroundColor: '#00b1b3'
     },
     '& $inputInput': {
       transition: theme.transitions.create('width'),

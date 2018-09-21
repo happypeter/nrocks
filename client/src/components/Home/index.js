@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import Hidden from '@material-ui/core/Hidden'
 import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import Hero from './Hero'
 import CourseList from './CourseList'
@@ -7,10 +8,10 @@ import Footer from '../shared/Footer'
 
 const styles = theme => ({
   content: {
-    padding: theme.spacing.unit * 2,
+    padding: `${theme.spacing.unit * 10}px ${theme.spacing.unit * 2}px`,
     width: '100%',
-    maxWidth: MAX_WIDTH,
-    margin: '0 auto'
+    margin: '0 auto',
+    backgroundColor: '#eeeeee'
   },
   listWrap: {
     display: 'flex',
@@ -34,7 +35,9 @@ class Home extends React.Component {
     const { classes: s, courses } = this.props
     return (
       <div>
-        <Hero />
+        <Hidden mdDown>
+          <Hero />
+        </Hidden>
         <div className={s.content}>
           <div className={s.listWrap}>
             <CourseList courses={courses} />

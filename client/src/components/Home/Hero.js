@@ -3,7 +3,6 @@ import { withStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
-import PropTypes from 'prop-types'
 import dashboardImg from '../../assets/images/dashboard.jpg'
 
 const styles = theme => ({
@@ -116,10 +115,6 @@ class Hero extends React.Component {
       </div>
     )
   }
-}
-
-Hero.propTypes = {
-  goto: PropTypes.func.isRequired
 }
 
 export default withStyles(styles)(Hero)

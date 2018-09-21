@@ -8,6 +8,10 @@ import {
 import fs from 'fs'
 import path from 'path'
 import theme from './src/theme'
+import chokidar from 'chokidar'
+import { reloadRoutes } from 'react-static/node'
+
+chokidar.watch('./docs').on('all', () => reloadRoutes())
 
 export default {
   getSiteData: () => ({
