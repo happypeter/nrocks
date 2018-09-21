@@ -29,7 +29,7 @@ class Header extends Component {
       <AppBar className={s.appBar} elevation={elevation} position="fixed">
         <Toolbar className={s.toolbar}>
           <Link to="/" className={s.home}>
-            <Typography variant="subheading">首页</Typography>
+            <Typography variant="headline">Nervos</Typography>
           </Link>
           <AppSearch />
         </Toolbar>

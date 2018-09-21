@@ -16,8 +16,9 @@ const styles = theme => ({
   },
   list: {
     width: '100%',
-    maxWidth: MAX_WIDTH - 300,
-    margin: '32px auto'
+    maxWidth: MAX_WIDTH - 240,
+    margin: '32px auto',
+    padding: `0 ${theme.spacing.unit * 2}px`
   },
   listItem: {
     display: 'block',
@@ -25,7 +26,8 @@ const styles = theme => ({
   },
   paper: {
     padding: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing.unit * 2,
+    border: '1px solid #eeeeee'
   }
 })
 
@@ -44,8 +46,8 @@ class Course extends Component {
               className={s.listItem}
               key={ep.id}
             >
-              <Paper className={s.paper}>
-                <Typography>{ep.title}</Typography>
+              <Paper className={s.paper} elevation={0}>
+                <Typography variant="subheading">{ep.title}</Typography>
               </Paper>
             </Link>
           ))}

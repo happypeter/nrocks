@@ -11,8 +11,16 @@ const styles = theme => ({
     margin: '0 auto'
   },
   section: {
-    marginBottom: theme.spacing.unit * 2,
-    textAlign: 'center'
+    marginBottom: theme.spacing.unit * 4,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  line: {
+    width: 32,
+    borderBottom: '4px solid #00b1b3',
+    marginTop: theme.spacing.unit
   }
 })
 
@@ -21,15 +29,7 @@ class CourseList extends Component {
     const { courses, classes: s } = this.props
 
     let courseList = courses.map((item, index) => (
-      <Grid
-        className={s.gridItem}
-        key={index}
-        item
-        xs={12}
-        sm={6}
-        lg={4}
-        xl={4}
-      >
+      <Grid key={index} item xs={12} sm={6} lg={4} xl={4}>
         <CourseCard course={item} />
       </Grid>
     ))
@@ -37,9 +37,9 @@ class CourseList extends Component {
     return (
       <div className={s.root}>
         <div className={s.section}>
-          <Typography variant="headline">最新发布</Typography>
+          <Typography variant="title">课程展示</Typography>
+          <div className={s.line} />
         </div>
-
         <Grid container>{courseList}</Grid>
       </div>
     )

@@ -75,7 +75,6 @@ const styles = theme => ({
     justifyContent: 'space-around',
     alignItem: 'center'
   },
-  text: {},
   subheading: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2
@@ -98,7 +97,7 @@ class Hero extends React.Component {
       <div className={s.hero}>
         <div className={s.content}>
           <div className={s.textWrap}>
-            <div className={s.text}>
+            <div>
               <Typography variant="display2">Learning Nervos</Typography>
               <Typography className={s.subheading} variant="subheading">
                 Peter 的踩坑实录，帮你节省自学时间。

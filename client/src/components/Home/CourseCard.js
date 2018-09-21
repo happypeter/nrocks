@@ -16,7 +16,7 @@ const styles = theme => ({
     margin: '0 auto 8px',
     textAlign: 'center',
     backgroundColor: '#cccccc',
-    padding: '4px 0',
+    padding: '2px 0',
     borderRadius: 4
   },
   date: {

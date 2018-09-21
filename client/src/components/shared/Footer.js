@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core'
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
   root: {
@@ -12,7 +13,11 @@ const styles = theme => ({
 
 const Footer = props => {
   const { classes: s } = props
-  return <div className={s.root}>Learning Nervos</div>
+  return (
+    <div className={s.root}>
+      <Typography variant="title">见证下一代伟大公司的成长时刻</Typography>
+    </div>
+  )
 }
 
 export default withStyles(styles)(Footer)

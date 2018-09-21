@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
 import Hidden from '@material-ui/core/Hidden'
 import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import Hero from './Hero'
@@ -7,8 +8,11 @@ import CourseList from './CourseList'
 import Footer from '../shared/Footer'
 
 const styles = theme => ({
+  root: {
+    marginTop: HEADER_HEIGHT
+  },
   content: {
-    padding: `${theme.spacing.unit * 10}px ${theme.spacing.unit * 2}px`,
+    padding: `${theme.spacing.unit * 10}px 0`,
     width: '100%',
     margin: '0 auto',
     backgroundColor: '#eeeeee'
@@ -27,6 +31,16 @@ const styles = theme => ({
       width: 1100,
       margin: '0 auto'
     }
+  },
+  text: {
+    padding: `${theme.spacing.unit * 10}px 0`,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  subheading: {
+    marginTop: theme.spacing.unit * 2
   }
 })
 
@@ -34,9 +48,17 @@ class Home extends React.Component {
   render() {
     const { classes: s, courses } = this.props
     return (
-      <div>
+      <div className={s.root}>
         <Hidden mdDown>
           <Hero />
+        </Hidden>
+        <Hidden mdUp>
+          <div className={s.text}>
+            <Typography variant="display2">Learning Nervos</Typography>
+            <Typography className={s.subheading} variant="subheading">
+              Peter 的踩坑实录，帮你节省自学时间。
+            </Typography>
+          </div>
         </Hidden>
         <div className={s.content}>
           <div className={s.listWrap}>

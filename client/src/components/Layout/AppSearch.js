@@ -105,7 +105,6 @@ const styles = theme => ({
   root: {
     fontFamily: theme.typography.fontFamily,
     position: 'relative',
-    marginRight: theme.spacing.unit * 2,
     marginLeft: theme.spacing.unit,
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade('#00b1b3', 0.8),
