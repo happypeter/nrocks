@@ -8,30 +8,15 @@ import {
   DRAWER_WIDTH
 } from '../../constants/GlobalStyle'
 import Doc from './Doc'
+import AppDrawer from './AppDrawer'
 
 const styles = theme => ({
   root: {
     display: 'flex',
     marginTop: HEADER_HEIGHT
   },
-  left: {
-    width: DRAWER_WIDTH,
-    padding: theme.spacing.unit * 3,
-    height: `calc(100vh - ${HEADER_HEIGHT}px)`,
-    background: '#a7cbd0',
-    flexShrink: 0,
-    position: 'fixed',
-    left: 0,
-    top: HEADER_HEIGHT,
-    bottom: 0
-  },
-  listItem: {
-    display: 'block',
-    textDecoration: 'none',
-    paddingBottom: theme.spacing.unit * 2
-  },
   rightWrapper: {
-    width: `calc(100% - 260px)`,
+    width: `calc(100% - ${DRAWER_WIDTH}px)`,
     marginLeft: DRAWER_WIDTH
   },
   right: {
@@ -50,20 +35,7 @@ class Episode extends Component {
     const { classes: s, course, episodes, episode, markdown } = this.props
     return (
       <div className={s.root}>
-        <div className={s.left}>
-          <div>
-            <Link to={`/${course.id}`}>{course.title}</Link>
-          </div>
-          {episodes.map(ep => (
-            <Link
-              to={`/${course.id}/${ep.id}`}
-              className={s.listItem}
-              key={ep.id}
-            >
-              <Typography>{ep.title}</Typography>
-            </Link>
-          ))}
-        </div>
+        <AppDrawer episodes={episodes} course={course} />
         <div className={s.rightWrapper}>
           <div className={s.right}>
             <div className={s.title}>

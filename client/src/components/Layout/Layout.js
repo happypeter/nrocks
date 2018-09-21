@@ -4,20 +4,17 @@ import classNames from 'classnames'
 import Header from './Header'
 
 const styles = theme => ({
-  root: {},
   content: {
     backgroundColor: theme.palette.background.default
   }
 })
 
 class Layout extends React.Component {
-  componentDidMount() {}
-
   render() {
     const { children, classes: s } = this.props
 
     return (
-      <div className={s.root}>
+      <div>
         <Header />
         <div className={classNames(s.content)}>{children}</div>
       </div>
