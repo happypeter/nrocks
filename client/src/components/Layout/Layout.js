@@ -11,11 +11,17 @@ const styles = theme => ({
 
 class Layout extends React.Component {
   render() {
-    const { children, classes: s, isDrawerOpen, toggleDrawer } = this.props
+    const {
+      children,
+      classes: s,
+      isDrawerOpen,
+      toggleDrawer,
+      isOnEpisodePage
+    } = this.props
 
     return (
       <div>
-        <Header toggleDrawer={toggleDrawer} />
+        <Header toggleDrawer={toggleDrawer} isOnEpisodePage={isOnEpisodePage} />
         <div className={classNames(s.content)}>{children}</div>
       </div>
     )

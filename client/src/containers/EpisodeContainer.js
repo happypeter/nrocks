@@ -2,7 +2,11 @@ import React from 'react'
 import { withRouteData } from 'react-static'
 import { connect } from 'react-redux'
 import Episode from '../components/Episode'
-import { toggleDrawer } from '../redux/actions/index'
+import {
+  toggleDrawer,
+  setOnEpisodePage,
+  clearOnEpisodePage
+} from '../redux/actions/index'
 
 const EpisodeContainer = props => <Episode {...props} />
 
@@ -12,5 +16,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { toggleDrawer }
+  { toggleDrawer, setOnEpisodePage, clearOnEpisodePage }
 )(withRouteData(EpisodeContainer))

@@ -38,19 +38,21 @@ class Header extends Component {
   }
 
   render() {
-    const { classes: s, width } = this.props
+    const { classes: s, width, isOnEpisodePage } = this.props
     const elevation = isWidthUp('sm', width) ? 0 : 1
     return (
       <AppBar className={s.appBar} elevation={elevation} position="fixed">
         <Toolbar className={s.toolbar}>
-          <IconButton
-            color="primary"
-            aria-label="Open drawer"
-            onClick={this.handleDrawerToggle}
-            className={s.navIconHide}
-          >
-            <MenuIcon />
-          </IconButton>
+          {isOnEpisodePage ? (
+            <IconButton
+              color="primary"
+              aria-label="Open drawer"
+              onClick={this.handleDrawerToggle}
+              className={s.navIconHide}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : null}
           <Link to="/" className={s.home}>
             <Typography variant="headline">Nervos</Typography>
           </Link>

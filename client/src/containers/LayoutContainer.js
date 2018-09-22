@@ -7,7 +7,8 @@ import { toggleDrawer } from '../redux/actions'
 const LayoutContainer = props => <Layout {...props} />
 
 const mapStateToProps = state => ({
-  isDrawerOpen: state.common.isDrawerOpen
+  isDrawerOpen: state.common.isDrawerOpen,
+  isOnEpisodePage: state.common.isOnEpisodePage
 })
 
 export default withRouter(

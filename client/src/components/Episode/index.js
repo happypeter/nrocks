@@ -36,6 +36,14 @@ const styles = theme => ({
 })
 
 class Episode extends Component {
+  componentDidMount() {
+    this.props.setOnEpisodePage()
+  }
+
+  componentWillUnmount() {
+    this.props.clearOnEpisodePage()
+  }
+
   render() {
     const {
       classes: s,
