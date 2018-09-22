@@ -17,8 +17,12 @@ const styles = theme => ({
     marginTop: HEADER_HEIGHT
   },
   rightWrapper: {
-    width: `calc(100% - ${DRAWER_WIDTH}px)`,
-    marginLeft: DRAWER_WIDTH
+    width: '100%',
+    padding: `0 ${theme.spacing.unit * 3}px`,
+    [theme.breakpoints.up('md')]: {
+      width: `calc(100% - ${DRAWER_WIDTH}px)`,
+      marginLeft: DRAWER_WIDTH
+    }
   },
   right: {
     width: '100%',
