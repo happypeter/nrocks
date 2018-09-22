@@ -10,7 +10,6 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-static'
 import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import AppSearch from './AppSearch'
-import { withTheme } from '@material-ui/core'
 
 const styles = theme => ({
   appBar: {
@@ -26,6 +25,7 @@ const styles = theme => ({
     textDecoration: 'none'
   },
   navIconHide: {
+    color: '#000',
     [theme.breakpoints.up('md')]: {
       display: 'none'
     }
@@ -45,7 +45,6 @@ class Header extends Component {
         <Toolbar className={s.toolbar}>
           {isOnEpisodePage ? (
             <IconButton
-              color="primary"
               aria-label="Open drawer"
               onClick={this.handleDrawerToggle}
               className={s.navIconHide}

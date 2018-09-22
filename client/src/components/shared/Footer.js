@@ -15,7 +15,7 @@ const Footer = props => {
   const { classes: s } = props
   return (
     <div className={s.root}>
-      <Typography variant="title">见证下一代伟大公司的成长时刻</Typography>
+      <Typography variant="title">见证下一代伟大公司的成长过程</Typography>
     </div>
   )
 }

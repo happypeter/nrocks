@@ -1,21 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import Hidden from '@material-ui/core/Hidden'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-static'
+import IconButton from '@material-ui/core/IconButton'
 import { DRAWER_WIDTH } from '../../constants/GlobalStyle'
+import ArrowBackIcon from '../svg/ArrowBack'
 
 const styles = theme => ({
-  root: {},
   navIconHide: {
     [theme.breakpoints.up('md')]: {
       display: 'none'
     }
   },
   toolbar: theme.mixins.toolbar,
+  toolbarCus: {
+    borderBottom: '1px solid #eee',
+    display: 'flex',
+    alignItems: 'center'
+  },
   drawerPaper: {
     width: DRAWER_WIDTH
   },
@@ -35,7 +42,11 @@ class AppDrawer extends React.Component {
     const { classes: s, episodes, course, open } = this.props
     const drawer = (
       <div>
-        <div className={s.toolbar} />
+        <div className={classNames(s.toolbar, s.toolbarCus)}>
+          <IconButton onClick={this.handleDrawerToggle}>
+            <ArrowBackIcon />
+          </IconButton>
+        </div>
         {episodes.map(ep => (
           <Link
             to={`/${course.id}/${ep.id}`}
@@ -43,7 +54,9 @@ class AppDrawer extends React.Component {
             key={ep.id}
             onClick={this.handleDrawerToggle}
           >
-            <Typography variant="body2">{ep.title}</Typography>
+            <Typography variant="body2" component="div">
+              {ep.title}
+            </Typography>
           </Link>
         ))}
       </div>
@@ -83,7 +96,10 @@ class AppDrawer extends React.Component {
 }
 
 AppDrawer.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  episodes: PropTypes.array.isRequired,
+  course: PropTypes.object.isRequired,
+  open: PropTypes.bool.isRequired
 }
 
 export default withStyles(styles)(AppDrawer)
