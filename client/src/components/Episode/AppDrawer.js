@@ -41,6 +41,7 @@ class AppDrawer extends React.Component {
             to={`/${course.id}/${ep.id}`}
             className={s.listItem}
             key={ep.id}
+            onClick={this.handleDrawerToggle}
           >
             <Typography variant="body2">{ep.title}</Typography>
           </Link>
