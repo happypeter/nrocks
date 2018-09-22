@@ -34,7 +34,7 @@ const styles = theme => ({
 
 class Header extends Component {
   handleDrawerToggle = () => {
-    // this.props.toggleDrawer()
+    this.props.toggleDrawer()
   }
 
   render() {

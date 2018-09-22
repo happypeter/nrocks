@@ -1,13 +1,12 @@
 import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
 import rootReducer from './reducers/'
 
 let store
 if (process.env.REACT_STATIC_ENV !== 'production') {
   const { logger } = require('redux-logger')
-  store = createStore(rootReducer, applyMiddleware(thunk, logger))
+  store = createStore(rootReducer, applyMiddleware(logger))
 } else {
-  store = createStore(rootReducer, applyMiddleware(thunk))
+  store = createStore(rootReducer)
 }
 
 export default store

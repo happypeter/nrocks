@@ -9,6 +9,7 @@ import {
 } from '../../constants/GlobalStyle'
 import Doc from './Doc'
 import AppDrawer from './AppDrawer'
+import { toggleDrawer } from '../../redux/actions/index'
 
 const styles = theme => ({
   root: {
@@ -32,10 +33,23 @@ const styles = theme => ({
 
 class Episode extends Component {
   render() {
-    const { classes: s, course, episodes, episode, markdown } = this.props
+    const {
+      classes: s,
+      course,
+      episodes,
+      episode,
+      markdown,
+      isDrawerOpen,
+      toggleDrawer
+    } = this.props
     return (
       <div className={s.root}>
-        <AppDrawer episodes={episodes} course={course} />
+        <AppDrawer
+          episodes={episodes}
+          course={course}
+          open={isDrawerOpen}
+          toggleDrawer={toggleDrawer}
+        />
         <div className={s.rightWrapper}>
           <div className={s.right}>
             <div className={s.title}>

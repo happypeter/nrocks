@@ -28,11 +28,11 @@ const styles = theme => ({
 
 class AppDrawer extends React.Component {
   handleDrawerToggle = () => {
-    // this.props.toggleDrawer()
+    this.props.toggleDrawer()
   }
 
   render() {
-    const { classes: s, theme, episodes, course, isDrawerOpen } = this.props
+    const { classes: s, episodes, course, open } = this.props
     const drawer = (
       <div>
         <div className={s.toolbar} />
@@ -53,7 +53,7 @@ class AppDrawer extends React.Component {
         <Hidden mdUp>
           <Drawer
             variant="temporary"
-            open
+            open={open}
             onClose={this.handleDrawerToggle}
             classes={{
               paper: s.drawerPaper
@@ -82,8 +82,7 @@ class AppDrawer extends React.Component {
 }
 
 AppDrawer.propTypes = {
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles, { withTheme: true })(AppDrawer)
+export default withStyles(styles)(AppDrawer)
