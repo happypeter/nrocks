@@ -87,7 +87,12 @@ export default {
               content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
             />
             <title>Learning Nervos</title>
-            <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+            <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+            <link
+              rel="shortcut icon"
+              type="image/x-icon"
+              href="images/favicon.ico"
+            />
             <meta name="description" content="nervos" />
             <meta name="keywords" content="nervos blockchain" />
           </Head>

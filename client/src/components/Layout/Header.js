@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-static'
 import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import AppSearch from './AppSearch'
+import Logo from '../svg/Logo'
 
 const styles = theme => ({
   appBar: {
@@ -20,6 +21,10 @@ const styles = theme => ({
     height: HEADER_HEIGHT,
     display: 'flex',
     justifyContent: 'space-between'
+  },
+  left: {
+    display: 'flex',
+    alignItems: 'center'
   },
   home: {
     textDecoration: 'none'
@@ -43,18 +48,20 @@ class Header extends Component {
     return (
       <AppBar className={s.appBar} elevation={elevation} position="fixed">
         <Toolbar className={s.toolbar}>
-          {isOnEpisodePage ? (
-            <IconButton
-              aria-label="Open drawer"
-              onClick={this.handleDrawerToggle}
-              className={s.navIconHide}
-            >
-              <MenuIcon />
-            </IconButton>
-          ) : null}
-          <Link to="/" className={s.home}>
-            <Typography variant="headline">Nervos</Typography>
-          </Link>
+          <div className={s.left}>
+            {isOnEpisodePage ? (
+              <IconButton
+                aria-label="Open drawer"
+                onClick={this.handleDrawerToggle}
+                className={s.navIconHide}
+              >
+                <MenuIcon />
+              </IconButton>
+            ) : null}
+            <Link to="/" className={s.home}>
+              <Logo width={100} />
+            </Link>
+          </div>
           <AppSearch />
         </Toolbar>
       </AppBar>
