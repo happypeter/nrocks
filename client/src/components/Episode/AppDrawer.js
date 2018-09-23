@@ -8,7 +8,11 @@ import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-static'
 import IconButton from '@material-ui/core/IconButton'
-import { DRAWER_WIDTH } from '../../constants/GlobalStyle'
+import {
+  DRAWER_WIDTH,
+  DIVIDER_COLOR,
+  DEFAULT_PRIMARY_COLOR
+} from '../../constants/GlobalStyle'
 import ArrowBackIcon from '../svg/ArrowBack'
 
 const styles = theme => ({
@@ -26,10 +30,23 @@ const styles = theme => ({
   drawerPaper: {
     width: DRAWER_WIDTH
   },
+  list: {
+    marginTop: theme.spacing.unit * 2
+  },
   listItem: {
     display: 'block',
     textDecoration: 'none',
-    padding: `${theme.spacing.unit}px  ${theme.spacing.unit * 3}px`
+    padding: `${theme.spacing.unit}px  ${theme.spacing.unit * 2}px`,
+    '&:hover': {
+      backgroundColor: DIVIDER_COLOR
+    },
+    '&.active $text': {
+      borderLeft: `4px solid ${DEFAULT_PRIMARY_COLOR}`,
+      fontWeight: 600
+    }
+  },
+  text: {
+    paddingLeft: theme.spacing.unit
   }
 })
 
@@ -47,18 +64,20 @@ class AppDrawer extends React.Component {
             <ArrowBackIcon />
           </IconButton>
         </div>
-        {episodes.map(ep => (
-          <Link
-            to={`/${course.id}/${ep.id}`}
-            className={s.listItem}
-            key={ep.id}
-            onClick={this.handleDrawerToggle}
-          >
-            <Typography variant="body2" component="div">
-              {ep.title}
-            </Typography>
-          </Link>
-        ))}
+        <div className={s.list}>
+          {episodes.map(ep => (
+            <Link
+              to={`/${course.id}/${ep.id}`}
+              className={s.listItem}
+              key={ep.id}
+              onClick={this.handleDrawerToggle}
+            >
+              <Typography variant="body1" component="div" className={s.text}>
+                {ep.title}
+              </Typography>
+            </Link>
+          ))}
+        </div>
       </div>
     )
 
