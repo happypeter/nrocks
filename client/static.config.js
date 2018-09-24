@@ -10,8 +10,25 @@ import path from 'path'
 import theme from './src/theme'
 import chokidar from 'chokidar'
 import { reloadRoutes } from 'react-static/node'
+import { docRepo } from './config'
 
-chokidar.watch('./docs').on('all', () => reloadRoutes())
+chokidar.watch(`./${docRepo}`).on('all', () => reloadRoutes())
+
+function getCourseToc(courseId) {
+  const content = fs.readFileSync(`./${docRepo}/${courseId}/SUMMARY.md`, 'utf8')
+  const lines = content.split('\n')
+  let toc = []
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim()
+    const reg = /^[*-]\s+\[(.*)\]\((.*)\)$/
+    if (reg.test(line)) {
+      const title = line.replace(reg, '$1')
+      const id = line.replace(reg, '$2').slice(0, -3)
+      toc.push({ id, title })
+    }
+  }
+  return toc
+}
 
 export default {
   getSiteData: () => ({
@@ -19,8 +36,9 @@ export default {
   }),
   getRoutes: async () => {
     const courses = JSON.parse(
-      fs.readFileSync(path.resolve('docs/index.json'), 'utf8')
+      fs.readFileSync(`./${docRepo}/index.json`, 'utf8')
     )
+    console.log('courses...', courses)
     return [
       {
         path: '/',
@@ -28,9 +46,7 @@ export default {
         getData: () => ({ courses })
       },
       ...courses.map(course => {
-        const episodes = JSON.parse(
-          fs.readFileSync(path.resolve(`docs/${course.id}/toc.json`), 'utf8')
-        )
+        const episodes = getCourseToc(course.id)
         return {
           path: `/${course.id}`,
           component: 'src/containers/CourseContainer',
@@ -43,7 +59,7 @@ export default {
               episodes,
               episode,
               markdown: fs.readFileSync(
-                path.resolve(`docs/${course.id}/${episode.id}.md`),
+                `./${docRepo}/${course.id}/${episode.id}.md`,
                 'utf8'
               )
             })

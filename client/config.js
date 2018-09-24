@@ -3,5 +3,5 @@ module.exports = {
     process.env.REACT_STATIC_ENV === 'production'
       ? 'http://xxx'
       : 'http://localhost:3001',
-  videoRepo: 'xxx'
+  docRepo: 'ncourse'
 }

@@ -14,8 +14,10 @@ const styles = theme => ({
     '& pre': {
       border: `2px solid ${theme.palette.primary.light}`,
       padding: theme.spacing.unit,
-      fontFamily: `Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace`,
-      overflow: 'auto'
+      fontFamily: `Roboto, monospace`,
+      overflow: 'auto',
+      backgroundColor: '#fff',
+      fontSize: 14
     },
     '& a': {
       color: '#00bcd4',
@@ -23,9 +25,15 @@ const styles = theme => ({
     },
     '& img': {
       width: '100%',
-      maxWidth: 600,
       margin: '16px auto',
       display: 'block'
+    },
+    '& blockquote': {
+      margin: 0,
+      padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px`,
+      borderLeft: '4px solid #00bcd4',
+      borderRadius: 3,
+      backgroundColor: '#fff'
     }
   }
 })
