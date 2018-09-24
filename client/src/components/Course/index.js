@@ -5,13 +5,14 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import Footer from '../shared/Footer'
+import PlayArrowIcon from '../svg/PlayArrow'
 
 const styles = theme => ({
   header: {
     padding: `${theme.spacing.unit * 10}px 0`,
     backgroundColor: '#a7cbd0',
     textAlign: 'center',
-    fontSize: 24,
+    lineHeight: 2,
     marginTop: HEADER_HEIGHT
   },
   list: {
@@ -27,7 +28,16 @@ const styles = theme => ({
   paper: {
     padding: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
-    border: '1px solid #eeeeee'
+    border: '1px solid #eeeeee',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  icon: {
+    color: 'rgba(33, 33, 33, 0.8)',
+    '&:hover': {
+      color: '#a7cbd0'
+    }
   }
 })
 
@@ -38,6 +48,8 @@ class Course extends Component {
       <div>
         <div className={s.header}>
           <Typography variant="headline">{course.title}</Typography>
+          <Typography variant="subheading">{course.desc}</Typography>
+          <Typography variant="body2">{course.date}</Typography>
         </div>
         <div className={s.list}>
           {episodes.map(ep => (
@@ -48,6 +60,7 @@ class Course extends Component {
             >
               <Paper className={s.paper} elevation={0}>
                 <Typography variant="subheading">{ep.title}</Typography>
+                <PlayArrowIcon className={s.icon} />
               </Paper>
             </Link>
           ))}
