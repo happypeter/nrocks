@@ -11,23 +11,45 @@ import theme from './src/theme'
 import chokidar from 'chokidar'
 import { reloadRoutes } from 'react-static/node'
 import { docRepo } from './config'
+import { PauseCircleFilled } from '@material-ui/icons'
 
 chokidar.watch(`./${docRepo}`).on('all', () => reloadRoutes())
 
-function getCourseToc(courseId) {
-  const content = fs.readFileSync(`./${docRepo}/${courseId}/SUMMARY.md`, 'utf8')
+function parseFileContent(courseId, fileName) {
+  const content = fs.readFileSync(
+    `./${docRepo}/${courseId}/${fileName.toUpperCase()}.md`,
+    'utf8'
+  )
   const lines = content.split('\n')
-  let toc = []
+  let obj = {}
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim()
     const reg = /^[*-]\s+\[(.*)\]\((.*)\)$/
     if (reg.test(line)) {
-      const title = line.replace(reg, '$1')
-      const id = line.replace(reg, '$2').slice(0, -3)
-      toc.push({ id, title })
+      if (fileName === 'readme') {
+        obj[line.replace(reg, '$1')] = line.replace(reg, '$2')
+      } else {
+        obj[line.replace(reg, '$2').slice(0, -3)] = line.replace(reg, '$1')
+      }
     }
   }
-  return toc
+  return obj
+}
+
+function getCourseToc(courseId) {
+  const toc = parseFileContent(courseId, 'summary')
+  const videos = parseFileContent(courseId, 'readme')
+  const keys = Object.keys(toc)
+  const list = []
+  for (let i = 0; i < keys.length; i++) {
+    const id = keys[i]
+    list.push({
+      id,
+      title: toc[id],
+      video: videos[id]
+    })
+  }
+  return list
 }
 
 export default {
@@ -38,7 +60,6 @@ export default {
     const courses = JSON.parse(
       fs.readFileSync(`./${docRepo}/index.json`, 'utf8')
     )
-    console.log('courses...', courses)
     return [
       {
         path: '/',

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 import { Link } from 'react-static'
 import {
   HEADER_HEIGHT,
@@ -10,6 +11,7 @@ import {
 import Doc from './Doc'
 import AppDrawer from './AppDrawer'
 import { toggleDrawer } from '../../redux/actions/index'
+import PlayArrowIcon from '../svg/PlayArrow'
 
 const styles = theme => ({
   root: {
@@ -32,6 +34,18 @@ const styles = theme => ({
   },
   title: {
     textAlign: 'center'
+  },
+  link: {
+    color: '#fff',
+    backgroundColor: '#00bcd4',
+    marginTop: theme.spacing.unit * 4
+  },
+  icon: {
+    width: 36,
+    height: 36
+  },
+  desc: {
+    color: '#fff'
   }
 })
 
@@ -67,6 +81,18 @@ class Episode extends Component {
             <div className={s.title}>
               <Typography variant="headline">{episode.title}</Typography>
             </div>
+            {episode.video ? (
+              <Button
+                href={episode.video}
+                className={s.link}
+                variant="contained"
+              >
+                <PlayArrowIcon className={s.icon} />
+                <Typography variant="subheading" className={s.desc}>
+                  去到 B 站观看视频
+                </Typography>
+              </Button>
+            ) : null}
             <Doc markdown={markdown} />
           </div>
         </div>
