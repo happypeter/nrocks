@@ -28,7 +28,8 @@ const styles = theme => ({
     alignItems: 'center'
   },
   drawerPaper: {
-    width: DRAWER_WIDTH
+    width: DRAWER_WIDTH,
+    justifyContent: 'space-between'
   },
   list: {
     marginTop: theme.spacing.unit * 2
@@ -47,6 +48,15 @@ const styles = theme => ({
   },
   text: {
     paddingLeft: theme.spacing.unit
+  },
+  drawer: {
+    flexGrow: 1
+  },
+  bottom: {
+    display: 'block',
+    flexShrink: 0,
+    borderTop: '1px solid #eee',
+    padding: theme.spacing.unit * 2
   }
 })
 
@@ -58,7 +68,7 @@ class AppDrawer extends React.Component {
   render() {
     const { classes: s, episodes, course, open } = this.props
     const drawer = (
-      <div>
+      <div className={s.drawer}>
         <div className={classNames(s.toolbar, s.toolbarCus)}>
           <IconButton onClick={this.handleDrawerToggle}>
             <ArrowBackIcon />
@@ -96,6 +106,11 @@ class AppDrawer extends React.Component {
             }}
           >
             {drawer}
+            <Link to={`/${course.id}`} className={s.bottom}>
+              <Typography variant="body1" component="div" className={s.text}>
+                {course.title}
+              </Typography>
+            </Link>
           </Drawer>
         </Hidden>
         <Hidden smDown implementation="css">
@@ -107,6 +122,11 @@ class AppDrawer extends React.Component {
             }}
           >
             {drawer}
+            <Link to={`/${course.id}`} className={s.bottom}>
+              <Typography variant="body1" component="div" className={s.text}>
+                {course.title}
+              </Typography>
+            </Link>
           </Drawer>
         </Hidden>
       </div>
