@@ -14,6 +14,7 @@ import {
   DEFAULT_PRIMARY_COLOR
 } from '../../constants/GlobalStyle'
 import ArrowBackIcon from '../svg/ArrowBack'
+import { ArrowBack } from '@material-ui/icons'
 
 const styles = theme => ({
   navIconHide: {
@@ -56,7 +57,11 @@ const styles = theme => ({
     display: 'block',
     flexShrink: 0,
     borderTop: '1px solid #eee',
-    padding: theme.spacing.unit * 2
+    padding: theme.spacing.unit * 2,
+    textDecoration: 'none'
+  },
+  icon: {
+    color: 'rgba(33,33,33,.8)'
   }
 })
 
@@ -107,6 +112,7 @@ class AppDrawer extends React.Component {
           >
             {drawer}
             <Link to={`/${course.id}`} className={s.bottom}>
+              <ArrowBackIcon className={s.icon} />
               <Typography variant="body1" component="div" className={s.text}>
                 {course.title}
               </Typography>
@@ -123,6 +129,7 @@ class AppDrawer extends React.Component {
           >
             {drawer}
             <Link to={`/${course.id}`} className={s.bottom}>
+              <ArrowBackIcon className={s.icon} />
               <Typography variant="body1" component="div" className={s.text}>
                 {course.title}
               </Typography>

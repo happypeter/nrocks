@@ -12,6 +12,7 @@ import Doc from './Doc'
 import AppDrawer from './AppDrawer'
 import { toggleDrawer } from '../../redux/actions/index'
 import PlayArrowIcon from '../svg/PlayArrow'
+import Navigation from './Navigation'
 
 const styles = theme => ({
   root: {
@@ -94,6 +95,11 @@ class Episode extends Component {
               </Button>
             ) : null}
             <Doc markdown={markdown} />
+            <Navigation
+              episodes={episodes}
+              episodeId={episode.id}
+              courseId={course.id}
+            />
           </div>
         </div>
       </div>
