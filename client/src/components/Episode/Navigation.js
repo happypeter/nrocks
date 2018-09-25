@@ -26,9 +26,14 @@ class Navigation extends Component {
     const index = episodes.findIndex(el => el.id === episodeId)
 
     const previous = index === 0 ? null : episodes[index - 1]
-    const next = index === episodes.length ? null : episodes[index + 1]
+    const next =
+      index === episodes.length || index + 1 === episodes.length
+        ? null
+        : episodes[index + 1]
 
-    const prevLink = props => <Link to={`/${courseId}/${next.id}`} {...props} />
+    const prevLink = props => (
+      <Link to={`/${courseId}/${previous.id}`} {...props} />
+    )
     const nextLink = props => <Link to={`/${courseId}/${next.id}`} {...props} />
     return (
       <div className={s.root}>
