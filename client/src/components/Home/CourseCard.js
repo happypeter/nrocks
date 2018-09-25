@@ -50,7 +50,6 @@ class CourseCard extends React.Component {
               <CardMedia
                 className={s.media}
                 component="img"
-                height="140"
                 image={course.image}
                 title={course.id}
               />

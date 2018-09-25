@@ -13,7 +13,9 @@ const styles = theme => ({
     justifyContent: 'space-between'
   },
   nav: {
-    textDecoration: 'none'
+    width: '48%',
+    maxWidth: 320,
+    justifyContent: 'space-between'
   },
   icon: {
     color: 'rgba(33,33,33,.8)'
@@ -38,14 +40,14 @@ class Navigation extends Component {
     return (
       <div className={s.root}>
         {!previous ? null : (
-          <Button component={prevLink} variant="contained">
+          <Button component={prevLink} variant="contained" className={s.nav}>
             <ArrowBackIcon className={s.icon} />
             <Typography variant="body1">{previous.title}</Typography>
           </Button>
         )}
 
         {!next ? null : (
-          <Button component={nextLink} variant="contained">
+          <Button component={nextLink} variant="contained" className={s.nav}>
             <Typography variant="body1">{next.title}</Typography>
             <ArrowForwardIcon className={s.icon} />
           </Button>
