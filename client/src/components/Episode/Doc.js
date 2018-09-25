@@ -13,7 +13,7 @@ const styles = theme => ({
     },
     '& pre': {
       border: `2px solid ${theme.palette.primary.light}`,
-      padding: theme.spacing.unit,
+      padding: theme.spacing.unit * 2,
       fontFamily: `Roboto, monospace`,
       overflow: 'auto',
       backgroundColor: '#fff',
@@ -21,7 +21,8 @@ const styles = theme => ({
     },
     '& a': {
       color: '#00bcd4',
-      fontStyle: 'normal'
+      fontStyle: 'normal',
+      wordBreak: 'break-word'
     },
     '& img': {
       width: '100%',
