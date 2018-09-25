@@ -14,7 +14,6 @@ import {
   DEFAULT_PRIMARY_COLOR
 } from '../../constants/GlobalStyle'
 import ArrowBackIcon from '../svg/ArrowBack'
-import { ArrowBack } from '@material-ui/icons'
 
 const styles = theme => ({
   navIconHide: {
