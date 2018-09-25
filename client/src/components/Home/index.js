@@ -52,7 +52,7 @@ class Home extends React.Component {
         <Hidden mdDown>
           <Hero />
         </Hidden>
-        <Hidden mdUp>
+        <Hidden lgUp>
           <div className={s.text}>
             <Typography variant="display2">Learning Nervos</Typography>
             <Typography className={s.subheading} variant="subheading">

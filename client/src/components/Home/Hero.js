@@ -9,7 +9,7 @@ const styles = theme => ({
   hero: {
     position: 'relative',
     height: 600,
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       height: 700
     },
     overflow: 'hidden'
@@ -59,7 +59,7 @@ const styles = theme => ({
     marginLeft: -500,
     margin: '0 auto',
     justifyContent: 'space-between',
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       width: 1100,
       marginLeft: -550
     },
@@ -81,7 +81,7 @@ const styles = theme => ({
   },
   imgWrap: {
     width: 450,
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       width: 600
     },
     '& img': {
