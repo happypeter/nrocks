@@ -49,16 +49,8 @@ class Home extends React.Component {
     const { classes: s, courses } = this.props
     return (
       <div className={s.root}>
-        <Hidden mdDown>
+        <Hidden smDown>
           <Hero />
-        </Hidden>
-        <Hidden lgUp>
-          <div className={s.text}>
-            <Typography variant="display2">Learning Nervos</Typography>
-            <Typography className={s.subheading} variant="subheading">
-              Peter 的踩坑实录，帮你节省自学时间。
-            </Typography>
-          </div>
         </Hidden>
         <div className={s.content}>
           <div className={s.listWrap}>

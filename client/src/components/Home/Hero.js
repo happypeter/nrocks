@@ -8,8 +8,11 @@ import dashboardImg from '../../assets/images/dashboard.jpg'
 const styles = theme => ({
   hero: {
     position: 'relative',
-    height: 600,
+    height: 500,
     [theme.breakpoints.up('lg')]: {
+      height: 650
+    },
+    [theme.breakpoints.up('xl')]: {
       height: 700
     },
     overflow: 'hidden'
@@ -19,11 +22,16 @@ const styles = theme => ({
     backgroundImage: `linear-gradient(100deg, ${
       theme.palette.primary.main
     },#ffffff)`,
-    top: -350,
-    right: -110,
     borderRadius: '8%',
     width: '50%',
-    height: 800,
+    top: -300,
+    right: -110,
+    height: 600,
+    [theme.breakpoints.up('lg')]: {
+      top: -350,
+      right: -110,
+      height: 800
+    },
     transform: 'skew(3deg,30deg)',
     opacity: 1
   },
@@ -33,12 +41,24 @@ const styles = theme => ({
     backgroundImage: `linear-gradient(100deg, ${theme.palette.primary.main}, ${
       theme.palette.primary.dark
     })`,
-    top: -400,
-    left: -350,
+    opacity: 0.2,
     borderRadius: '100%',
-    height: 800,
-    width: 800,
-    opacity: 0.2
+    top: -200,
+    left: -150,
+    height: 400,
+    width: 400,
+    [theme.breakpoints.up('lg')]: {
+      top: -300,
+      left: -250,
+      height: 600,
+      width: 600
+    },
+    [theme.breakpoints.up('xl')]: {
+      top: -400,
+      left: -350,
+      height: 800,
+      width: 800
+    }
   },
   bgCircleTwo: {
     position: 'absolute',
@@ -46,31 +66,43 @@ const styles = theme => ({
     backgroundImage: `linear-gradient(100deg, ${theme.palette.primary.main}, ${
       theme.palette.primary.dark
     })`,
-    top: 150,
-    left: 350,
     borderRadius: '100%',
-    height: 100,
-    width: 100,
-    opacity: 0.8
+    opacity: 0.8,
+    top: 100,
+    left: 180,
+    height: 60,
+    width: 60,
+    [theme.breakpoints.up('lg')]: {
+      top: 150,
+      left: 250,
+      height: 80,
+      width: 80
+    },
+    [theme.breakpoints.up('xl')]: {
+      top: 150,
+      left: 350,
+      height: 100,
+      width: 100
+    }
   },
   content: {
+    zIndex: 1000,
     display: 'flex',
-    width: 1000,
-    marginLeft: -500,
-    margin: '0 auto',
     justifyContent: 'space-between',
+    margin: '0 auto',
+    position: 'absolute',
+    top: 180,
+    width: 800,
+    left: '50%',
+    marginLeft: -400,
     [theme.breakpoints.up('lg')]: {
       width: 1100,
       marginLeft: -550
-    },
-    left: '50%',
-    top: 170,
-    position: 'absolute',
-    zIndex: 1000
+    }
   },
   textWrap: {
     display: 'flex',
-    width: 400,
+    width: '50%',
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItem: 'center'
