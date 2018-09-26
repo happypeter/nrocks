@@ -20,3 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 ncourse
 src/config/config.js
+deploy.sh
