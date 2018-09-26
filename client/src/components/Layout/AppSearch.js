@@ -8,7 +8,7 @@ import Input from '@material-ui/core/Input'
 import SearchIcon from '@material-ui/icons/Search'
 import { fade } from '@material-ui/core/styles/colorManipulator'
 import { withStyles } from '@material-ui/core/styles'
-import { DARK_PRIMARY_COLOR } from '../../constants/GlobalStyle'
+import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 
 let searchTimer
 let initialized = false
@@ -108,9 +108,9 @@ const styles = theme => ({
     position: 'relative',
     marginLeft: theme.spacing.unit,
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(`${DARK_PRIMARY_COLOR}`, 0.8),
+    backgroundColor: fade(`${ACCENT_COLOR}`, 0.8),
     '&:hover': {
-      backgroundColor: DARK_PRIMARY_COLOR
+      backgroundColor: ACCENT_COLOR
     },
     '& $inputInput': {
       transition: theme.transitions.create('width'),
