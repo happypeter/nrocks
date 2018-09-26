@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import { Link } from 'react-static'
 import {
   HEADER_HEIGHT,
   MAX_WIDTH,
-  DRAWER_WIDTH
+  DRAWER_WIDTH,
+  DEFAULT_PRIMARY_COLOR
 } from '../../constants/GlobalStyle'
 import Doc from './Doc'
 import AppDrawer from './AppDrawer'
@@ -37,16 +37,17 @@ const styles = theme => ({
     textAlign: 'center'
   },
   link: {
-    color: '#fff',
-    backgroundColor: '#00bcd4',
-    marginTop: theme.spacing.unit * 4
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: theme.spacing.unit * 4,
+    color: DEFAULT_PRIMARY_COLOR
   },
   icon: {
     width: 36,
     height: 36
   },
   desc: {
-    color: '#fff'
+    color: DEFAULT_PRIMARY_COLOR
   }
 })
 
@@ -83,16 +84,12 @@ class Episode extends Component {
               <Typography variant="headline">{episode.title}</Typography>
             </div>
             {episode.video ? (
-              <Button
-                href={episode.video}
-                className={s.link}
-                variant="contained"
-              >
+              <Link to={episode.video} className={s.link}>
                 <PlayArrowIcon className={s.icon} />
                 <Typography variant="subheading" className={s.desc}>
                   去到 B 站观看视频
                 </Typography>
-              </Button>
+              </Link>
             ) : null}
             <Doc markdown={markdown} />
             <Navigation
