@@ -11,13 +11,33 @@ const styles = theme => ({
   header: {
     padding: `${theme.spacing.unit * 10}px 0`,
     backgroundColor: '#a7cbd0',
-    textAlign: 'center',
-    lineHeight: 2,
     marginTop: HEADER_HEIGHT
+  },
+  headerInner: {
+    width: `calc(100% - ${theme.spacing.unit * 4}px)`,
+    maxWidth: MAX_WIDTH - 220,
+    margin: '0 auto'
+  },
+  date: {
+    backgroundColor: '#6EBFCB',
+    width: 88,
+    padding: theme.spacing.unit / 4,
+    textAlign: 'center',
+    color: '#fff',
+    borderRadius: 4,
+    marginBottom: theme.spacing.unit / 2
+  },
+  title: {
+    color: '#fff',
+    fontWeight: 600,
+    marginBottom: theme.spacing.unit
+  },
+  subheading: {
+    color: '#fff'
   },
   list: {
     width: `calc(100% - ${theme.spacing.unit * 4}px)`,
-    maxWidth: MAX_WIDTH - 240,
+    maxWidth: MAX_WIDTH - 220,
     margin: '32px auto',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px`
   },
@@ -47,9 +67,17 @@ class Course extends Component {
     return (
       <div>
         <div className={s.header}>
-          <Typography variant="headline">{course.title}</Typography>
-          <Typography variant="subheading">{course.desc}</Typography>
-          <Typography variant="body2">{course.date}</Typography>
+          <div className={s.headerInner}>
+            <Typography variant="body2" className={s.date}>
+              {course.date}
+            </Typography>
+            <Typography variant="headline" className={s.title}>
+              {course.title}
+            </Typography>
+            <Typography variant="subheading" className={s.subheading}>
+              {course.desc}
+            </Typography>
+          </div>
         </div>
         <Paper className={s.list} elevation={1}>
           {episodes.map(ep => (
