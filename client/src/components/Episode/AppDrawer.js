@@ -11,7 +11,7 @@ import IconButton from '@material-ui/core/IconButton'
 import {
   DRAWER_WIDTH,
   DIVIDER_COLOR,
-  DEFAULT_PRIMARY_COLOR
+  ACCENT_COLOR
 } from '../../constants/GlobalStyle'
 import ArrowBackIcon from '../svg/ArrowBack'
 
@@ -42,7 +42,7 @@ const styles = theme => ({
       backgroundColor: DIVIDER_COLOR
     },
     '&.active $text': {
-      borderLeft: `4px solid ${DEFAULT_PRIMARY_COLOR}`,
+      borderLeft: `4px solid ${ACCENT_COLOR}`,
       fontWeight: 600
     }
   },

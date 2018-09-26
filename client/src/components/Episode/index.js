@@ -4,9 +4,8 @@ import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-static'
 import {
   HEADER_HEIGHT,
-  MAX_WIDTH,
   DRAWER_WIDTH,
-  DEFAULT_PRIMARY_COLOR
+  ACCENT_COLOR
 } from '../../constants/GlobalStyle'
 import Doc from './Doc'
 import AppDrawer from './AppDrawer'
@@ -29,25 +28,28 @@ const styles = theme => ({
   },
   right: {
     width: '100%',
-    maxWidth: MAX_WIDTH,
+    maxWidth: 680,
     margin: '24px auto',
     overflowY: 'auto'
   },
-  title: {
-    textAlign: 'center'
+  h1: {
+    fontSize: '1.8em',
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 4,
+    fontWeight: 500
   },
   link: {
     display: 'flex',
     alignItems: 'center',
     marginTop: theme.spacing.unit * 4,
-    color: DEFAULT_PRIMARY_COLOR
+    color: ACCENT_COLOR
   },
   icon: {
     width: 36,
     height: 36
   },
   desc: {
-    color: DEFAULT_PRIMARY_COLOR
+    color: ACCENT_COLOR
   }
 })
 
@@ -80,14 +82,15 @@ class Episode extends Component {
         />
         <div className={s.rightWrapper}>
           <div className={s.right}>
-            <div className={s.title}>
-              <Typography variant="headline">{episode.title}</Typography>
-            </div>
+            <Typography variant="headline" className={s.h1}>
+              {episode.title}
+            </Typography>
+
             {episode.video ? (
               <Link to={episode.video} className={s.link}>
                 <PlayArrowIcon className={s.icon} />
                 <Typography variant="subheading" className={s.desc}>
-                  去到 B 站观看视频
+                  到 B 站观看视频
                 </Typography>
               </Link>
             ) : null}

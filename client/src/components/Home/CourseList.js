@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import { DEFAULT_PRIMARY_COLOR } from '../../constants/GlobalStyle'
+import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 
 const styles = theme => ({
   root: {
@@ -20,7 +20,7 @@ const styles = theme => ({
   },
   line: {
     width: 32,
-    borderBottom: `4px solid ${DEFAULT_PRIMARY_COLOR}`,
+    borderBottom: `4px solid ${ACCENT_COLOR}`,
     marginTop: theme.spacing.unit
   }
 })

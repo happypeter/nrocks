@@ -9,7 +9,8 @@ import ArrowForwardIcon from '../svg/ArrowForward'
 const styles = theme => ({
   root: {
     display: 'flex',
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing.unit * 8,
+    marginBottom: theme.spacing.unit * 6,
     justifyContent: 'space-between'
   },
   nav: {

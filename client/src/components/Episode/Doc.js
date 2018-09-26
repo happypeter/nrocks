@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { withStyles } from '@material-ui/core/styles'
+import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 
 const styles = theme => ({
   root: {
@@ -9,10 +10,12 @@ const styles = theme => ({
     lineHeight: 1.9,
     fontSize: 16,
     '& h2': {
-      fontSize: 20
+      fontSize: '1.4em',
+      color: 'rgba(0, 0, 0, 0.87)',
+      fontWeight: 500,
+      marginTop: theme.spacing.unit * 5
     },
     '& pre': {
-      border: `2px solid ${theme.palette.primary.light}`,
       padding: theme.spacing.unit * 2,
       fontFamily: `Roboto, monospace`,
       overflow: 'auto',
@@ -20,7 +23,7 @@ const styles = theme => ({
       fontSize: 14
     },
     '& a': {
-      color: '#00bcd4',
+      color: ACCENT_COLOR,
       fontStyle: 'normal',
       wordBreak: 'break-word'
     },
@@ -32,9 +35,12 @@ const styles = theme => ({
     '& blockquote': {
       margin: 0,
       padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px`,
-      borderLeft: '4px solid #00bcd4',
+      borderLeft: `4px solid ${ACCENT_COLOR}`,
       borderRadius: 3,
       backgroundColor: '#fff'
+    },
+    '& p': {
+      color: 'rgba(0, 0, 0, 0.75)'
     }
   }
 })
