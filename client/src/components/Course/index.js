@@ -16,22 +16,22 @@ const styles = theme => ({
     marginTop: HEADER_HEIGHT
   },
   list: {
-    width: '100%',
+    width: `calc(100% - ${theme.spacing.unit * 4}px)`,
     maxWidth: MAX_WIDTH - 240,
     margin: '32px auto',
-    padding: `0 ${theme.spacing.unit * 2}px`
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px`
   },
   listItem: {
     display: 'block',
-    textDecoration: 'none'
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    border: '1px solid #eeeeee',
+    textDecoration: 'none',
+    padding: `${theme.spacing.unit * 2}px 0`,
+    borderBottom: '1px solid #eeeeee',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    '&:last-child': {
+      borderBottom: 'none'
+    }
   },
   icon: {
     color: 'rgba(33, 33, 33, 0.8)',
@@ -51,20 +51,18 @@ class Course extends Component {
           <Typography variant="subheading">{course.desc}</Typography>
           <Typography variant="body2">{course.date}</Typography>
         </div>
-        <div className={s.list}>
+        <Paper className={s.list} elevation={1}>
           {episodes.map(ep => (
             <Link
               to={`/${course.id}/${ep.id}`}
               className={s.listItem}
               key={ep.id}
             >
-              <Paper className={s.paper} elevation={0}>
-                <Typography variant="subheading">{ep.title}</Typography>
-                <PlayArrowIcon className={s.icon} />
-              </Paper>
+              <Typography variant="subheading">{ep.title}</Typography>
+              <PlayArrowIcon className={s.icon} />
             </Link>
           ))}
-        </div>
+        </Paper>
         <Footer />
       </div>
     )
