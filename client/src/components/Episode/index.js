@@ -9,7 +9,6 @@ import {
 } from '../../constants/GlobalStyle'
 import Doc from './Doc'
 import AppDrawer from './AppDrawer'
-import { toggleDrawer } from '../../redux/actions/index'
 import PlayArrowIcon from '../svg/PlayArrow'
 import Navigation from './Navigation'
 
