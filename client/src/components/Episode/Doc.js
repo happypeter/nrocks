@@ -2,6 +2,21 @@ import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { withStyles } from '@material-ui/core/styles'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-javascript'
+import '../../assets/themes/prism.css'
+
+const md = require('markdown-it')({
+  highlight: function(str, language) {
+    const lang = language || 'javascript'
+    if (lang) {
+      try {
+        return Prism.highlight(str, Prism.languages[lang], lang)
+      } catch (__) {}
+    }
+    return ''
+  }
+})
 
 const styles = theme => ({
   root: {
@@ -40,7 +55,8 @@ const styles = theme => ({
       backgroundColor: '#fff'
     },
     '& p': {
-      color: 'rgba(0, 0, 0, 0.75)'
+      color: 'rgba(0, 0, 0, 0.75)',
+      wordBreak: 'break-word'
     }
   }
 })
@@ -48,7 +64,10 @@ const styles = theme => ({
 class Doc extends Component {
   render() {
     const { classes: s, markdown } = this.props
-    return <ReactMarkdown source={markdown} className={s.root} />
+    const result = md.render(markdown)
+    return (
+      <div dangerouslySetInnerHTML={{ __html: result }} className={s.root} />
+    )
   }
 }
 
