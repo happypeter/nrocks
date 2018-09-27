@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 import dashboardImg from '../../assets/images/dashboard.jpg'
-import NLogoIcon from '../svg/NLogo'
+import LogoOnly from '../svg/LogoOnly'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 
 const styles = theme => ({
@@ -116,7 +116,8 @@ const styles = theme => ({
   },
   nlogo: {
     flexShrink: 0,
-    marginRight: theme.spacing.unit * 2
+    marginRight: theme.spacing.unit * 2,
+    marginTop: -128
   },
   text: {
     width: '70%',
@@ -146,7 +147,7 @@ class Hero extends React.Component {
         <div className={s.content}>
           <div className={s.left}>
             <div className={s.slogan}>
-              <NLogoIcon className={s.nlogo} />
+              <LogoOnly className={s.nlogo} width={50} />
               <div className={s.text}>
                 <Typography variant="headline">Nervos 学习站</Typography>
                 <Typography className={s.caption} variant="body2">
