@@ -69,7 +69,7 @@ class Course extends Component {
       <div>
         <div className={s.header}>
           <div className={s.headerInner}>
-            <Typography variant="title" className={s.title}>
+            <Typography variant="headline" className={s.title}>
               {course.title}
             </Typography>
             <Typography variant="body2" className={s.subtitle}>

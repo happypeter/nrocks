@@ -32,7 +32,6 @@ const styles = theme => ({
     overflowY: 'auto'
   },
   h1: {
-    fontSize: '1.8em',
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 4,
     fontWeight: 500

@@ -25,7 +25,7 @@ const styles = theme => ({
     lineHeight: 1.9,
     fontSize: 16,
     '& h2': {
-      fontSize: '1.4em',
+      fontSize: '1.3125rem',
       color: 'rgba(0, 0, 0, 0.87)',
       fontWeight: 500,
       marginTop: theme.spacing.unit * 5
