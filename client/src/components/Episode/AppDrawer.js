@@ -57,10 +57,14 @@ const styles = theme => ({
     flexShrink: 0,
     borderTop: '1px solid #eee',
     padding: theme.spacing.unit * 2,
-    textDecoration: 'none'
+    textDecoration: 'none',
+    display: 'flex',
+    alignItems: 'center'
   },
   icon: {
-    color: 'rgba(33,33,33,.8)'
+    color: 'rgba(33,33,33,.54)',
+    width: 16,
+    height: 16
   }
 })
 
@@ -112,7 +116,7 @@ class AppDrawer extends React.Component {
             {drawer}
             <Link to={`/${course.id}`} className={s.bottom}>
               <ArrowBackIcon className={s.icon} />
-              <Typography variant="body1" component="div" className={s.text}>
+              <Typography variant="caption" className={s.text}>
                 {course.title}
               </Typography>
             </Link>
@@ -129,7 +133,7 @@ class AppDrawer extends React.Component {
             {drawer}
             <Link to={`/${course.id}`} className={s.bottom}>
               <ArrowBackIcon className={s.icon} />
-              <Typography variant="body1" component="div" className={s.text}>
+              <Typography variant="caption" className={s.text}>
                 {course.title}
               </Typography>
             </Link>

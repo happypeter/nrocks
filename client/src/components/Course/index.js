@@ -20,20 +20,21 @@ const styles = theme => ({
   },
   date: {
     backgroundColor: '#6EBFCB',
-    width: 88,
+    width: 80,
     padding: theme.spacing.unit / 4,
     textAlign: 'center',
     color: '#fff',
-    borderRadius: 4,
-    marginBottom: theme.spacing.unit / 2
+    borderRadius: 4
   },
   title: {
     color: '#fff',
-    fontWeight: 600,
-    marginBottom: theme.spacing.unit
+    fontWeight: 500,
+    marginBottom: theme.spacing.unit * 2
   },
-  subheading: {
-    color: '#fff'
+  subtitle: {
+    color: '#fff',
+    marginBottom: theme.spacing.unit * 2,
+    fontWeight: 400
   },
   list: {
     width: `calc(100% - ${theme.spacing.unit * 4}px)`,
@@ -68,14 +69,14 @@ class Course extends Component {
       <div>
         <div className={s.header}>
           <div className={s.headerInner}>
-            <Typography variant="body2" className={s.date}>
-              {course.date}
-            </Typography>
-            <Typography variant="headline" className={s.title}>
+            <Typography variant="title" className={s.title}>
               {course.title}
             </Typography>
-            <Typography variant="subheading" className={s.subheading}>
+            <Typography variant="body2" className={s.subtitle}>
               {course.desc}
+            </Typography>
+            <Typography variant="caption" className={s.date}>
+              {course.date}
             </Typography>
           </div>
         </div>

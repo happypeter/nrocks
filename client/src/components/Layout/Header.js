@@ -59,7 +59,7 @@ class Header extends Component {
               </IconButton>
             ) : null}
             <Link to="/" className={s.home}>
-              <Logo width={100} />
+              <Logo width={isWidthUp('md', width) ? 100 : 80} />
             </Link>
           </div>
           <AppSearch />
