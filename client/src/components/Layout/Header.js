@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-static'
 import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import AppSearch from './AppSearch'
-import Logo from '../svg/Logo'
+import LogoIcon from '../svg/Logo'
 
 const styles = theme => ({
   appBar: {
@@ -59,7 +59,7 @@ class Header extends Component {
               </IconButton>
             ) : null}
             <Link to="/" className={s.home}>
-              <Logo width={isWidthUp('md', width) ? 100 : 80} />
+              <LogoIcon width={isWidthUp('md', width) ? 100 : 80} />
             </Link>
           </div>
           <AppSearch />
