@@ -32,7 +32,8 @@ const styles = theme => ({
   },
   caption: {
     marginTop: theme.spacing.unit * 3,
-    color: '#fff'
+    color: '#fff',
+    opacity: 0.7
   },
   link: {
     color: ACCENT_COLOR

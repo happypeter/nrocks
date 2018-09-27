@@ -124,7 +124,8 @@ const styles = theme => ({
   },
   caption: {
     marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing.unit * 2,
+    opacity: 0.7
   },
   imgWrap: {
     width: 450,
