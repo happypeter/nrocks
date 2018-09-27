@@ -4,6 +4,8 @@ import { Typography } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 import dashboardImg from '../../assets/images/dashboard.jpg'
+import NLogoIcon from '../svg/NLogo'
+import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 
 const styles = theme => ({
   hero: {
@@ -100,14 +102,27 @@ const styles = theme => ({
       marginLeft: -550
     }
   },
-  textWrap: {
+  left: {
     display: 'flex',
     width: '50%',
-    flexDirection: 'column',
     justifyContent: 'space-around',
-    alignItem: 'center'
+    alignItems: 'center'
   },
-  subheading: {
+  slogan: {
+    display: 'flex'
+  },
+  link: {
+    color: ACCENT_COLOR
+  },
+  nlogo: {
+    flexShrink: 0,
+    marginRight: theme.spacing.unit * 2
+  },
+  text: {
+    width: '70%',
+    maxWidth: 300
+  },
+  caption: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2
   },
@@ -128,12 +143,20 @@ class Hero extends React.Component {
     return (
       <div className={s.hero}>
         <div className={s.content}>
-          <div className={s.textWrap}>
-            <div>
-              <Typography variant="display2">Learning Nervos</Typography>
-              <Typography className={s.subheading} variant="subheading">
-                Peter 的踩坑实录，帮你节省自学时间。
-              </Typography>
+          <div className={s.left}>
+            <div className={s.slogan}>
+              <NLogoIcon className={s.nlogo} />
+              <div className={s.text}>
+                <Typography variant="headline">Nervos 学习站</Typography>
+                <Typography className={s.caption} variant="body2">
+                  <a href="https://www.nervos.org/" className={s.link}>
+                    Nervos
+                  </a>{' '}
+                  是一个服务企业搭建公链和 DApp
+                  的区块链网络。本站的视频课程，帮助大家迅速掌握区块链基础知识和
+                  Nervos 开发。
+                </Typography>
+              </div>
             </div>
           </div>
           <Paper className={s.imgWrap}>
