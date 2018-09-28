@@ -12,7 +12,7 @@ const styles = theme => ({
     marginTop: HEADER_HEIGHT
   },
   content: {
-    padding: `${theme.spacing.unit * 10}px 0`,
+    padding: `${theme.spacing.unit * 10}px ${theme.spacing.unit * 2}px`,
     width: '100%',
     margin: '0 auto',
     backgroundColor: '#eeeeee'
@@ -20,7 +20,7 @@ const styles = theme => ({
   listWrap: {
     display: 'flex',
     [theme.breakpoints.up('md')]: {
-      width: 700,
+      width: 800,
       margin: '0 auto'
     },
     [theme.breakpoints.up('lg')]: {

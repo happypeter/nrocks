@@ -9,6 +9,9 @@ import { Link } from 'react-static'
 
 const styles = theme => ({
   root: {
+    margin: -theme.spacing.unit * 2
+  },
+  inner: {
     margin: theme.spacing.unit * 2
   },
   dateWrapper: {
@@ -39,31 +42,33 @@ class CourseCard extends React.Component {
     const { course, classes: s } = this.props
     return (
       <div className={s.root}>
-        <div className={s.dateWrapper}>
-          <Typography variant="body1" className={s.date} component="div">
-            {course.date}
-          </Typography>
+        <div className={s.inner}>
+          <div className={s.dateWrapper}>
+            <Typography variant="body1" className={s.date} component="div">
+              {course.date}
+            </Typography>
+          </div>
+          <Link to={`/${course.id}`} className={s.link}>
+            <Card className={s.card}>
+              <CardActionArea className={s.button}>
+                <CardMedia
+                  className={s.media}
+                  component="img"
+                  image={course.image}
+                  title={course.id}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="subheading" component="h3">
+                    {course.title}
+                  </Typography>
+                  <Typography variant="caption" component="p">
+                    {course.desc}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Link>
         </div>
-        <Link to={`/${course.id}`} className={s.link}>
-          <Card className={s.card}>
-            <CardActionArea className={s.button}>
-              <CardMedia
-                className={s.media}
-                component="img"
-                image={course.image}
-                title={course.id}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="subheading" component="h3">
-                  {course.title}
-                </Typography>
-                <Typography variant="caption" component="p">
-                  {course.desc}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
       </div>
     )
   }

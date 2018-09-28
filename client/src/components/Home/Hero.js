@@ -98,37 +98,39 @@ const styles = theme => ({
     left: '50%',
     marginLeft: -400,
     [theme.breakpoints.up('lg')]: {
+      width: 1000,
+      marginLeft: -500
+    },
+    [theme.breakpoints.up('xl')]: {
       width: 1100,
       marginLeft: -550
     }
   },
   left: {
-    display: 'flex',
     width: '50%',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  slogan: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
     display: 'flex'
   },
   link: {
-    color: ACCENT_COLOR
+    color: ACCENT_COLOR,
+    textDecoration: 'none'
   },
-  nlogo: {
-    flexShrink: 0,
-    marginRight: theme.spacing.unit * 2,
-    marginTop: -128
+  headline: {
+    display: 'flex'
   },
-  text: {
-    width: '70%',
-    maxWidth: 300
+  siteTitle: {
+    lineHeight: '50px',
+    marginLeft: '8px'
   },
   caption: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    opacity: 0.7
+    marginLeft: 58,
+    marginTop: theme.spacing.unit,
+    opacity: 0.7,
+    maxWidth: 340
   },
   imgWrap: {
+    marginLeft: theme.spacing.unit * 4,
     width: 450,
     [theme.breakpoints.up('lg')]: {
       width: 600
@@ -141,24 +143,26 @@ const styles = theme => ({
 
 class Hero extends React.Component {
   render() {
-    const { classes: s, goto } = this.props
+    const { classes: s } = this.props
     return (
       <div className={s.hero}>
         <div className={s.content}>
           <div className={s.left}>
-            <div className={s.slogan}>
-              <LogoOnly className={s.nlogo} width={50} />
-              <div className={s.text}>
-                <Typography variant="headline">Nervos 学习站</Typography>
-                <Typography className={s.caption} variant="body2">
-                  <a href="https://www.nervos.org/" className={s.link}>
-                    Nervos
-                  </a>{' '}
-                  是一个服务企业搭建公链和 DApp
-                  的区块链网络。本站的视频课程，帮助大家迅速掌握区块链基础知识和
-                  Nervos 开发。
+            <div>
+              <div className={s.headline}>
+                <LogoOnly className={s.nlogo} width={50} height={50} />
+                <Typography className={s.siteTitle} variant="headline">
+                  Nervos 学习站
                 </Typography>
               </div>
+              <Typography className={s.caption} variant="body2">
+                <a href="https://www.nervos.org/" className={s.link}>
+                  Nervos
+                </a>{' '}
+                是一个帮助企业搭建公链和 DApp
+                的区块链网络。本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手
+                Nervos 开发。
+              </Typography>
             </div>
           </div>
           <Paper className={s.imgWrap}>

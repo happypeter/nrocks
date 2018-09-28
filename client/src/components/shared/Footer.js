@@ -14,7 +14,7 @@ const styles = theme => ({
   container: {
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: 700,
+      width: 800,
       margin: '0 auto'
     },
     [theme.breakpoints.up('lg')]: {
