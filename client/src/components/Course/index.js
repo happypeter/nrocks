@@ -11,6 +11,7 @@ const styles = theme => ({
   header: {
     padding: `${theme.spacing.unit * 10}px 0`,
     backgroundColor: '#a7cbd0',
+    background: `linear-gradient(341deg,rgba(217,240,244,1) 0%,rgba(40,159,176,1) 100%)`,
     marginTop: HEADER_HEIGHT
   },
   headerInner: {
