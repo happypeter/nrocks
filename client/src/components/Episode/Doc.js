@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactMarkdown from 'react-markdown'
 import { withStyles } from '@material-ui/core/styles'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 import Prism from 'prismjs'

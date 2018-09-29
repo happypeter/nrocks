@@ -6,12 +6,10 @@ import {
   createGenerateClassName
 } from '@material-ui/core/styles'
 import fs from 'fs'
-import path from 'path'
 import theme from './src/theme'
 import chokidar from 'chokidar'
 import { reloadRoutes } from 'react-static/node'
 import { docRepo } from './config'
-import { PauseCircleFilled } from '@material-ui/icons'
 
 chokidar.watch(`./${docRepo}`).on('all', () => reloadRoutes())
 
@@ -87,7 +85,7 @@ export default {
           }))
         }
       }),
-      { is404: true, component: 'src/containers/404' }
+      { is404: true, component: 'src/components/NotFound' }
     ]
   },
   renderToHtml: (render, Comp, meta) => {
