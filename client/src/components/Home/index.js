@@ -5,6 +5,7 @@ import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
 import Hero from './Hero'
 import CourseList from './CourseList'
 import Footer from '../shared/Footer'
+import Cat from './Cat'
 
 const styles = theme => ({
   root: {
@@ -14,7 +15,8 @@ const styles = theme => ({
     padding: `${theme.spacing.unit * 10}px ${theme.spacing.unit * 2}px`,
     width: '100%',
     margin: '0 auto',
-    backgroundColor: '#eeeeee'
+    backgroundColor: '#eeeeee',
+    background: `linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%)`
   },
   listWrap: {
     display: 'flex',
@@ -51,6 +53,7 @@ class Home extends React.Component {
         <Hidden smDown>
           <Hero />
         </Hidden>
+        <Cat />
         <div className={s.content}>
           <div className={s.listWrap}>
             <CourseList courses={courses} />

@@ -38,7 +38,7 @@ class CourseList extends Component {
     return (
       <div className={s.root}>
         <div className={s.section}>
-          <Typography variant="title">课程展示</Typography>
+          <Typography variant="title">最新课程</Typography>
           <div className={s.line} />
         </div>
         <Grid container>{courseList}</Grid>
