@@ -28,6 +28,7 @@ const styles = theme => ({
   title: {
     opacity: 0.7,
     marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
     fontSize: 16
   },
   icon: {
@@ -45,7 +46,7 @@ class Cat extends Component {
     const { classes: s } = this.props
     return (
       <div className={s.root}>
-        <Grid container spacing={24}>
+        <Grid container>
           <Grid item xs={6} sm={3} lg={3} xl={3}>
             <ChainIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
