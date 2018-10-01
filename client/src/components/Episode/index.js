@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-static'
+import classNames from 'classnames'
 import {
   HEADER_HEIGHT,
   DRAWER_WIDTH,
@@ -79,7 +80,7 @@ class Episode extends Component {
           toggleDrawer={toggleDrawer}
         />
         <div className={s.rightWrapper}>
-          <div className={s.right}>
+          <div className={classNames('docSearch-content', s.right)}>
             <Typography variant="headline" className={s.h1}>
               {episode.title}
             </Typography>
