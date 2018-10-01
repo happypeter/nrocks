@@ -6,23 +6,23 @@ import ChainIcon from '../svg/Chain'
 import DAppIcon from '../svg/DApp'
 import CryptoIcon from '../svg/Crypto'
 import NervosIcon from '../svg/Nervos'
+import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    width: '100%',
     textAlign: 'center',
-    margin: '132px auto 48px',
+    margin: '0 auto',
+    padding: `${theme.spacing.unit * 6}px 0`,
     [theme.breakpoints.up('md')]: {
       width: 800,
-      marginTop: 0
+      paddingTop: 0
     },
     [theme.breakpoints.up('lg')]: {
-      width: 1000,
-      marginTop: 0
+      width: 1000
     },
     [theme.breakpoints.up('xl')]: {
-      width: 1100,
-      marginTop: 0
+      width: 1100
     }
   },
   title: {
@@ -35,6 +35,10 @@ const styles = theme => ({
     width: 40,
     height: 40,
     [theme.breakpoints.up('lg')]: {
+      width: 60,
+      height: 60
+    },
+    [theme.breakpoints.up('xl')]: {
       width: 80,
       height: 80
     }
@@ -47,25 +51,25 @@ class Cat extends Component {
     return (
       <div className={s.root}>
         <Grid container>
-          <Grid item xs={6} sm={3} lg={3} xl={3}>
+          <Grid item xs={6} sm={3}>
             <ChainIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
               区块链
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} lg={3} xl={3}>
+          <Grid item xs={6} sm={3}>
             <DAppIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
               DApp
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} lg={3} xl={3}>
+          <Grid item xs={6} sm={3}>
             <CryptoIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
               密码学
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3} lg={3} xl={3}>
+          <Grid item xs={6} sm={3}>
             <NervosIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
               Nervos 实战
