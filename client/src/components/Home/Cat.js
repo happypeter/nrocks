@@ -9,20 +9,33 @@ import NervosIcon from '../svg/Nervos'
 
 const styles = theme => ({
   root: {
-    padding: '16px 0 80px',
     display: 'flex',
     textAlign: 'center',
+    margin: '132px auto 48px',
     [theme.breakpoints.up('md')]: {
       width: 800,
-      margin: '0 auto'
+      marginTop: 0
     },
     [theme.breakpoints.up('lg')]: {
       width: 1000,
-      margin: '0 auto'
+      marginTop: 0
     },
     [theme.breakpoints.up('xl')]: {
       width: 1100,
-      margin: '0 auto'
+      marginTop: 0
+    }
+  },
+  title: {
+    opacity: 0.7,
+    marginTop: theme.spacing.unit * 2,
+    fontSize: 16
+  },
+  icon: {
+    width: 40,
+    height: 40,
+    [theme.breakpoints.up('lg')]: {
+      width: 80,
+      height: 80
     }
   }
 })
@@ -34,20 +47,28 @@ class Cat extends Component {
       <div className={s.root}>
         <Grid container spacing={24}>
           <Grid item xs={6} sm={3} lg={3} xl={3}>
-            <ChainIcon width={80} height={80} />
-            <Typography variant="subheading">区块链</Typography>
+            <ChainIcon className={s.icon} />
+            <Typography variant="title" className={s.title}>
+              区块链
+            </Typography>
           </Grid>
           <Grid item xs={6} sm={3} lg={3} xl={3}>
-            <DAppIcon width={80} height={80} />
-            <Typography variant="subheading">DApp</Typography>
+            <DAppIcon className={s.icon} />
+            <Typography variant="title" className={s.title}>
+              DApp
+            </Typography>
           </Grid>
           <Grid item xs={6} sm={3} lg={3} xl={3}>
-            <CryptoIcon width={80} height={80} />
-            <Typography variant="subheading">密码学</Typography>
+            <CryptoIcon className={s.icon} />
+            <Typography variant="title" className={s.title}>
+              密码学
+            </Typography>
           </Grid>
           <Grid item xs={6} sm={3} lg={3} xl={3}>
-            <NervosIcon width={80} height={80} />
-            <Typography variant="subheading">Nervos</Typography>
+            <NervosIcon className={s.icon} />
+            <Typography variant="title" className={s.title}>
+              Nervos 实战
+            </Typography>
           </Grid>
         </Grid>
       </div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import classNames from 'classnames'
 import Header from './Header'
 
 const styles = theme => ({
@@ -11,18 +10,12 @@ const styles = theme => ({
 
 class Layout extends React.Component {
   render() {
-    const {
-      children,
-      classes: s,
-      isDrawerOpen,
-      toggleDrawer,
-      isOnEpisodePage
-    } = this.props
+    const { children, classes: s, toggleDrawer, isOnEpisodePage } = this.props
 
     return (
       <div>
         <Header toggleDrawer={toggleDrawer} isOnEpisodePage={isOnEpisodePage} />
-        <div className={classNames(s.content)}>{children}</div>
+        <div className={s.content}>{children}</div>
       </div>
     )
   }
