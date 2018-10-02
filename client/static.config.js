@@ -129,7 +129,21 @@ export default {
               href="images/favicon.ico"
             />
             <meta name="description" content="nervos" />
-            <meta name="keywords" content="nervos blockchain" />
+            <meta name="keywords" content="Nervos Blockchain Crypto DApp" />
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=UA-126744557-1"
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'UA-126744557-1');
+                `
+              }}
+            />
           </Head>
           <Body>
             {children}
