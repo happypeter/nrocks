@@ -5,7 +5,9 @@ import Prism from 'prismjs'
 import 'prismjs/components/prism-javascript'
 import '../../assets/themes/prism.css'
 
+const uslug = require('uslug')
 const md = require('markdown-it')({
+  linkify: true,
   highlight: function(str, language) {
     const lang = language || 'javascript'
     if (lang) {
@@ -15,6 +17,9 @@ const md = require('markdown-it')({
     }
     return ''
   }
+}).use(require('markdown-it-anchor'), {
+  permalink: true,
+  slugify: s => uslug(s)
 })
 
 const styles = theme => ({
@@ -27,7 +32,22 @@ const styles = theme => ({
       fontSize: '1.3125rem',
       color: 'rgba(0, 0, 0, 0.87)',
       fontWeight: 500,
-      marginTop: theme.spacing.unit * 5
+      marginTop: theme.spacing.unit * 5,
+      '&:before': {
+        content: '""',
+        display: 'block',
+        height: 91,
+        marginTop: -91,
+        visibility: 'hidden'
+      },
+      '& $a': {
+        visibility: 'hidden'
+      },
+      '&:hover $a': {
+        cursor: 'pointer',
+        visibility: 'visible',
+        textDecoration: 'none'
+      }
     },
     '& pre': {
       padding: theme.spacing.unit * 2,

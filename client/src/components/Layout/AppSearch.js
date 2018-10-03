@@ -9,6 +9,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import { fade } from '@material-ui/core/styles/colorManipulator'
 import { withStyles } from '@material-ui/core/styles'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
+import history from '../../utils/routerUtils'
 
 let searchTimer
 let initialized = false
@@ -34,11 +35,15 @@ function initDocsearch() {
     initialized = docsearchInput
     clearInterval(searchTimer)
     window.docsearch({
-      apiKey: 'xxx',
-      indexName: 'xxx',
+      apiKey: '91fce6c04d7f68bbb346278719149541',
+      indexName: 'nervos',
       inputSelector: '#docsearch-input',
       handleSelected: (input, event, suggestion) => {
         const url = suggestion.url
+          .replace(/^https:\/\/learning\.nervos\.org/, '')
+          .replace(/\/#/, '#')
+          .replace(/\/$/, '')
+        history.push(url)
       },
       // Set debug to true if you want to inspect the dropdown.
       debug: true
@@ -50,8 +55,14 @@ const styles = theme => ({
   '@global': {
     '.algolia-autocomplete': {
       fontFamily: theme.typography.fontFamily,
+      '& .algolia-docsearch-suggestion--category-header': {
+        backgroundColor: ACCENT_COLOR,
+        paddingLeft: 8,
+        paddingRight: 8
+      },
       '& .algolia-docsearch-suggestion--category-header-lvl0': {
-        color: theme.palette.text.primary
+        color: '#ffffff',
+        fontSize: 14
       },
       '& .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column': {
         opacity: 1,
@@ -63,8 +74,12 @@ const styles = theme => ({
         },
         '&:after': {
           display: 'none'
+        },
+        '& .algolia-docsearch-suggestion--subcategory-column-text': {
+          fontSize: 14
         }
       },
+
       '& .algolia-docsearch-suggestion .algolia-docsearch-suggestion--content': {
         float: 'right',
         padding: '5.33px 0 5.33px 10.66px',
@@ -78,16 +93,21 @@ const styles = theme => ({
         fontWeight: theme.typography.fontWeightRegular
       },
       '& .algolia-docsearch-suggestion--highlight': {
-        color: theme.palette.type === 'light' ? '#174d8c' : '#acccf1'
+        color: ACCENT_COLOR
       },
       '& .algolia-docsearch-suggestion': {
         background: 'transparent'
       },
       '& .algolia-docsearch-suggestion--title': {
-        ...theme.typography.title
+        ...theme.typography.title,
+        fontSize: 14
       },
       '& .algolia-docsearch-suggestion--text': {
-        ...theme.typography.body1
+        ...theme.typography.body1,
+        '& .algolia-docsearch-suggestion--highlight': {
+          color: ACCENT_COLOR,
+          boxShadow: 'none'
+        }
       },
       '& .ds-dropdown-menu': {
         boxShadow: theme.shadows[1],
@@ -98,7 +118,8 @@ const styles = theme => ({
         '& [class^=ds-dataset-]': {
           border: 0,
           borderRadius: 2,
-          backgroundColor: theme.palette.background.paper
+          backgroundColor: theme.palette.background.paper,
+          padding: 0
         }
       }
     }

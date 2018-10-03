@@ -144,10 +144,18 @@ export default {
                 `
               }}
             />
+            <link
+              rel="stylesheet"
+              href="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+            />
           </Head>
           <Body>
             {children}
             <style id="jss-server-side">{renderMeta.jssStyles}</style>
+            <script
+              type="text/javascript"
+              src="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
+            />
           </Body>
         </Html>
       )
