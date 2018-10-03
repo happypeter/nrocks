@@ -130,6 +130,18 @@ export default {
             />
             <meta name="description" content="nervos" />
             <meta name="keywords" content="Nervos Blockchain Crypto DApp" />
+            <link
+              rel="stylesheet"
+              href="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+            />
+          </Head>
+          <Body>
+            {children}
+            <style id="jss-server-side">{renderMeta.jssStyles}</style>
+            <script
+              type="text/javascript"
+              src="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
+            />
             <script
               async
               src="https://www.googletagmanager.com/gtag/js?id=UA-126744557-1"
@@ -143,18 +155,6 @@ export default {
                   gtag('config', 'UA-126744557-1');
                 `
               }}
-            />
-            <link
-              rel="stylesheet"
-              href="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
-            />
-          </Head>
-          <Body>
-            {children}
-            <style id="jss-server-side">{renderMeta.jssStyles}</style>
-            <script
-              type="text/javascript"
-              src="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
             />
           </Body>
         </Html>
