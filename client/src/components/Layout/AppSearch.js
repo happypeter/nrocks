@@ -56,12 +56,10 @@ const styles = theme => ({
     '.algolia-autocomplete': {
       fontFamily: theme.typography.fontFamily,
       '& .algolia-docsearch-suggestion--category-header': {
-        backgroundColor: ACCENT_COLOR,
-        paddingLeft: 8,
-        paddingRight: 8
+        fontWeight: 500,
+        marginTop: 16
       },
       '& .algolia-docsearch-suggestion--category-header-lvl0': {
-        color: '#ffffff',
         fontSize: 14
       },
       '& .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column': {
@@ -110,7 +108,7 @@ const styles = theme => ({
         }
       },
       '& .ds-dropdown-menu': {
-        boxShadow: theme.shadows[1],
+        boxShadow: theme.shadows[2],
         borderRadius: 2,
         '&::before': {
           display: 'none'
@@ -118,8 +116,7 @@ const styles = theme => ({
         '& [class^=ds-dataset-]': {
           border: 0,
           borderRadius: 2,
-          backgroundColor: theme.palette.background.paper,
-          padding: 0
+          backgroundColor: theme.palette.background.paper
         }
       }
     }

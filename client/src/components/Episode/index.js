@@ -6,7 +6,8 @@ import classNames from 'classnames'
 import {
   HEADER_HEIGHT,
   DRAWER_WIDTH,
-  ACCENT_COLOR
+  ACCENT_COLOR,
+  DOC_WIDTH
 } from '../../constants/GlobalStyle'
 import Doc from './Doc'
 import AppDrawer from './AppDrawer'
@@ -28,7 +29,7 @@ const styles = theme => ({
   },
   right: {
     width: '100%',
-    maxWidth: 680,
+    maxWidth: DOC_WIDTH,
     margin: '24px auto',
     overflowY: 'auto'
   },

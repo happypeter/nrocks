@@ -12,3 +12,4 @@ export const DRAWER_WIDTH = 298
 export const HEADER_HEIGHT = 64
 export const ERROR_COLOR = '#ff1744'
 export const MAX_WIDTH = 900
+export const DOC_WIDTH = 640
