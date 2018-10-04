@@ -8,7 +8,8 @@ const styles = theme => ({
     marginTop: HEADER_HEIGHT + 120,
     textAlign: 'center',
     opacity: 0.7,
-    fontWeight: 400
+    fontWeight: 400,
+    padding: `0 ${theme.spacing.unit * 2}px`
   }
 })
 class NotFound extends Component {
@@ -16,7 +17,7 @@ class NotFound extends Component {
     const { classes: s } = this.props
     return (
       <Typography variant="title" className={s.root}>
-        Oh no! It looks like that page doesn't exist :(
+        页面不存在 :(
       </Typography>
     )
   }
