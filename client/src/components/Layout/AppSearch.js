@@ -193,7 +193,7 @@ class AppSearch extends React.Component {
   }
 
   render() {
-    const { classes, width, isSearchOpen } = this.props
+    const { classes } = this.props
     initDocsearch()
     return (
       <div className={classes.root}>
