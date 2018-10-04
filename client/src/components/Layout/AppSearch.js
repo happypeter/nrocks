@@ -102,6 +102,7 @@ const styles = theme => ({
       },
       '& .algolia-docsearch-suggestion--text': {
         ...theme.typography.body1,
+        wordBreak: 'break-word',
         '& .algolia-docsearch-suggestion--highlight': {
           color: ACCENT_COLOR,
           boxShadow: 'none'
@@ -110,6 +111,16 @@ const styles = theme => ({
       '& .ds-dropdown-menu': {
         boxShadow: theme.shadows[2],
         borderRadius: 2,
+        minWidth: 288,
+        maxWidth: 288,
+        maxHeight: 400,
+        overflow: 'scroll',
+        [theme.breakpoints.up('sm')]: {
+          minWidth: 500,
+          maxWidth: 600,
+          maxHeight: 'unset',
+          overflow: 'auto'
+        },
         '&::before': {
           display: 'none'
         },
@@ -132,14 +143,21 @@ const styles = theme => ({
     },
     '& $inputInput': {
       transition: theme.transitions.create('width'),
-      width: 120,
+      width: 0,
+      [theme.breakpoints.up('sm')]: {
+        width: 120
+      },
       '&:focus': {
-        width: 170
+        width: 170,
+        [theme.breakpoints.down('sm')]: {
+          width: 100
+        },
+        paddingLeft: theme.spacing.unit * 5
       }
     }
   },
   search: {
-    width: theme.spacing.unit * 9,
+    width: theme.spacing.unit * 5,
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
@@ -153,7 +171,10 @@ const styles = theme => ({
   inputInput: {
     padding: `${theme.spacing.unit}px ${theme.spacing.unit}px ${
       theme.spacing.unit
-    }px ${theme.spacing.unit * 9}px`
+    }px ${theme.spacing.unit * 4}px`,
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing.unit * 5
+    }
   }
 })
 
@@ -172,17 +193,10 @@ class AppSearch extends React.Component {
   }
 
   render() {
-    const { classes, width } = this.props
-
-    if (isWidthUp('sm', width)) {
-      initDocsearch()
-    }
-
+    const { classes, width, isSearchOpen } = this.props
+    initDocsearch()
     return (
-      <div
-        className={classes.root}
-        style={{ display: isWidthUp('sm', width) ? 'block' : 'none' }}
-      >
+      <div className={classes.root}>
         <EventListener target="window" onKeyDown={this.handleKeyDown} />
         <div className={classes.search}>
           <SearchIcon />
