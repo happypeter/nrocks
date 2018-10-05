@@ -111,16 +111,6 @@ const styles = theme => ({
       '& .ds-dropdown-menu': {
         boxShadow: theme.shadows[2],
         borderRadius: 2,
-        minWidth: 288,
-        maxWidth: 288,
-        maxHeight: 400,
-        overflow: 'scroll',
-        [theme.breakpoints.up('sm')]: {
-          minWidth: 500,
-          maxWidth: 600,
-          maxHeight: 'unset',
-          overflow: 'auto'
-        },
         '&::before': {
           display: 'none'
         },
@@ -143,16 +133,9 @@ const styles = theme => ({
     },
     '& $inputInput': {
       transition: theme.transitions.create('width'),
-      width: 0,
-      [theme.breakpoints.up('sm')]: {
-        width: 120
-      },
+      width: 120,
       '&:focus': {
-        width: 170,
-        [theme.breakpoints.down('sm')]: {
-          width: 100
-        },
-        paddingLeft: theme.spacing.unit * 5
+        width: 170
       }
     }
   },
@@ -171,10 +154,7 @@ const styles = theme => ({
   inputInput: {
     padding: `${theme.spacing.unit}px ${theme.spacing.unit}px ${
       theme.spacing.unit
-    }px ${theme.spacing.unit * 4}px`,
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: theme.spacing.unit * 5
-    }
+    }px ${theme.spacing.unit * 5}px`
   }
 })
 
@@ -193,10 +173,15 @@ class AppSearch extends React.Component {
   }
 
   render() {
-    const { classes } = this.props
-    initDocsearch()
+    const { classes, width } = this.props
+    if (isWidthUp('sm', width)) {
+      initDocsearch()
+    }
     return (
-      <div className={classes.root}>
+      <div
+        className={classes.root}
+        style={{ display: isWidthUp('sm', width) ? 'block' : 'none' }}
+      >
         <EventListener target="window" onKeyDown={this.handleKeyDown} />
         <div className={classes.search}>
           <SearchIcon />
