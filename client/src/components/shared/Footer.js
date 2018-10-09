@@ -1,29 +1,29 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
-import LogoLightIcon from '../svg/LogoLight'
+import LogoIcon from '../svg/Logo'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
+import { Link } from 'react-static'
 
 const styles = theme => ({
   root: {
-    backgroundColor: '#0f1721',
+    backgroundColor: '#ffffff',
     padding: `${theme.spacing.unit * 6}px ${theme.spacing.unit * 2}px ${theme
-      .spacing.unit * 9}px ${theme.spacing.unit * 2}px`,
-    backgroundImage: `linear-gradient(180deg, #111c29, #111c29)`
+      .spacing.unit * 9}px ${theme.spacing.unit * 2}px`
   },
   container: {
+    borderTop: `1px solid ${ACCENT_COLOR}`,
     width: '100%',
+    margin: `${theme.spacing.unit * 4}px auto 0`,
+    padding: `${theme.spacing.unit * 4}px 0 0`,
     [theme.breakpoints.up('md')]: {
-      width: 800,
-      margin: '0 auto'
+      width: 800
     },
     [theme.breakpoints.up('lg')]: {
-      width: 1000,
-      margin: '0 auto'
+      width: 1000
     },
     [theme.breakpoints.up('xl')]: {
-      width: 1100,
-      margin: '0 auto'
+      width: 1100
     }
   },
   column: {
@@ -32,7 +32,7 @@ const styles = theme => ({
   },
   caption: {
     marginTop: theme.spacing.unit * 3,
-    color: '#fff',
+    color: '#212121',
     opacity: 0.7
   },
   link: {
@@ -46,7 +46,9 @@ const Footer = props => {
     <div className={s.root}>
       <div className={s.container}>
         <div className={s.column}>
-          <LogoLightIcon width={120} />
+          <Link to="/">
+            <LogoIcon width={120} />
+          </Link>
           <Typography variant="caption" className={s.caption}>
             欢迎来到 Nervos
             学习站，除非另行特定说明，本站所有文字内容，以及相关视频按照{' '}

@@ -1,64 +1,114 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-static'
-import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import { MAX_WIDTH, HEADER_HEIGHT } from '../../constants/GlobalStyle'
+import {
+  MAX_WIDTH,
+  HEADER_HEIGHT,
+  ACCENT_COLOR
+} from '../../constants/GlobalStyle'
 import Footer from '../shared/Footer'
-import PlayArrowIcon from '../svg/PlayArrow'
+import HeroDiv from '../svg/HeroDiv'
 
 const styles = theme => ({
+  root: {
+    backgroundColor: '#ffffff'
+  },
   header: {
-    padding: `${theme.spacing.unit * 10}px 0`,
-    backgroundColor: '#a7cbd0',
-    background: `linear-gradient(341deg,rgba(217,240,244,1) 0%,rgba(40,159,176,1) 100%)`,
-    marginTop: HEADER_HEIGHT
+    padding: `${theme.spacing.unit * 10}px 0 ${theme.spacing.unit * 12}px`,
+    [theme.breakpoints.up('md')]: {
+      paddingBottom: theme.spacing.unit * 15
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingBottom: theme.spacing.unit * 18
+    },
+    backgroundColor: '#45C289',
+    backgroundImage: `linear-gradient(60deg, #4bda99, #3da274)`,
+    marginTop: HEADER_HEIGHT,
+    position: 'relative'
   },
   headerInner: {
     width: `calc(100% - ${theme.spacing.unit * 4}px)`,
     maxWidth: MAX_WIDTH - 220,
-    margin: '0 auto'
+    margin: '0 auto',
+    padding: `0 ${theme.spacing.unit}px`
   },
   date: {
-    backgroundColor: '#218c9c',
-    width: 80,
-    padding: theme.spacing.unit / 4,
+    backgroundColor: '#3da274',
+    padding: `${theme.spacing.unit / 2}px`,
     textAlign: 'center',
     color: '#fff',
-    borderRadius: 4
+    borderRadius: 4,
+    width: 80,
+    fontSize: 12,
+    fontFamily: 'Roboto'
   },
-  title: {
+  headline: {
     color: '#fff',
-    fontWeight: 500,
+    fontWeight: 600,
     marginBottom: theme.spacing.unit * 2
   },
   subtitle: {
     color: '#fff',
-    marginBottom: theme.spacing.unit * 2,
-    fontWeight: 400
+    marginBottom: theme.spacing.unit * 2
   },
   list: {
     width: `calc(100% - ${theme.spacing.unit * 4}px)`,
     maxWidth: MAX_WIDTH - 220,
-    margin: '32px auto',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px`
+    margin: `${theme.spacing.unit * 4}px auto`
   },
   listItem: {
-    display: 'block',
     textDecoration: 'none',
-    padding: `${theme.spacing.unit * 2}px 0`,
-    borderBottom: '1px solid #eeeeee',
     display: 'flex',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    '&:last-child': {
-      borderBottom: 'none'
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit}px`,
+    '&:hover': {
+      backgroundColor: '#F2F7F4'
     }
   },
   icon: {
     color: 'rgba(33, 33, 33, 0.8)',
     '&:hover': {
       color: '#a7cbd0'
+    }
+  },
+  hero: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    height: 'auto',
+    marginBottom: -1,
+    width: '100%'
+  },
+  number: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 30,
+    height: 30,
+    border: `2px solid ${ACCENT_COLOR}`,
+    borderRadius: '50%',
+    marginRight: theme.spacing.unit * 2,
+    color: ACCENT_COLOR,
+    flexShrink: 0,
+    fontSize: 12,
+    fontFamily: 'Roboto',
+    [theme.breakpoints.up('md')]: {
+      fontSize: 14,
+      width: 36,
+      height: 36
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 16,
+      width: 42,
+      height: 42,
+      marginRight: theme.spacing.unit * 3
+    }
+  },
+  title: {
+    fontSize: 16,
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 18
     }
   }
 })
@@ -67,32 +117,32 @@ class Course extends Component {
   render() {
     const { classes: s, episodes, course } = this.props
     return (
-      <div>
+      <div className={s.root}>
         <div className={s.header}>
           <div className={s.headerInner}>
-            <Typography variant="headline" className={s.title}>
+            <Typography variant="headline" className={s.headline}>
               {course.title}
             </Typography>
             <Typography variant="body2" className={s.subtitle}>
               {course.desc}
             </Typography>
-            <Typography variant="caption" className={s.date}>
-              {course.date}
-            </Typography>
+            <div className={s.date}>{course.date}</div>
           </div>
+          <HeroDiv className={s.hero} />
         </div>
-        <Paper className={s.list} elevation={1}>
-          {episodes.map(ep => (
+
+        <div className={s.list}>
+          {episodes.map((ep, index) => (
             <Link
               to={`/${course.id}/${ep.id}`}
               className={s.listItem}
               key={ep.id}
             >
-              <Typography variant="subheading">{ep.title}</Typography>
-              <PlayArrowIcon className={s.icon} />
+              <div className={s.number}>{index}</div>
+              <Typography className={s.title}>{ep.title}</Typography>
             </Link>
           ))}
-        </Paper>
+        </div>
         <Footer />
       </div>
     )

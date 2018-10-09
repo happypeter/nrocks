@@ -5,15 +5,14 @@ import Grid from '@material-ui/core/Grid'
 import ChainIcon from '../svg/Chain'
 import DAppIcon from '../svg/DApp'
 import CryptoIcon from '../svg/Crypto'
-import NervosIcon from '../svg/Nervos'
-import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
+import ContractIcon from '../svg/Contract'
 
 const styles = theme => ({
   root: {
     width: '100%',
     textAlign: 'center',
     margin: '0 auto',
-    padding: `${theme.spacing.unit * 6}px 0`,
+    padding: `${theme.spacing.unit * 4}px 0`,
     [theme.breakpoints.up('md')]: {
       width: 800,
       paddingTop: 0
@@ -34,13 +33,13 @@ const styles = theme => ({
   icon: {
     width: 40,
     height: 40,
+    [theme.breakpoints.up('md')]: {
+      width: 50,
+      height: 50
+    },
     [theme.breakpoints.up('lg')]: {
       width: 60,
       height: 60
-    },
-    [theme.breakpoints.up('xl')]: {
-      width: 80,
-      height: 80
     }
   }
 })
@@ -70,9 +69,9 @@ class Cat extends Component {
             </Typography>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <NervosIcon className={s.icon} />
+            <ContractIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
-              Nervos 实战
+              智能合约
             </Typography>
           </Grid>
         </Grid>

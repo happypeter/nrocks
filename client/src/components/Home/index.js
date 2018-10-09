@@ -1,7 +1,8 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Hidden from '@material-ui/core/Hidden'
-import { HEADER_HEIGHT } from '../../constants/GlobalStyle'
+import Typography from '@material-ui/core/Typography'
+import { HEADER_HEIGHT, ACCENT_COLOR } from '../../constants/GlobalStyle'
 import Hero from './Hero'
 import CourseList from './CourseList'
 import Footer from '../shared/Footer'
@@ -9,28 +10,28 @@ import Cat from './Cat'
 
 const styles = theme => ({
   root: {
-    marginTop: HEADER_HEIGHT
+    marginTop: HEADER_HEIGHT,
+    backgroundColor: '#ffffff'
   },
   content: {
-    padding: `${theme.spacing.unit * 10}px ${theme.spacing.unit * 2}px`,
+    padding: `${theme.spacing.unit * 6}px ${theme.spacing.unit * 2}px`,
     width: '100%',
-    margin: '0 auto',
-    backgroundColor: '#eeeeee',
-    background: `linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(238,238,238,1) 100%)`
+    margin: '0 auto'
   },
   listWrap: {
+    backgroundColor: '#F2F7F4',
     display: 'flex',
+    margin: '0 auto',
+    padding: 24,
     [theme.breakpoints.up('md')]: {
-      width: 800,
-      margin: '0 auto'
+      width: 800
     },
     [theme.breakpoints.up('lg')]: {
       width: 1000,
-      margin: '0 auto'
+      padding: 48
     },
     [theme.breakpoints.up('xl')]: {
-      width: 1100,
-      margin: '0 auto'
+      width: 1100
     }
   },
   text: {
@@ -42,6 +43,18 @@ const styles = theme => ({
   },
   subheading: {
     marginTop: theme.spacing.unit * 2
+  },
+  section: {
+    marginBottom: theme.spacing.unit * 4,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  line: {
+    width: 32,
+    borderBottom: `4px solid ${ACCENT_COLOR}`,
+    marginTop: theme.spacing.unit
   }
 })
 
@@ -55,6 +68,10 @@ class Home extends React.Component {
         </Hidden>
         <Cat />
         <div className={s.content}>
+          <div className={s.section}>
+            <Typography variant="title">最新课程</Typography>
+            <div className={s.line} />
+          </div>{' '}
           <div className={s.listWrap}>
             <CourseList courses={courses} />
           </div>

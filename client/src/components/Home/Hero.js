@@ -1,8 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import Paper from '@material-ui/core/Paper'
-import dashboardImg from '../../assets/images/dashboard.jpg'
+import posterImg from '../../assets/images/poster.png'
 import LogoOnly from '../svg/LogoOnly'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 
@@ -16,13 +15,13 @@ const styles = theme => ({
     [theme.breakpoints.up('xl')]: {
       height: 700
     },
-    overflow: 'hidden'
+    overflow: 'hidden',
+    backgroundColor: '#ffffff'
   },
   bgShape: {
     position: 'absolute',
-    backgroundImage: `linear-gradient(100deg, ${
-      theme.palette.primary.main
-    },#ffffff)`,
+    backgroundColor: ACCENT_COLOR,
+    backgroundImage: `linear-gradient(100deg, ${ACCENT_COLOR}, #ffffff)`,
     borderRadius: '8%',
     width: '50%',
     top: -300,
@@ -38,10 +37,8 @@ const styles = theme => ({
   },
   bgCircle: {
     position: 'absolute',
-    backgroundColor: theme.palette.primary.main,
-    backgroundImage: `linear-gradient(100deg, ${theme.palette.primary.main}, ${
-      theme.palette.primary.dark
-    })`,
+    backgroundColor: ACCENT_COLOR,
+    backgroundImage: `linear-gradient(100deg, #84e8bb, #45c289)`,
     opacity: 0.2,
     borderRadius: '100%',
     top: -200,
@@ -63,10 +60,8 @@ const styles = theme => ({
   },
   bgCircleTwo: {
     position: 'absolute',
-    backgroundColor: theme.palette.primary.main,
-    backgroundImage: `linear-gradient(100deg, ${theme.palette.primary.main}, ${
-      theme.palette.primary.dark
-    })`,
+    backgroundColor: ACCENT_COLOR,
+    backgroundImage: `linear-gradient(100deg, #84e8bb, #45c289)`,
     borderRadius: '100%',
     opacity: 0.8,
     top: 100,
@@ -164,9 +159,9 @@ class Hero extends React.Component {
               </Typography>
             </div>
           </div>
-          <Paper className={s.imgWrap}>
-            <img src={dashboardImg} alt="db" />
-          </Paper>
+          <div className={s.imgWrap}>
+            <img src={posterImg} alt="poster" />
+          </div>
         </div>
         <div className={s.bgShape} />
         <div className={s.bgCircle} />

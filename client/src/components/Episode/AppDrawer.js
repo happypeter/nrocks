@@ -64,6 +64,10 @@ const styles = theme => ({
     color: 'rgba(33,33,33,.54)',
     width: 16,
     height: 16
+  },
+  courseTitle: {
+    paddingLeft: theme.spacing.unit,
+    color: ACCENT_COLOR
   }
 })
 
@@ -115,7 +119,7 @@ class AppDrawer extends React.Component {
             {drawer}
             <Link to={`/${course.id}`} className={s.bottom}>
               <ArrowBackIcon className={s.icon} />
-              <Typography variant="caption" className={s.text}>
+              <Typography variant="caption" className={s.courseTitle}>
                 {course.title}
               </Typography>
             </Link>
@@ -132,7 +136,7 @@ class AppDrawer extends React.Component {
             {drawer}
             <Link to={`/${course.id}`} className={s.bottom}>
               <ArrowBackIcon className={s.icon} />
-              <Typography variant="caption" className={s.text}>
+              <Typography variant="caption" className={s.courseTitle}>
                 {course.title}
               </Typography>
             </Link>
