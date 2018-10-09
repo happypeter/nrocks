@@ -87,7 +87,7 @@ class Episode extends Component {
             </Typography>
 
             {episode.video ? (
-              <Link to={episode.video} className={s.link}>
+              <Link to={episode.video} className={s.link} target="_blank">
                 <PlayArrowIcon className={s.icon} />
                 <Typography variant="subheading" className={s.desc}>
                   到 B 站观看视频
