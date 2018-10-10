@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import { Link } from 'react-static'
 import ArrowBackIcon from '../svg/ArrowBack'
 import ArrowForwardIcon from '../svg/ArrowForward'
@@ -13,13 +12,28 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit * 6,
     justifyContent: 'space-between'
   },
+  placeholder: {
+    width: '48%'
+  },
   nav: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    textDecoration: 'none',
     width: '48%',
     maxWidth: 320,
-    justifyContent: 'space-between'
+    border: '1px solid #E6ECF1',
+    boxShadow: `0 3px 8px 0 rgba(116, 129, 141, 0.1)`,
+    padding: theme.spacing.unit * 2
   },
   icon: {
     color: 'rgba(33,33,33,.8)'
+  },
+  prev: {
+    textAlign: 'right'
+  },
+  index: {
+    marginBottom: theme.spacing.unit
   }
 })
 
@@ -34,24 +48,34 @@ class Navigation extends Component {
         ? null
         : episodes[index + 1]
 
-    const prevLink = props => (
-      <Link to={`/${courseId}/${previous.id}`} {...props} />
-    )
-    const nextLink = props => <Link to={`/${courseId}/${next.id}`} {...props} />
     return (
       <div className={s.root}>
-        {!previous ? null : (
-          <Button component={prevLink} variant="contained" className={s.nav}>
+        {!previous ? (
+          <div className={s.placeholder} />
+        ) : (
+          <Link to={`/${courseId}/${previous.id}`} className={s.nav}>
             <ArrowBackIcon className={s.icon} />
-            <Typography variant="body1">{previous.title}</Typography>
-          </Button>
+            <div className={s.prev}>
+              <Typography variant="caption" className={s.index}>
+                Previous
+              </Typography>
+              <Typography variant="body1">{previous.title}</Typography>
+            </div>
+          </Link>
         )}
 
-        {!next ? null : (
-          <Button component={nextLink} variant="contained" className={s.nav}>
-            <Typography variant="body1">{next.title}</Typography>
+        {!next ? (
+          <div className={s.placeholder} />
+        ) : (
+          <Link to={`/${courseId}/${next.id}`} className={s.nav}>
+            <div className={s.next}>
+              <Typography variant="caption" className={s.index}>
+                Next
+              </Typography>
+              <Typography variant="body1">{next.title}</Typography>
+            </div>
             <ArrowForwardIcon className={s.icon} />
-          </Button>
+          </Link>
         )}
       </div>
     )
