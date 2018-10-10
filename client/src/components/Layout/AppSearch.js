@@ -41,8 +41,8 @@ function initDocsearch() {
       handleSelected: (input, event, suggestion) => {
         const url = suggestion.url
           .replace(/^https:\/\/learning\.nervos\.org/, '')
+          .replace(/\/#root/, '')
           .replace(/\/#/, '#')
-          .replace(/\/$/, '')
         history.push(url)
       },
       // Set debug to true if you want to inspect the dropdown.
