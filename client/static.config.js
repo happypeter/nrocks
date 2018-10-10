@@ -9,8 +9,9 @@ import fs from 'fs'
 import theme from './src/theme'
 import chokidar from 'chokidar'
 import { reloadRoutes } from 'react-static/node'
-import { docRepo } from './config'
+import config from './config'
 
+const docRepo = config.docRepo
 chokidar.watch(`./${docRepo}`).on('all', () => reloadRoutes())
 
 function parseFileContent(courseId, fileName) {
