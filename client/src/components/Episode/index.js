@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import { Link } from 'react-static'
 import classNames from 'classnames'
 import {
   HEADER_HEIGHT,
@@ -11,13 +10,16 @@ import {
 } from '../../constants/GlobalStyle'
 import Doc from './Doc'
 import AppDrawer from './AppDrawer'
-import PlayArrowIcon from '../svg/PlayArrow'
+import PlayCircleIcon from '../svg/PlayCircle'
+import CreateIcon from '../svg/Create'
 import Navigation from './Navigation'
+import config from '../../../config'
 
 const styles = theme => ({
   root: {
     display: 'flex',
-    marginTop: HEADER_HEIGHT
+    marginTop: HEADER_HEIGHT,
+    marginBottom: theme.spacing.unit * 8
   },
   rightWrapper: {
     width: '100%',
@@ -42,14 +44,31 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     marginTop: theme.spacing.unit * 4,
-    color: ACCENT_COLOR
-  },
-  icon: {
-    width: 36,
-    height: 36
+    textDecoration: 'none',
+    '& h3': {
+      marginLeft: 8
+    }
   },
   desc: {
-    color: ACCENT_COLOR
+    color: ACCENT_COLOR,
+    borderBottom: `1px solid ${ACCENT_COLOR}`
+  },
+  line: {
+    height: 1,
+    backgroundColor: '#f5f3f7',
+    border: 'none',
+    marginTop: theme.spacing.unit * 6,
+    marginBottom: theme.spacing.unit * 3
+  },
+  github: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    textDecoration: 'none',
+    '& p': {
+      marginLeft: theme.spacing.unit / 2,
+      color: ACCENT_COLOR
+    }
   }
 })
 
@@ -87,12 +106,12 @@ class Episode extends Component {
             </Typography>
 
             {episode.video ? (
-              <Link to={episode.video} className={s.link} target="_blank">
-                <PlayArrowIcon className={s.icon} />
+              <a href={episode.video} className={s.link} target="_blank">
+                <PlayCircleIcon width={32} height={32} fill={ACCENT_COLOR} />
                 <Typography variant="subheading" className={s.desc}>
                   到 B 站观看视频
                 </Typography>
-              </Link>
+              </a>
             ) : null}
             <Doc markdown={markdown} />
             <Navigation
@@ -100,6 +119,15 @@ class Episode extends Component {
               episodeId={episode.id}
               courseId={course.id}
             />
+            <hr className={s.line} />
+            <a
+              href={`${config.gitHubRepo}/${course.id}/${episode.id}.md`}
+              target="_blank"
+              className={s.github}
+            >
+              <CreateIcon width={20} height={20} fill={ACCENT_COLOR} />
+              <Typography variant="body1">edit this page on GitHub</Typography>
+            </a>
           </div>
         </div>
       </div>

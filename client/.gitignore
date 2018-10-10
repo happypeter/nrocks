@@ -19,5 +19,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 ncourse
-src/config/config.js
+config.js
 deploy.sh

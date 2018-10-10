@@ -1,7 +1,4 @@
-module.exports = {
-  api:
-    process.env.REACT_STATIC_ENV === 'production'
-      ? 'xxx'
-      : 'http://localhost:3001',
-  docRepo: 'ncourse'
+export default {
+  docRepo: 'ncourse',
+  gitHubRepo: 'https://github.com/happypeter/ncourse/blob/master'
 }
