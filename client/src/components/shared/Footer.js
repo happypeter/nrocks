@@ -36,7 +36,8 @@ const styles = theme => ({
     opacity: 0.7
   },
   link: {
-    color: ACCENT_COLOR
+    color: ACCENT_COLOR,
+    fontWeight: 600
   }
 })
 
