@@ -50,7 +50,7 @@ const styles = theme => ({
       }
     },
     '& pre': {
-      padding: theme.spacing.unit * 2,
+      padding: theme.spacing.unit * 3,
       fontFamily: `Roboto, monospace`,
       overflow: 'auto',
       backgroundColor: '#fff',
