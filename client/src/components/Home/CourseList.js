@@ -15,11 +15,16 @@ class CourseList extends Component {
   render() {
     const { courses, classes: s } = this.props
 
-    let courseList = courses.map(course => (
-      <Grid key={course.id} item xs={12} sm={6} lg={4} xl={4}>
-        <CourseCard course={course} />
-      </Grid>
-    ))
+    let courseList = courses.map((course, index) => {
+      if (index === 0) {
+        return
+      }
+      return (
+        <Grid key={course.id} item xs={12} sm={6} lg={4} xl={4}>
+          <CourseCard course={course} />
+        </Grid>
+      )
+    })
 
     return (
       <div className={s.root}>

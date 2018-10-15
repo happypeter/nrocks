@@ -42,11 +42,11 @@ function getCourseToc(courseId) {
   const list = []
   for (let i = 0; i < keys.length; i++) {
     const id = keys[i]
-    list.push({
-      id,
-      title: toc[id],
-      video: videos[id]
-    })
+    const data = { id, title: toc[id] }
+    if (videos && videos[id]) {
+      data.video = videos[id]
+    }
+    list.push(data)
   }
   return list
 }
