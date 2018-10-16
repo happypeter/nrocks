@@ -150,12 +150,9 @@ class Hero extends React.Component {
                 </Typography>
               </div>
               <Typography className={s.caption} variant="body2">
-                <a href="https://www.nervos.org/" className={s.link}>
-                  Nervos
-                </a>{' '}
-                是一个帮助企业搭建公链和 DApp
-                的区块链网络。本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手
-                Nervos 开发。
+                Nervos AppChain
+                是一个帮助企业搭建应用的链，本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手
+                AppChain 相关应用开发。
               </Typography>
             </div>
           </div>
