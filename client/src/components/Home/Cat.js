@@ -12,10 +12,11 @@ const styles = theme => ({
     width: '100%',
     textAlign: 'center',
     margin: '0 auto',
-    padding: `${theme.spacing.unit * 4}px 0`,
+    paddingTop: theme.spacing.unit * 4,
     [theme.breakpoints.up('md')]: {
       width: 800,
-      paddingTop: 0
+      paddingTop: 0,
+      paddingBottom: theme.spacing.unit * 4
     },
     [theme.breakpoints.up('lg')]: {
       width: 1000
@@ -50,28 +51,28 @@ class Cat extends Component {
     return (
       <div className={s.root}>
         <Grid container>
-          <Grid item xs={6} sm={3}>
+          <Grid item xs={3}>
             <ChainIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
               区块链
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid item xs={3}>
             <DAppIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
               DApp
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={3}>
-            <CryptoIcon className={s.icon} />
-            <Typography variant="title" className={s.title}>
-              密码学
-            </Typography>
-          </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid item xs={3}>
             <ContractIcon className={s.icon} />
             <Typography variant="title" className={s.title}>
               智能合约
+            </Typography>
+          </Grid>
+          <Grid item xs={3}>
+            <CryptoIcon className={s.icon} />
+            <Typography variant="title" className={s.title}>
+              密码学
             </Typography>
           </Grid>
         </Grid>
