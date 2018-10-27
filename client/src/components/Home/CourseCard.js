@@ -6,15 +6,11 @@ import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-static'
+import Grid from '@material-ui/core/Grid'
 
 const styles = theme => ({
-  root: {
-    margin: -theme.spacing.unit * 2
-  },
-  inner: {
-    margin: theme.spacing.unit * 2
-  },
-  dateWrapper: {
+  date: {
+    color: '#ffffff',
     width: 88,
     margin: '0 auto 8px',
     textAlign: 'center',
@@ -22,14 +18,11 @@ const styles = theme => ({
     padding: '2px 0',
     borderRadius: 4
   },
-  date: {
-    color: '#ffffff'
-  },
   link: {
     display: 'block',
     textDecoration: 'none'
   },
-  button: {
+  action: {
     width: '100%'
   },
   media: {
@@ -41,35 +34,30 @@ class CourseCard extends React.Component {
   render() {
     const { course, classes: s } = this.props
     return (
-      <div className={s.root}>
-        <div className={s.inner}>
-          <div className={s.dateWrapper}>
-            <Typography variant="body1" className={s.date} component="div">
-              {course.date}
-            </Typography>
-          </div>
-          <Link to={`/${course.id}`} className={s.link}>
-            <Card className={s.card}>
-              <CardActionArea className={s.button}>
-                <CardMedia
-                  className={s.media}
-                  component="img"
-                  image={course.image}
-                  title={course.id}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="subheading" component="h3">
-                    {course.title}
-                  </Typography>
-                  <Typography variant="caption" component="p">
-                    {course.desc}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Link>
-        </div>
-      </div>
+      <Grid item xs={12} sm={6} lg={4} xl={4}>
+        <Typography variant="body1" className={s.date}>
+          {course.date}
+        </Typography>
+
+        <Link to={`/${course.id}`} className={s.link}>
+          <Card className={s.card}>
+            <CardActionArea className={s.action}>
+              <CardMedia
+                className={s.media}
+                component="img"
+                image={course.image}
+                title={course.id}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="subheading">
+                  {course.title}
+                </Typography>
+                <Typography variant="caption">{course.desc}</Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Link>
+      </Grid>
     )
   }
 }

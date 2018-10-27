@@ -22,13 +22,12 @@ const styles = theme => ({
     backgroundColor: '#F2F7F4',
     display: 'flex',
     margin: '0 auto',
-    padding: 24,
+    padding: '48px 24px',
     [theme.breakpoints.up('md')]: {
       width: 800
     },
     [theme.breakpoints.up('lg')]: {
-      width: 1000,
-      padding: 48
+      width: 1000
     },
     [theme.breakpoints.up('xl')]: {
       width: 1100

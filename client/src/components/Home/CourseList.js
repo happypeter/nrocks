@@ -16,19 +16,17 @@ class CourseList extends Component {
     const { courses, classes: s } = this.props
 
     let courseList = courses.map((course, index) => {
-      if (index === 0) {
+      if (course.published === false) {
         return
       }
-      return (
-        <Grid key={course.id} item xs={12} sm={6} lg={4} xl={4}>
-          <CourseCard course={course} />
-        </Grid>
-      )
+      return <CourseCard key={course.id} course={course} />
     })
 
     return (
       <div className={s.root}>
-        <Grid container>{courseList}</Grid>
+        <Grid container spacing={32}>
+          {courseList}
+        </Grid>
       </div>
     )
   }

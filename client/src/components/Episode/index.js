@@ -38,7 +38,8 @@ const styles = theme => ({
   h1: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 4,
-    fontWeight: 500
+    fontWeight: 500,
+    fontSize: 26
   },
   link: {
     display: 'flex',

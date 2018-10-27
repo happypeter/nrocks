@@ -26,10 +26,10 @@ const styles = theme => ({
   root: {
     marginTop: theme.spacing.unit * 4,
     fontFamily: `'Helvetica Neue',Helvetica,Arial,Sans-serif`,
-    lineHeight: 1.9,
+    lineHeight: 2.2,
     fontSize: 16,
     '& h2': {
-      fontSize: '1.3125rem',
+      fontSize: 21,
       color: 'rgba(0, 0, 0, 0.87)',
       fontWeight: 500,
       marginTop: theme.spacing.unit * 5,
@@ -75,7 +75,8 @@ const styles = theme => ({
     },
     '& p': {
       color: 'rgba(0, 0, 0, 0.75)',
-      wordBreak: 'break-word'
+      wordBreak: 'break-word',
+      fontSize: 16
     }
   }
 })

@@ -8,7 +8,7 @@ import { Link } from 'react-static'
 const styles = theme => ({
   root: {
     backgroundColor: '#ffffff',
-    padding: `${theme.spacing.unit * 6}px ${theme.spacing.unit * 2}px ${theme
+    padding: `${theme.spacing.unit * 4}px ${theme.spacing.unit * 2}px ${theme
       .spacing.unit * 9}px ${theme.spacing.unit * 2}px`
   },
   container: {
