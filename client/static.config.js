@@ -12,11 +12,11 @@ import { reloadRoutes } from 'react-static/node'
 import config from './config'
 
 const docRepo = config.docRepo
-chokidar.watch(`./${docRepo}`).on('all', () => reloadRoutes())
+chokidar.watch(`${docRepo}`).on('all', () => reloadRoutes())
 
 function parseFileContent(courseId, fileName) {
   const content = fs.readFileSync(
-    `./${docRepo}/${courseId}/${fileName.toUpperCase()}.md`,
+    `${docRepo}/${courseId}/${fileName.toUpperCase()}.md`,
     'utf8'
   )
   const lines = content.split('\n')
@@ -56,9 +56,7 @@ export default {
     title: 'nervos'
   }),
   getRoutes: async () => {
-    const courses = JSON.parse(
-      fs.readFileSync(`./${docRepo}/index.json`, 'utf8')
-    )
+    const courses = JSON.parse(fs.readFileSync(`${docRepo}/index.json`, 'utf8'))
     return [
       {
         path: '/',
@@ -79,7 +77,7 @@ export default {
               episodes,
               episode,
               markdown: fs.readFileSync(
-                `./${docRepo}/${course.id}/${episode.id}.md`,
+                `${docRepo}/${course.id}/${episode.id}.md`,
                 'utf8'
               )
             })
