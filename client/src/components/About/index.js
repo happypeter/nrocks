@@ -6,6 +6,9 @@ import classNames from 'classnames'
 import { HEADER_HEIGHT, ACCENT_COLOR } from '../../constants/GlobalStyle'
 import Footer from '../shared/Footer'
 import HeroDiv from '../svg/HeroDiv'
+import GitHub from '../svg/GitHub'
+import ZhiHu from '../svg/ZhiHu'
+import Twitter from '../svg/Twitter'
 
 const styles = theme => ({
   root: {
@@ -66,6 +69,9 @@ const styles = theme => ({
       borderBottom: `3px solid ${ACCENT_COLOR}`
     }
   },
+  authorWrapper: {
+    display: 'flex'
+  },
   author: {
     fontSize: 22,
     margin: '0 0 32px',
@@ -77,6 +83,13 @@ const styles = theme => ({
       height: 16,
       borderBottom: `3px solid #fff`
     }
+  },
+  icon: {
+    fill: '#fff',
+    marginLeft: 16
+  },
+  link: {
+    textDecoration: 'none'
   },
   intro: {
     lineHeight: 2.6,
@@ -147,7 +160,30 @@ const About = props => {
         <div className={s.container}>
           <Grid container spacing={32} className={s.profile}>
             <Grid item xs={12} sm={6}>
-              <div className={s.author}>关于作者</div>
+              <div className={s.authorWrapper}>
+                <div className={s.author}>关于作者</div>
+                <a
+                  href="https://github.com/happypeter"
+                  className={s.link}
+                  target="_blank"
+                >
+                  <GitHub className={s.icon} />
+                </a>
+                <a
+                  href="https://zhihu.com/people/peterlovemoney"
+                  className={s.link}
+                  target="_blank"
+                >
+                  <Twitter className={s.icon} />
+                </a>
+                <a
+                  href="https://twitter.com/happypeter1983"
+                  className={s.link}
+                  target="_blank"
+                >
+                  <ZhiHu className={s.icon} />
+                </a>
+              </div>
               <div className={s.intro}>
                 王广忠，网名 happypeter，硕士，2006年开始进行 Linux Kernel
                 开发，是开源运动的坚定支持者。Git
