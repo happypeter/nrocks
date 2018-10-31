@@ -174,14 +174,14 @@ const About = props => {
                   className={s.link}
                   target="_blank"
                 >
-                  <Twitter className={s.icon} />
+                  <ZhiHu className={s.icon} />
                 </a>
                 <a
                   href="https://twitter.com/happypeter1983"
                   className={s.link}
                   target="_blank"
                 >
-                  <ZhiHu className={s.icon} />
+                  <Twitter className={s.icon} />
                 </a>
               </div>
               <div className={s.intro}>
