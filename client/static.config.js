@@ -84,6 +84,7 @@ export default {
           }))
         }
       }),
+      { path: '/about', component: `src/components/About` },
       { is404: true, component: 'src/components/NotFound' }
     ]
   },

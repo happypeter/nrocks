@@ -4,14 +4,18 @@ import Typography from '@material-ui/core/Typography'
 import LogoIcon from '../svg/Logo'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 import { Link } from 'react-static'
+import { LineWeight } from '@material-ui/icons'
 
 const styles = theme => ({
   root: {
     backgroundColor: '#ffffff',
     padding: `${theme.spacing.unit * 4}px ${theme.spacing.unit * 2}px ${theme
-      .spacing.unit * 9}px ${theme.spacing.unit * 2}px`
+      .spacing.unit * 9}px ${theme.spacing.unit * 2}px`,
+    fontFamily: 'sans-serif'
   },
   container: {
+    display: 'flex',
+    justifyContent: 'space-between',
     borderTop: `1px solid ${ACCENT_COLOR}`,
     width: '100%',
     margin: `${theme.spacing.unit * 4}px auto 0`,
@@ -27,8 +31,10 @@ const styles = theme => ({
     }
   },
   column: {
-    width: '100%',
     maxWidth: 300
+  },
+  column1: {
+    flexShrink: 0
   },
   caption: {
     marginTop: theme.spacing.unit * 3,
@@ -38,6 +44,15 @@ const styles = theme => ({
   link: {
     color: ACCENT_COLOR,
     fontWeight: 600
+  },
+  about: {
+    color: ACCENT_COLOR,
+    fontWeight: 500,
+    textDecoration: 'none',
+    fontSize: 16,
+    display: 'block',
+    height: '46.86px',
+    lineHeight: '46.86px'
   }
 })
 
@@ -61,6 +76,11 @@ const Footer = props => {
             </a>
             发布。
           </Typography>
+        </div>
+        <div className={s.column1}>
+          <Link to="/about" className={s.about}>
+            关于
+          </Link>
         </div>
       </div>
     </div>

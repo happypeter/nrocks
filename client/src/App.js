@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-// eslint-disable-next-line
 import { Router } from 'react-static'
 import { Provider } from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
