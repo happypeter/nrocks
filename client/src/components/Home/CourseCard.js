@@ -30,36 +30,31 @@ const styles = theme => ({
   }
 })
 
-class CourseCard extends React.Component {
-  render() {
-    const { course, classes: s } = this.props
-    return (
-      <Grid item xs={12} sm={6} lg={4} xl={4}>
-        <Typography variant="body1" className={s.date}>
-          {course.date}
-        </Typography>
+const CourseCard = ({ course, classes: s }) => (
+  <Grid item xs={12} sm={6} lg={4} xl={4}>
+    <Typography variant="body1" className={s.date}>
+      {course.date}
+    </Typography>
 
-        <Link to={`/${course.id}`} className={s.link}>
-          <Card className={s.card}>
-            <CardActionArea className={s.action}>
-              <CardMedia
-                className={s.media}
-                component="img"
-                image={course.image}
-                title={course.id}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="subheading">
-                  {course.title}
-                </Typography>
-                <Typography variant="caption">{course.desc}</Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-      </Grid>
-    )
-  }
-}
+    <Link to={`/${course.id}`} className={s.link}>
+      <Card className={s.card}>
+        <CardActionArea className={s.action}>
+          <CardMedia
+            className={s.media}
+            component="img"
+            image={course.image}
+            title={course.id}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="subheading">
+              {course.title}
+            </Typography>
+            <Typography variant="caption">{course.desc}</Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Link>
+  </Grid>
+)
 
 export default withStyles(styles)(CourseCard)

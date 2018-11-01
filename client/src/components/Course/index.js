@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-static'
 import Typography from '@material-ui/core/Typography'
@@ -113,40 +113,31 @@ const styles = theme => ({
   }
 })
 
-class Course extends Component {
-  render() {
-    const { classes: s, episodes, course } = this.props
-    return (
-      <div className={s.root}>
-        <div className={s.header}>
-          <div className={s.headerInner}>
-            <Typography variant="headline" className={s.headline}>
-              {course.title}
-            </Typography>
-            <Typography variant="body2" className={s.subtitle}>
-              {course.desc}
-            </Typography>
-            <div className={s.date}>{course.date}</div>
-          </div>
-          <HeroDiv className={s.hero} />
-        </div>
-
-        <div className={s.list}>
-          {episodes.map((ep, index) => (
-            <Link
-              to={`/${course.id}/${ep.id}`}
-              className={s.listItem}
-              key={ep.id}
-            >
-              <div className={s.number}>{index}</div>
-              <Typography className={s.title}>{ep.title}</Typography>
-            </Link>
-          ))}
-        </div>
-        <Footer />
+const Course = ({ classes: s, episodes, course }) => (
+  <div className={s.root}>
+    <div className={s.header}>
+      <div className={s.headerInner}>
+        <Typography variant="headline" className={s.headline}>
+          {course.title}
+        </Typography>
+        <Typography variant="body2" className={s.subtitle}>
+          {course.desc}
+        </Typography>
+        <div className={s.date}>{course.date}</div>
       </div>
-    )
-  }
-}
+      <HeroDiv className={s.hero} />
+    </div>
+
+    <div className={s.list}>
+      {episodes.map((ep, index) => (
+        <Link to={`/${course.id}/${ep.id}`} className={s.listItem} key={ep.id}>
+          <div className={s.number}>{index}</div>
+          <Typography className={s.title}>{ep.title}</Typography>
+        </Link>
+      ))}
+    </div>
+    <Footer />
+  </div>
+)
 
 export default withStyles(styles)(Course)

@@ -71,80 +71,77 @@ const styles = theme => ({
   }
 })
 
-class AppDrawer extends React.Component {
-  handleDrawerToggle = () => {
-    this.props.toggleDrawer()
+const AppDrawer = ({ classes: s, episodes, course, open, toggleDrawer }) => {
+  const handleDrawerToggle = () => {
+    toggleDrawer()
   }
 
-  render() {
-    const { classes: s, episodes, course, open } = this.props
-    const drawer = (
-      <div className={s.drawer}>
-        <div className={classNames(s.toolbar, s.toolbarCus)}>
-          <IconButton onClick={this.handleDrawerToggle}>
-            <ArrowBackIcon />
-          </IconButton>
-        </div>
-        <div className={s.list}>
-          {episodes.map(ep => (
-            <Link
-              to={`/${course.id}/${ep.id}`}
-              className={s.listItem}
-              key={ep.id}
-              onClick={this.handleDrawerToggle}
-            >
-              <Typography variant="body1" component="div" className={s.text}>
-                {ep.title}
-              </Typography>
-            </Link>
-          ))}
-        </div>
+  const drawer = (
+    <div className={s.drawer}>
+      <div className={classNames(s.toolbar, s.toolbarCus)}>
+        <IconButton onClick={handleDrawerToggle}>
+          <ArrowBackIcon />
+        </IconButton>
       </div>
-    )
+      <div className={s.list}>
+        {episodes.map(ep => (
+          <Link
+            to={`/${course.id}/${ep.id}`}
+            className={s.listItem}
+            key={ep.id}
+            onClick={handleDrawerToggle}
+          >
+            <Typography variant="body1" className={s.text}>
+              {ep.title}
+            </Typography>
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
 
-    return (
-      <div>
-        <Hidden mdUp>
-          <Drawer
-            variant="temporary"
-            open={open}
-            onClose={this.handleDrawerToggle}
-            classes={{
-              paper: s.drawerPaper
-            }}
-            ModalProps={{
-              keepMounted: true
-            }}
-          >
-            {drawer}
-            <Link to={`/${course.id}`} className={s.bottom}>
-              <ArrowBackIcon className={s.icon} />
-              <Typography variant="caption" className={s.courseTitle}>
-                {course.title}
-              </Typography>
-            </Link>
-          </Drawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <Drawer
-            variant="permanent"
-            open
-            classes={{
-              paper: s.drawerPaper
-            }}
-          >
-            {drawer}
-            <Link to={`/${course.id}`} className={s.bottom}>
-              <ArrowBackIcon className={s.icon} />
-              <Typography variant="caption" className={s.courseTitle}>
-                {course.title}
-              </Typography>
-            </Link>
-          </Drawer>
-        </Hidden>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Hidden mdUp>
+        <Drawer
+          variant="temporary"
+          open={open}
+          onClose={handleDrawerToggle}
+          classes={{
+            paper: s.drawerPaper
+          }}
+          ModalProps={{
+            keepMounted: true
+          }}
+        >
+          {drawer}
+          <Link to={`/${course.id}`} className={s.bottom}>
+            <ArrowBackIcon className={s.icon} />
+            <Typography variant="caption" className={s.courseTitle}>
+              {course.title}
+            </Typography>
+          </Link>
+        </Drawer>
+      </Hidden>
+      <Hidden smDown implementation="css">
+        <Drawer
+          variant="permanent"
+          open
+          classes={{
+            paper: s.drawerPaper
+          }}
+        >
+          {drawer}
+          <Link to={`/${course.id}`} className={s.bottom}>
+            <ArrowBackIcon className={s.icon} />
+            <Typography variant="caption" className={s.courseTitle}>
+              {course.title}
+            </Typography>
+          </Link>
+        </Drawer>
+      </Hidden>
+    </div>
+  )
 }
 
 AppDrawer.propTypes = {

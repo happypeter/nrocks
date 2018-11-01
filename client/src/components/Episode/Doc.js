@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 import Prism from 'prismjs'
@@ -81,14 +81,9 @@ const styles = theme => ({
   }
 })
 
-class Doc extends Component {
-  render() {
-    const { classes: s, markdown } = this.props
-    const result = md.render(markdown)
-    return (
-      <div dangerouslySetInnerHTML={{ __html: result }} className={s.root} />
-    )
-  }
+const Doc = ({ classes: s, markdown }) => {
+  const result = md.render(markdown)
+  return <div dangerouslySetInnerHTML={{ __html: result }} className={s.root} />
 }
 
 export default withStyles(styles)(Doc)

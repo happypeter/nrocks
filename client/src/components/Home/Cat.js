@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
@@ -45,40 +45,35 @@ const styles = theme => ({
   }
 })
 
-class Cat extends Component {
-  render() {
-    const { classes: s } = this.props
-    return (
-      <div className={s.root}>
-        <Grid container>
-          <Grid item xs={3}>
-            <ChainIcon className={s.icon} />
-            <Typography variant="title" className={s.title}>
-              区块链
-            </Typography>
-          </Grid>
-          <Grid item xs={3}>
-            <DAppIcon className={s.icon} />
-            <Typography variant="title" className={s.title}>
-              DApp
-            </Typography>
-          </Grid>
-          <Grid item xs={3}>
-            <ContractIcon className={s.icon} />
-            <Typography variant="title" className={s.title}>
-              智能合约
-            </Typography>
-          </Grid>
-          <Grid item xs={3}>
-            <CryptoIcon className={s.icon} />
-            <Typography variant="title" className={s.title}>
-              密码学
-            </Typography>
-          </Grid>
-        </Grid>
-      </div>
-    )
-  }
-}
+const Cat = ({ classes: s }) => (
+  <div className={s.root}>
+    <Grid container>
+      <Grid item xs={3}>
+        <ChainIcon className={s.icon} />
+        <Typography variant="title" className={s.title}>
+          区块链
+        </Typography>
+      </Grid>
+      <Grid item xs={3}>
+        <DAppIcon className={s.icon} />
+        <Typography variant="title" className={s.title}>
+          DApp
+        </Typography>
+      </Grid>
+      <Grid item xs={3}>
+        <ContractIcon className={s.icon} />
+        <Typography variant="title" className={s.title}>
+          智能合约
+        </Typography>
+      </Grid>
+      <Grid item xs={3}>
+        <CryptoIcon className={s.icon} />
+        <Typography variant="title" className={s.title}>
+          密码学
+        </Typography>
+      </Grid>
+    </Grid>
+  </div>
+)
 
 export default withStyles(styles)(Cat)

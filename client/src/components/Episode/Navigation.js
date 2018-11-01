@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-static'
@@ -37,49 +37,45 @@ const styles = theme => ({
   }
 })
 
-class Navigation extends Component {
-  render() {
-    const { episodes, episodeId, courseId, classes: s } = this.props
-    const index = episodes.findIndex(el => el.id === episodeId)
+const Navigation = ({ episodes, episodeId, courseId, classes: s }) => {
+  const index = episodes.findIndex(el => el.id === episodeId)
+  const previous = index === 0 ? null : episodes[index - 1]
+  const next =
+    index === episodes.length || index + 1 === episodes.length
+      ? null
+      : episodes[index + 1]
 
-    const previous = index === 0 ? null : episodes[index - 1]
-    const next =
-      index === episodes.length || index + 1 === episodes.length
-        ? null
-        : episodes[index + 1]
+  return (
+    <div className={s.root}>
+      {!previous ? (
+        <div className={s.placeholder} />
+      ) : (
+        <Link to={`/${courseId}/${previous.id}`} className={s.nav}>
+          <ArrowBackIcon className={s.icon} />
+          <div className={s.prev}>
+            <Typography variant="caption" className={s.index}>
+              Previous
+            </Typography>
+            <Typography variant="body1">{previous.title}</Typography>
+          </div>
+        </Link>
+      )}
 
-    return (
-      <div className={s.root}>
-        {!previous ? (
-          <div className={s.placeholder} />
-        ) : (
-          <Link to={`/${courseId}/${previous.id}`} className={s.nav}>
-            <ArrowBackIcon className={s.icon} />
-            <div className={s.prev}>
-              <Typography variant="caption" className={s.index}>
-                Previous
-              </Typography>
-              <Typography variant="body1">{previous.title}</Typography>
-            </div>
-          </Link>
-        )}
-
-        {!next ? (
-          <div className={s.placeholder} />
-        ) : (
-          <Link to={`/${courseId}/${next.id}`} className={s.nav}>
-            <div className={s.next}>
-              <Typography variant="caption" className={s.index}>
-                Next
-              </Typography>
-              <Typography variant="body1">{next.title}</Typography>
-            </div>
-            <ArrowForwardIcon className={s.icon} />
-          </Link>
-        )}
-      </div>
-    )
-  }
+      {!next ? (
+        <div className={s.placeholder} />
+      ) : (
+        <Link to={`/${courseId}/${next.id}`} className={s.nav}>
+          <div className={s.next}>
+            <Typography variant="caption" className={s.index}>
+              Next
+            </Typography>
+            <Typography variant="body1">{next.title}</Typography>
+          </div>
+          <ArrowForwardIcon className={s.icon} />
+        </Link>
+      )}
+    </div>
+  )
 }
 
 export default withStyles(styles)(Navigation)
