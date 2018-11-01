@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -11,25 +11,21 @@ const styles = theme => ({
   }
 })
 
-class CourseList extends Component {
-  render() {
-    const { courses, classes: s } = this.props
+const CourseList = ({ courses, classes: s }) => {
+  const courseList = courses.map((course, index) => {
+    if (course.published === false) {
+      return
+    }
+    return <CourseCard key={course.id} course={course} />
+  })
 
-    let courseList = courses.map((course, index) => {
-      if (course.published === false) {
-        return
-      }
-      return <CourseCard key={course.id} course={course} />
-    })
-
-    return (
-      <div className={s.root}>
-        <Grid container spacing={32}>
-          {courseList}
-        </Grid>
-      </div>
-    )
-  }
+  return (
+    <div className={s.root}>
+      <Grid container spacing={32}>
+        {courseList}
+      </Grid>
+    </div>
+  )
 }
 
 CourseList.propTypes = {

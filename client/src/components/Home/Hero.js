@@ -135,37 +135,32 @@ const styles = theme => ({
   }
 })
 
-class Hero extends React.Component {
-  render() {
-    const { classes: s } = this.props
-    return (
-      <div className={s.hero}>
-        <div className={s.content}>
-          <div className={s.left}>
-            <div>
-              <div className={s.headline}>
-                <LogoOnly className={s.nlogo} width={50} height={50} />
-                <Typography className={s.siteTitle} variant="headline">
-                  Nervos 学习站
-                </Typography>
-              </div>
-              <Typography className={s.caption} variant="body2">
-                Nervos AppChain
-                是一个帮助企业搭建应用的链，本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手
-                AppChain 相关应用开发。
-              </Typography>
-            </div>
+const Hero = ({ classes: s }) => (
+  <div className={s.hero}>
+    <div className={s.content}>
+      <div className={s.left}>
+        <div>
+          <div className={s.headline}>
+            <LogoOnly className={s.nlogo} width={50} height={50} />
+            <Typography className={s.siteTitle} variant="headline">
+              Nervos 学习站
+            </Typography>
           </div>
-          <div className={s.imgWrap}>
-            <img src={posterImg} alt="poster" />
-          </div>
+          <Typography className={s.caption} variant="body2">
+            Nervos AppChain
+            是一个帮助企业搭建应用的链，本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手
+            AppChain 相关应用开发。
+          </Typography>
         </div>
-        <div className={s.bgShape} />
-        <div className={s.bgCircle} />
-        <div className={s.bgCircleTwo} />
       </div>
-    )
-  }
-}
+      <div className={s.imgWrap}>
+        <img src={posterImg} alt="poster" />
+      </div>
+    </div>
+    <div className={s.bgShape} />
+    <div className={s.bgCircle} />
+    <div className={s.bgCircleTwo} />
+  </div>
+)
 
 export default withStyles(styles)(Hero)

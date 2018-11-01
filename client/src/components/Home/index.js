@@ -57,28 +57,23 @@ const styles = theme => ({
   }
 })
 
-class Home extends React.Component {
-  render() {
-    const { classes: s, courses } = this.props
-    return (
-      <div className={s.root}>
-        <Hidden smDown>
-          <Hero />
-        </Hidden>
-        <Cat />
-        <div className={s.content}>
-          <div className={s.section}>
-            <Typography variant="title">最新课程</Typography>
-            <div className={s.line} />
-          </div>{' '}
-          <div className={s.listWrap}>
-            <CourseList courses={courses} />
-          </div>
-        </div>
-        <Footer />
+const Home = ({ classes: s, courses }) => (
+  <div className={s.root}>
+    <Hidden smDown>
+      <Hero />
+    </Hidden>
+    <Cat />
+    <div className={s.content}>
+      <div className={s.section}>
+        <Typography variant="title">最新课程</Typography>
+        <div className={s.line} />
+      </div>{' '}
+      <div className={s.listWrap}>
+        <CourseList courses={courses} />
       </div>
-    )
-  }
-}
+    </div>
+    <Footer />
+  </div>
+)
 
 export default withStyles(styles)(Home)

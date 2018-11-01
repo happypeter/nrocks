@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { compose } from 'recompose'
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
@@ -36,36 +36,32 @@ const styles = theme => ({
   }
 })
 
-class Header extends Component {
-  handleDrawerToggle = () => {
-    this.props.toggleDrawer()
+const Header = ({ classes: s, width, isOnEpisodePage, toggleDrawer }) => {
+  const handleDrawerToggle = () => {
+    toggleDrawer()
   }
-
-  render() {
-    const { classes: s, width, isOnEpisodePage } = this.props
-    const elevation = isWidthUp('sm', width) ? 0 : 1
-    return (
-      <AppBar className={s.appBar} elevation={elevation} position="fixed">
-        <Toolbar className={s.toolbar}>
-          <div className={s.left}>
-            {isOnEpisodePage ? (
-              <IconButton
-                aria-label="Open drawer"
-                onClick={this.handleDrawerToggle}
-                className={s.navIconHide}
-              >
-                <MenuIcon />
-              </IconButton>
-            ) : null}
-            <Link to="/" className={s.home}>
-              <LogoIcon width={isWidthUp('md', width) ? 100 : 80} />
-            </Link>
-          </div>
-          <AppSearch />
-        </Toolbar>
-      </AppBar>
-    )
-  }
+  const elevation = isWidthUp('sm', width) ? 0 : 1
+  return (
+    <AppBar className={s.appBar} elevation={elevation} position="fixed">
+      <Toolbar className={s.toolbar}>
+        <div className={s.left}>
+          {isOnEpisodePage ? (
+            <IconButton
+              aria-label="Open drawer"
+              onClick={handleDrawerToggle}
+              className={s.navIconHide}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : null}
+          <Link to="/" className={s.home}>
+            <LogoIcon width={isWidthUp('md', width) ? 100 : 80} />
+          </Link>
+        </div>
+        <AppSearch />
+      </Toolbar>
+    </AppBar>
+  )
 }
 
 export default compose(
