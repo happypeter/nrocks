@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import classNames from 'classnames'
@@ -73,67 +73,54 @@ const styles = theme => ({
   }
 })
 
-class Episode extends Component {
-  componentDidMount() {
-    this.props.setOnEpisodePage()
-  }
+const Episode = ({
+  classes: s,
+  course,
+  episodes,
+  episode,
+  markdown,
+  isDrawerOpen,
+  toggleDrawer
+}) => (
+  <div className={s.root}>
+    <AppDrawer
+      episodes={episodes}
+      course={course}
+      open={isDrawerOpen}
+      toggleDrawer={toggleDrawer}
+    />
+    <div className={s.rightWrapper}>
+      <div className={classNames('docSearch-content', s.right)}>
+        <Typography variant="headline" className={s.h1}>
+          {episode.title}
+        </Typography>
 
-  componentWillUnmount() {
-    this.props.clearOnEpisodePage()
-  }
-
-  render() {
-    const {
-      classes: s,
-      course,
-      episodes,
-      episode,
-      markdown,
-      isDrawerOpen,
-      toggleDrawer
-    } = this.props
-    return (
-      <div className={s.root}>
-        <AppDrawer
-          episodes={episodes}
-          course={course}
-          open={isDrawerOpen}
-          toggleDrawer={toggleDrawer}
-        />
-        <div className={s.rightWrapper}>
-          <div className={classNames('docSearch-content', s.right)}>
-            <Typography variant="headline" className={s.h1}>
-              {episode.title}
+        {episode.video ? (
+          <a href={episode.video} className={s.link} target="_blank">
+            <PlayCircleIcon width={32} height={32} fill={ACCENT_COLOR} />
+            <Typography variant="subheading" className={s.desc}>
+              到 B 站观看视频
             </Typography>
-
-            {episode.video ? (
-              <a href={episode.video} className={s.link} target="_blank">
-                <PlayCircleIcon width={32} height={32} fill={ACCENT_COLOR} />
-                <Typography variant="subheading" className={s.desc}>
-                  到 B 站观看视频
-                </Typography>
-              </a>
-            ) : null}
-            <Doc markdown={markdown} />
-            <Navigation
-              episodes={episodes}
-              episodeId={episode.id}
-              courseId={course.id}
-            />
-            <hr className={s.line} />
-            <a
-              href={`${config.gitHubRepo}/${course.id}/${episode.id}.md`}
-              target="_blank"
-              className={s.github}
-            >
-              <CreateIcon width={20} height={20} fill={ACCENT_COLOR} />
-              <Typography variant="body1">edit this page on GitHub</Typography>
-            </a>
-          </div>
-        </div>
+          </a>
+        ) : null}
+        <Doc markdown={markdown} />
+        <Navigation
+          episodes={episodes}
+          episodeId={episode.id}
+          courseId={course.id}
+        />
+        <hr className={s.line} />
+        <a
+          href={`${config.gitHubRepo}/${course.id}/${episode.id}.md`}
+          target="_blank"
+          className={s.github}
+        >
+          <CreateIcon width={20} height={20} fill={ACCENT_COLOR} />
+          <Typography variant="body1">edit this page on GitHub</Typography>
+        </a>
       </div>
-    )
-  }
-}
+    </div>
+  </div>
+)
 
 export default withStyles(styles)(Episode)

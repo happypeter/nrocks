@@ -8,7 +8,19 @@ import {
   clearOnEpisodePage
 } from '../redux/actions/index'
 
-const EpisodeContainer = props => <Episode {...props} />
+class EpisodeContainer extends React.Component {
+  componentDidMount() {
+    this.props.setOnEpisodePage()
+  }
+
+  componentWillUnmount() {
+    this.props.clearOnEpisodePage()
+  }
+
+  render() {
+    return <Episode {...this.props} />
+  }
+}
 
 const mapStateToProps = state => ({
   isDrawerOpen: state.common.isDrawerOpen
