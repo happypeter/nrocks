@@ -4,7 +4,6 @@ import Typography from '@material-ui/core/Typography'
 import LogoIcon from '../svg/Logo'
 import { ACCENT_COLOR } from '../../constants/GlobalStyle'
 import { Link } from 'react-static'
-import { LineWeight } from '@material-ui/icons'
 
 const styles = theme => ({
   root: {
