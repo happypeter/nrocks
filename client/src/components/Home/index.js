@@ -2,6 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Hidden from '@material-ui/core/Hidden'
 import Typography from '@material-ui/core/Typography'
+import { Head } from 'react-static'
 import { HEADER_HEIGHT, ACCENT_COLOR } from '../../constants/GlobalStyle'
 import Hero from './Hero'
 import CourseList from './CourseList'
@@ -59,6 +60,7 @@ const styles = theme => ({
 
 const Home = ({ classes: s, courses }) => (
   <div className={s.root}>
+    <Head title="Learning Nervos" />
     <Hidden smDown>
       <Hero />
     </Hidden>

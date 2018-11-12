@@ -1,6 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import { Head } from 'react-static'
 import classNames from 'classnames'
 import {
   HEADER_HEIGHT,
@@ -83,6 +84,7 @@ const Episode = ({
   toggleDrawer
 }) => (
   <div className={s.root}>
+    <Head title={episode.title} />
     <AppDrawer
       episodes={episodes}
       course={course}

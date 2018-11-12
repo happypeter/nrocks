@@ -1,6 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Link } from 'react-static'
+import { Link, Head } from 'react-static'
 import Typography from '@material-ui/core/Typography'
 import {
   MAX_WIDTH,
@@ -115,6 +115,7 @@ const styles = theme => ({
 
 const Course = ({ classes: s, episodes, course }) => (
   <div className={s.root}>
+    <Head title={course.title} />
     <div className={s.header}>
       <div className={s.headerInner}>
         <Typography variant="headline" className={s.headline}>

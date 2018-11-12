@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import { Head } from 'react-static'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import classNames from 'classnames'
@@ -156,6 +157,7 @@ const About = props => {
   const { classes: s } = props
   return (
     <div className={s.root}>
+      <Head title="About" />
       <div className={s.header}>
         <div className={s.container}>
           <Grid container spacing={32} className={s.profile}>
