@@ -237,10 +237,7 @@ const About = props => {
             <div className={classNames(s.left, s.date)}>2018-10-24</div>
             <div className={s.right}>发布课程《区块链背后的密码学》</div>
           </div>
-          <div className={s.item}>
-            <div className={s.left}>发布课程《React 破冰之旅》</div>
-            <div className={classNames(s.right, s.date)}>2018-11-22</div>
-          </div>
+
           <div className={s.item}>
             <div className={classNames(s.left, s.date)} />
             <div className={s.right}>持续更新中...</div>
