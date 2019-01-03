@@ -29,8 +29,9 @@ function parseFileContent(courseId, fileName) {
         const file = line.replace(reg, '$1')
         if (/\.md$/.test(file)) {
           obj[file.slice(0, -3)] = line.replace(reg, '$2')
+        } else {
+          obj[line.replace(reg, '$1')] = line.replace(reg, '$2')
         }
-        obj[line.replace(reg, '$1')] = line.replace(reg, '$2')
       } else {
         obj[line.replace(reg, '$2').slice(0, -3)] = line.replace(reg, '$1')
       }
