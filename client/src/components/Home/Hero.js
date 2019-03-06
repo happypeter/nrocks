@@ -147,9 +147,8 @@ const Hero = ({ classes: s }) => (
             </Typography>
           </div>
           <Typography className={s.caption} variant="body2">
-            Nervos AppChain
-            是一个帮助企业搭建应用的链，本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手
-            AppChain 相关应用开发。
+            本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手
+            Nervos 相关应用开发。
           </Typography>
         </div>
       </div>
