@@ -67,7 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/nrocks/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 29);
@@ -4351,7 +4351,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  docRepo: './ncourse',
+  docRepo: '/Users/peter/nervos/ncourse',
   gitHubRepo: 'https://github.com/happypeter/ncourse/blob/master'
 };
 
@@ -5099,4 +5099,4 @@ module.exports = require("@material-ui/core/colors/red");
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.be08e3a5.js.map
+//# sourceMappingURL=static.4ec013bb.js.map

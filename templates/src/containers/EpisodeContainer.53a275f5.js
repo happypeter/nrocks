@@ -14386,11 +14386,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  docRepo: './ncourse',
+  docRepo: '/Users/peter/nervos/ncourse',
   gitHubRepo: 'https://github.com/happypeter/ncourse/blob/master'
 };
 
 /***/ })
 
 });
-//# sourceMappingURL=EpisodeContainer.bff87350.js.map
+//# sourceMappingURL=EpisodeContainer.53a275f5.js.map
