@@ -1,7 +1,7 @@
 首先在 client/ 目录下添加一个配置文件
 
 ```
-mv config.default.js config.js
+cp config.default.js config.js
 ```
 
 config.js 文件的内容如下
