@@ -67,10 +67,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://happypeter.github.io/./";
+/******/ 	__webpack_require__.p = "https://billie66.github.io/nrocks/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 29);
+/******/ 	return __webpack_require__(__webpack_require__.s = 30);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -125,30 +125,46 @@ module.exports = require("@material-ui/core/Typography");
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("prop-types");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  host: 'https://billie66.github.io/nrocks',
+  docRepo: '/Users/peter/nervos/ncourse',
+  gitHubRepo: 'https://github.com/happypeter/ncourse/blob/master'
+};
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Grid");
+module.exports = require("prop-types");
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("@material-ui/core/Grid");
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-redux");
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -162,19 +178,23 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _core = __webpack_require__(57);
+var _core = __webpack_require__(58);
 
 var _Typography = __webpack_require__(4);
 
 var _Typography2 = _interopRequireDefault(_Typography);
 
-var _Logo = __webpack_require__(18);
+var _Logo = __webpack_require__(19);
 
 var _Logo2 = _interopRequireDefault(_Logo);
 
 var _GlobalStyle = __webpack_require__(3);
 
 var _reactStatic = __webpack_require__(2);
+
+var _config = __webpack_require__(5);
+
+var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -244,7 +264,7 @@ var Footer = function Footer(props) {
         { className: s.column },
         _react2.default.createElement(
           _reactStatic.Link,
-          { to: '/' },
+          { to: _config2.default.host },
           _react2.default.createElement(_Logo2.default, { width: 120 })
         ),
         _react2.default.createElement(
@@ -268,7 +288,7 @@ var Footer = function Footer(props) {
         { className: s.column1 },
         _react2.default.createElement(
           _reactStatic.Link,
-          { to: '/about', className: s.about },
+          { to: _config2.default.host + '/about/', className: s.about },
           '\u5173\u4E8E'
         )
       )
@@ -279,13 +299,13 @@ var Footer = function Footer(props) {
 exports.default = (0, _core.withStyles)(styles)(Footer);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("classnames");
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -295,7 +315,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createBrowserHistory = __webpack_require__(34);
+var _createBrowserHistory = __webpack_require__(35);
 
 var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
@@ -311,7 +331,7 @@ var genHistory = function genHistory() {
 exports.default = genHistory();
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -325,13 +345,13 @@ var SET_ON_EPISODE_PAGE = exports.SET_ON_EPISODE_PAGE = 'SET_ON_EPISODE_PAGE';
 var CLEAR_ON_EPISODE_PAGE = exports.CLEAR_ON_EPISODE_PAGE = 'CLEAR_ON_EPISODE_PAGE';
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-dom");
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -359,7 +379,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -473,10 +493,10 @@ var loadFromPromiseCache = exports.loadFromPromiseCache = function loadFromPromi
 var cacheProm = exports.cacheProm = function cacheProm(pr, chunkName, props, promisecache) {
   return promisecache[callForString(chunkName, props)] = pr;
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)(module)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -492,7 +512,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _Home = __webpack_require__(47);
+var _Home = __webpack_require__(48);
 
 var _Home2 = _interopRequireDefault(_Home);
 
@@ -505,13 +525,13 @@ var HomeContainer = function HomeContainer(props) {
 exports.default = (0, _reactStatic.withRouteData)(HomeContainer);
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Hidden");
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -563,7 +583,7 @@ var Logo = function Logo(props) {
 exports.default = Logo;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -579,7 +599,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _Course = __webpack_require__(63);
+var _Course = __webpack_require__(64);
 
 var _Course2 = _interopRequireDefault(_Course);
 
@@ -592,7 +612,7 @@ var CourseContainer = function CourseContainer(props) {
 exports.default = (0, _reactStatic.withRouteData)(CourseContainer);
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -636,7 +656,7 @@ var HeroDiv = function HeroDiv(props) {
 exports.default = HeroDiv;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -654,13 +674,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _reactRedux = __webpack_require__(7);
+var _reactRedux = __webpack_require__(8);
 
-var _Episode = __webpack_require__(64);
+var _Episode = __webpack_require__(65);
 
 var _Episode2 = _interopRequireDefault(_Episode);
 
-var _index = __webpack_require__(25);
+var _index = __webpack_require__(26);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -708,13 +728,13 @@ var mapStateToProps = function mapStateToProps(state) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, { toggleDrawer: _index.toggleDrawer, setOnEpisodePage: _index.setOnEpisodePage, clearOnEpisodePage: _index.clearOnEpisodePage })((0, _reactStatic.withRouteData)(EpisodeContainer));
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/IconButton");
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -728,7 +748,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SvgIcon = __webpack_require__(24);
+var _SvgIcon = __webpack_require__(25);
 
 var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 
@@ -744,13 +764,13 @@ exports.default = function (props) {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/SvgIcon");
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -761,7 +781,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.clearOnEpisodePage = exports.setOnEpisodePage = exports.toggleDrawer = undefined;
 
-var _commonActionTypes = __webpack_require__(12);
+var _commonActionTypes = __webpack_require__(13);
 
 var toggleDrawer = exports.toggleDrawer = function toggleDrawer() {
   return { type: _commonActionTypes.TOGGLE_DRAWER };
@@ -776,7 +796,7 @@ var clearOnEpisodePage = exports.clearOnEpisodePage = function clearOnEpisodePag
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -798,21 +818,21 @@ var _Paper = __webpack_require__(80);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
-var _Grid = __webpack_require__(6);
+var _Grid = __webpack_require__(7);
 
 var _Grid2 = _interopRequireDefault(_Grid);
 
-var _classnames = __webpack_require__(10);
+var _classnames = __webpack_require__(11);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
 var _GlobalStyle = __webpack_require__(3);
 
-var _Footer = __webpack_require__(9);
+var _Footer = __webpack_require__(10);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _HeroDiv = __webpack_require__(20);
+var _HeroDiv = __webpack_require__(21);
 
 var _HeroDiv2 = _interopRequireDefault(_HeroDiv);
 
@@ -1137,7 +1157,7 @@ var About = function About(props) {
 exports.default = (0, _styles.withStyles)(styles)(About);
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1185,13 +1205,13 @@ var NotFound = function NotFound(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(NotFound);
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/withWidth");
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1205,13 +1225,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(30);
+var _reactDom = __webpack_require__(31);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _styles = __webpack_require__(1);
 
-var _App = __webpack_require__(31);
+var _App = __webpack_require__(32);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -1244,13 +1264,13 @@ if (typeof document !== 'undefined') {
 }
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1264,23 +1284,23 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _reactRedux = __webpack_require__(7);
+var _reactRedux = __webpack_require__(8);
 
-var _CssBaseline = __webpack_require__(32);
+var _CssBaseline = __webpack_require__(33);
 
 var _CssBaseline2 = _interopRequireDefault(_CssBaseline);
 
-__webpack_require__(33);
+__webpack_require__(34);
 
-var _routerUtils = __webpack_require__(11);
+var _routerUtils = __webpack_require__(12);
 
 var _routerUtils2 = _interopRequireDefault(_routerUtils);
 
-var _store = __webpack_require__(35);
+var _store = __webpack_require__(36);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _Main = __webpack_require__(38);
+var _Main = __webpack_require__(39);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -1349,25 +1369,25 @@ if (false) {
 }
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/CssBaseline");
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = require("typeface-roboto");
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports = require("history/createBrowserHistory");
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1377,9 +1397,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(8);
+var _redux = __webpack_require__(9);
 
-var _reducers = __webpack_require__(36);
+var _reducers = __webpack_require__(37);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -1401,29 +1421,6 @@ if (false) {
 exports.default = store;
 
 /***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _redux = __webpack_require__(8);
-
-var _common = __webpack_require__(37);
-
-var _common2 = _interopRequireDefault(_common);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var rootReducer = (0, _redux.combineReducers)({ common: _common2.default });
-
-exports.default = rootReducer;
-
-/***/ }),
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1434,9 +1431,32 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(8);
+var _redux = __webpack_require__(9);
 
-var _commonActionTypes = __webpack_require__(12);
+var _common = __webpack_require__(38);
+
+var _common2 = _interopRequireDefault(_common);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var rootReducer = (0, _redux.combineReducers)({ common: _common2.default });
+
+exports.default = rootReducer;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = __webpack_require__(9);
+
+var _commonActionTypes = __webpack_require__(13);
 
 var isDrawerOpen = function isDrawerOpen() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
@@ -1472,7 +1492,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1486,7 +1506,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStaticRoutes = __webpack_require__(39);
+var _reactStaticRoutes = __webpack_require__(40);
 
 var _reactStaticRoutes2 = _interopRequireDefault(_reactStaticRoutes);
 
@@ -1507,7 +1527,7 @@ var Main = function Main() {
 exports.default = Main;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1517,15 +1537,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _path2 = __webpack_require__(40);
+var _path2 = __webpack_require__(41);
 
 var _path3 = _interopRequireDefault(_path2);
 
-var _importCss2 = __webpack_require__(41);
+var _importCss2 = __webpack_require__(42);
 
 var _importCss3 = _interopRequireDefault(_importCss2);
 
-var _universalImport2 = __webpack_require__(42);
+var _universalImport2 = __webpack_require__(43);
 
 var _universalImport3 = _interopRequireDefault(_universalImport2);
 
@@ -1537,9 +1557,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
-var _reactUniversalComponent = __webpack_require__(43);
+var _reactUniversalComponent = __webpack_require__(44);
 
 var _reactUniversalComponent2 = _interopRequireDefault(_reactUniversalComponent);
 
@@ -1573,7 +1593,7 @@ var t_0 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/containers/HomeContainer',
   file: '/Users/peter/nervos/nrocks/client/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 16)), (0, _importCss3.default)('src/containers/HomeContainer', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 17)), (0, _importCss3.default)('src/containers/HomeContainer', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -1583,7 +1603,7 @@ var t_0 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/containers/HomeContainer');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(16);
+    return /*require.resolve*/(17);
   },
   chunkName: function chunkName() {
     return 'src/containers/HomeContainer';
@@ -1593,7 +1613,7 @@ var t_1 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/containers/CourseContainer',
   file: '/Users/peter/nervos/nrocks/client/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 19)), (0, _importCss3.default)('src/containers/CourseContainer', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 20)), (0, _importCss3.default)('src/containers/CourseContainer', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -1603,7 +1623,7 @@ var t_1 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/containers/CourseContainer');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(19);
+    return /*require.resolve*/(20);
   },
   chunkName: function chunkName() {
     return 'src/containers/CourseContainer';
@@ -1613,7 +1633,7 @@ var t_2 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/containers/EpisodeContainer',
   file: '/Users/peter/nervos/nrocks/client/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 21)), (0, _importCss3.default)('src/containers/EpisodeContainer', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 22)), (0, _importCss3.default)('src/containers/EpisodeContainer', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -1623,7 +1643,7 @@ var t_2 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/containers/EpisodeContainer');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(21);
+    return /*require.resolve*/(22);
   },
   chunkName: function chunkName() {
     return 'src/containers/EpisodeContainer';
@@ -1633,7 +1653,7 @@ var t_3 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/components/About',
   file: '/Users/peter/nervos/nrocks/client/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 26)), (0, _importCss3.default)('src/components/About', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 27)), (0, _importCss3.default)('src/components/About', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -1643,7 +1663,7 @@ var t_3 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/components/About');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(26);
+    return /*require.resolve*/(27);
   },
   chunkName: function chunkName() {
     return 'src/components/About';
@@ -1653,7 +1673,7 @@ var t_4 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/components/NotFound',
   file: '/Users/peter/nervos/nrocks/client/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 27)), (0, _importCss3.default)('src/components/NotFound', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 28)), (0, _importCss3.default)('src/components/NotFound', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -1663,7 +1683,7 @@ var t_4 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/components/NotFound');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(27);
+    return /*require.resolve*/(28);
   },
   chunkName: function chunkName() {
     return 'src/components/NotFound';
@@ -1750,25 +1770,25 @@ exports.default = Routes;
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-plugin-universal-import/importCss");
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-plugin-universal-import/universalImport");
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1783,7 +1803,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _requireUniversalModule = __webpack_require__(44);
+var _requireUniversalModule = __webpack_require__(45);
 
 Object.defineProperty(exports, 'CHUNK_NAMES', {
   enumerable: true,
@@ -1798,7 +1818,7 @@ Object.defineProperty(exports, 'MODULE_IDS', {
   }
 });
 
-var _reportChunks = __webpack_require__(45);
+var _reportChunks = __webpack_require__(46);
 
 Object.defineProperty(exports, 'ReportChunks', {
   enumerable: true,
@@ -1811,17 +1831,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _hoistNonReactStatics = __webpack_require__(46);
+var _hoistNonReactStatics = __webpack_require__(47);
 
 var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
 var _requireUniversalModule2 = _interopRequireDefault(_requireUniversalModule);
 
-var _utils = __webpack_require__(15);
+var _utils = __webpack_require__(16);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2112,10 +2132,10 @@ function universal(component) {
   }, _temp;
 }
 exports.default = universal;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)(module)))
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2127,7 +2147,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.clearChunks = exports.flushModuleIds = exports.flushChunkNames = exports.MODULE_IDS = exports.CHUNK_NAMES = undefined;
 exports.default = requireUniversalModule;
 
-var _utils = __webpack_require__(15);
+var _utils = __webpack_require__(16);
 
 var CHUNK_NAMES = exports.CHUNK_NAMES = new Set();
 var MODULE_IDS = exports.MODULE_IDS = new Set();
@@ -2297,7 +2317,7 @@ var getConfig = function getConfig(isDynamic, universalConfig, options, props) {
 };
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2313,7 +2333,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2360,13 +2380,13 @@ ReportChunks.childContextTypes = {
 exports.default = ReportChunks;
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = require("hoist-non-react-statics");
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2382,7 +2402,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _styles = __webpack_require__(1);
 
-var _Hidden = __webpack_require__(17);
+var _Hidden = __webpack_require__(18);
 
 var _Hidden2 = _interopRequireDefault(_Hidden);
 
@@ -2394,19 +2414,19 @@ var _reactStatic = __webpack_require__(2);
 
 var _GlobalStyle = __webpack_require__(3);
 
-var _Hero = __webpack_require__(48);
+var _Hero = __webpack_require__(49);
 
 var _Hero2 = _interopRequireDefault(_Hero);
 
-var _CourseList = __webpack_require__(51);
+var _CourseList = __webpack_require__(52);
 
 var _CourseList2 = _interopRequireDefault(_CourseList);
 
-var _Footer = __webpack_require__(9);
+var _Footer = __webpack_require__(10);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _Cat = __webpack_require__(58);
+var _Cat = __webpack_require__(59);
 
 var _Cat2 = _interopRequireDefault(_Cat);
 
@@ -2504,7 +2524,7 @@ var Home = function Home(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(Home);
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2524,11 +2544,11 @@ var _Typography = __webpack_require__(4);
 
 var _Typography2 = _interopRequireDefault(_Typography);
 
-var _poster = __webpack_require__(49);
+var _poster = __webpack_require__(50);
 
 var _poster2 = _interopRequireDefault(_poster);
 
-var _LogoOnly = __webpack_require__(50);
+var _LogoOnly = __webpack_require__(51);
 
 var _LogoOnly2 = _interopRequireDefault(_LogoOnly);
 
@@ -2703,13 +2723,13 @@ var Hero = function Hero(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(Hero);
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2753,7 +2773,7 @@ var LogoOnly = function LogoOnly(props) {
 exports.default = LogoOnly;
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2767,17 +2787,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _styles = __webpack_require__(1);
 
-var _Grid = __webpack_require__(6);
+var _Grid = __webpack_require__(7);
 
 var _Grid2 = _interopRequireDefault(_Grid);
 
-var _CourseCard = __webpack_require__(52);
+var _CourseCard = __webpack_require__(53);
 
 var _CourseCard2 = _interopRequireDefault(_CourseCard);
 
@@ -2821,7 +2841,7 @@ CourseList.propTypes = {
 exports.default = (0, _styles.withStyles)(styles)(CourseList);
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2835,19 +2855,19 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Card = __webpack_require__(53);
+var _Card = __webpack_require__(54);
 
 var _Card2 = _interopRequireDefault(_Card);
 
-var _CardActionArea = __webpack_require__(54);
+var _CardActionArea = __webpack_require__(55);
 
 var _CardActionArea2 = _interopRequireDefault(_CardActionArea);
 
-var _CardMedia = __webpack_require__(55);
+var _CardMedia = __webpack_require__(56);
 
 var _CardMedia2 = _interopRequireDefault(_CardMedia);
 
-var _CardContent = __webpack_require__(56);
+var _CardContent = __webpack_require__(57);
 
 var _CardContent2 = _interopRequireDefault(_CardContent);
 
@@ -2859,9 +2879,13 @@ var _styles = __webpack_require__(1);
 
 var _reactStatic = __webpack_require__(2);
 
-var _Grid = __webpack_require__(6);
+var _Grid = __webpack_require__(7);
 
 var _Grid2 = _interopRequireDefault(_Grid);
+
+var _config = __webpack_require__(5);
+
+var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2902,7 +2926,7 @@ var CourseCard = function CourseCard(_ref) {
     ),
     _react2.default.createElement(
       _reactStatic.Link,
-      { to: '/' + course.id, className: s.link },
+      { to: _config2.default.host + '/' + course.id + '/', className: s.link },
       _react2.default.createElement(
         _Card2.default,
         { className: s.card },
@@ -2938,37 +2962,37 @@ var CourseCard = function CourseCard(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(CourseCard);
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Card");
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/CardActionArea");
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/CardMedia");
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/CardContent");
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core");
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2988,23 +3012,23 @@ var _Typography = __webpack_require__(4);
 
 var _Typography2 = _interopRequireDefault(_Typography);
 
-var _Grid = __webpack_require__(6);
+var _Grid = __webpack_require__(7);
 
 var _Grid2 = _interopRequireDefault(_Grid);
 
-var _Chain = __webpack_require__(59);
+var _Chain = __webpack_require__(60);
 
 var _Chain2 = _interopRequireDefault(_Chain);
 
-var _DApp = __webpack_require__(60);
+var _DApp = __webpack_require__(61);
 
 var _DApp2 = _interopRequireDefault(_DApp);
 
-var _Crypto = __webpack_require__(61);
+var _Crypto = __webpack_require__(62);
 
 var _Crypto2 = _interopRequireDefault(_Crypto);
 
-var _Contract = __webpack_require__(62);
+var _Contract = __webpack_require__(63);
 
 var _Contract2 = _interopRequireDefault(_Contract);
 
@@ -3104,7 +3128,7 @@ var Cat = function Cat(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(Cat);
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3147,7 +3171,7 @@ var Chain = function Chain(props) {
 exports.default = Chain;
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3190,7 +3214,7 @@ var DApp = function DApp(props) {
 exports.default = DApp;
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3234,7 +3258,7 @@ var Crypto = function Crypto(props) {
 exports.default = Crypto;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3274,7 +3298,7 @@ var Contract = function Contract(props) {
 exports.default = Contract;
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3298,13 +3322,17 @@ var _Typography2 = _interopRequireDefault(_Typography);
 
 var _GlobalStyle = __webpack_require__(3);
 
-var _Footer = __webpack_require__(9);
+var _Footer = __webpack_require__(10);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _HeroDiv = __webpack_require__(20);
+var _HeroDiv = __webpack_require__(21);
 
 var _HeroDiv2 = _interopRequireDefault(_HeroDiv);
+
+var _config = __webpack_require__(5);
+
+var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3446,7 +3474,11 @@ var Course = function Course(_ref) {
       episodes.map(function (ep, index) {
         return _react2.default.createElement(
           _reactStatic.Link,
-          { to: '/' + course.id + '/' + ep.id, className: s.listItem, key: ep.id },
+          {
+            to: _config2.default.host + '/' + course.id + '/' + ep.id + '/',
+            className: s.listItem,
+            key: ep.id
+          },
           _react2.default.createElement(
             'div',
             { className: s.number },
@@ -3467,7 +3499,7 @@ var Course = function Course(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(Course);
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3489,33 +3521,33 @@ var _Typography2 = _interopRequireDefault(_Typography);
 
 var _reactStatic = __webpack_require__(2);
 
-var _classnames = __webpack_require__(10);
+var _classnames = __webpack_require__(11);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
 var _GlobalStyle = __webpack_require__(3);
 
-var _Doc = __webpack_require__(65);
+var _Doc = __webpack_require__(66);
 
 var _Doc2 = _interopRequireDefault(_Doc);
 
-var _AppDrawer = __webpack_require__(73);
+var _AppDrawer = __webpack_require__(74);
 
 var _AppDrawer2 = _interopRequireDefault(_AppDrawer);
 
-var _PlayCircle = __webpack_require__(75);
+var _PlayCircle = __webpack_require__(76);
 
 var _PlayCircle2 = _interopRequireDefault(_PlayCircle);
 
-var _Create = __webpack_require__(76);
+var _Create = __webpack_require__(77);
 
 var _Create2 = _interopRequireDefault(_Create);
 
-var _Navigation = __webpack_require__(77);
+var _Navigation = __webpack_require__(78);
 
 var _Navigation2 = _interopRequireDefault(_Navigation);
 
-var _config = __webpack_require__(79);
+var _config = __webpack_require__(5);
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -3650,7 +3682,7 @@ var Episode = function Episode(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(Episode);
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3668,18 +3700,18 @@ var _styles = __webpack_require__(1);
 
 var _GlobalStyle = __webpack_require__(3);
 
-var _prismjs = __webpack_require__(66);
+var _prismjs = __webpack_require__(67);
 
 var _prismjs2 = _interopRequireDefault(_prismjs);
 
-__webpack_require__(67);
-
 __webpack_require__(68);
+
+__webpack_require__(69);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var uslug = __webpack_require__(70);
-var md = __webpack_require__(71)({
+var uslug = __webpack_require__(71);
+var md = __webpack_require__(72)({
   linkify: true,
   highlight: function highlight(str, language) {
     var lang = language || 'javascript';
@@ -3690,7 +3722,7 @@ var md = __webpack_require__(71)({
     }
     return '';
   }
-}).use(__webpack_require__(72), {
+}).use(__webpack_require__(73), {
   permalink: true,
   slugify: function slugify(s) {
     return uslug(s);
@@ -3769,22 +3801,22 @@ var Doc = function Doc(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(Doc);
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = require("prismjs");
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = require("prismjs/components/prism-javascript");
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(69)(false);
+exports = module.exports = __webpack_require__(70)(false);
 // imports
 
 
@@ -3795,7 +3827,7 @@ exports.push([module.i, "code[class*=language-],pre[class*=language-]{color:#000
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports) {
 
 /*
@@ -3877,25 +3909,25 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = require("uslug");
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("markdown-it");
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = require("markdown-it-anchor");
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3909,21 +3941,21 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _classnames = __webpack_require__(10);
+var _classnames = __webpack_require__(11);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
 var _styles = __webpack_require__(1);
 
-var _Drawer = __webpack_require__(74);
+var _Drawer = __webpack_require__(75);
 
 var _Drawer2 = _interopRequireDefault(_Drawer);
 
-var _Hidden = __webpack_require__(17);
+var _Hidden = __webpack_require__(18);
 
 var _Hidden2 = _interopRequireDefault(_Hidden);
 
@@ -3933,15 +3965,19 @@ var _Typography2 = _interopRequireDefault(_Typography);
 
 var _reactStatic = __webpack_require__(2);
 
-var _IconButton = __webpack_require__(22);
+var _IconButton = __webpack_require__(23);
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
 var _GlobalStyle = __webpack_require__(3);
 
-var _ArrowBack = __webpack_require__(23);
+var _ArrowBack = __webpack_require__(24);
 
 var _ArrowBack2 = _interopRequireDefault(_ArrowBack);
+
+var _config = __webpack_require__(5);
+
+var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4034,7 +4070,7 @@ var AppDrawer = function AppDrawer(_ref) {
         return _react2.default.createElement(
           _reactStatic.Link,
           {
-            to: '/' + course.id + '/' + ep.id,
+            to: _config2.default.host + '/' + course.id + '/' + ep.id + '/',
             className: s.listItem,
             key: ep.id,
             onClick: handleDrawerToggle
@@ -4071,7 +4107,7 @@ var AppDrawer = function AppDrawer(_ref) {
         drawer,
         _react2.default.createElement(
           _reactStatic.Link,
-          { to: '/' + course.id, className: s.bottom },
+          { to: _config2.default.host + '/' + course.id + '/', className: s.bottom },
           _react2.default.createElement(_ArrowBack2.default, { className: s.icon }),
           _react2.default.createElement(
             _Typography2.default,
@@ -4096,7 +4132,7 @@ var AppDrawer = function AppDrawer(_ref) {
         drawer,
         _react2.default.createElement(
           _reactStatic.Link,
-          { to: '/' + course.id, className: s.bottom },
+          { to: _config2.default.host + '/' + course.id + '/', className: s.bottom },
           _react2.default.createElement(_ArrowBack2.default, { className: s.icon }),
           _react2.default.createElement(
             _Typography2.default,
@@ -4119,13 +4155,13 @@ AppDrawer.propTypes = {
 exports.default = (0, _styles.withStyles)(styles)(AppDrawer);
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Drawer");
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4153,7 +4189,7 @@ exports.default = function (props) {
 };
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4186,7 +4222,7 @@ var Create = function Create(props) {
 exports.default = Create;
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4208,13 +4244,17 @@ var _Typography2 = _interopRequireDefault(_Typography);
 
 var _reactStatic = __webpack_require__(2);
 
-var _ArrowBack = __webpack_require__(23);
+var _ArrowBack = __webpack_require__(24);
 
 var _ArrowBack2 = _interopRequireDefault(_ArrowBack);
 
-var _ArrowForward = __webpack_require__(78);
+var _ArrowForward = __webpack_require__(79);
 
 var _ArrowForward2 = _interopRequireDefault(_ArrowForward);
+
+var _config = __webpack_require__(5);
+
+var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4269,7 +4309,10 @@ var Navigation = function Navigation(_ref) {
     { className: s.root },
     !previous ? _react2.default.createElement('div', { className: s.placeholder }) : _react2.default.createElement(
       _reactStatic.Link,
-      { to: '/' + courseId + '/' + previous.id, className: s.nav },
+      {
+        to: _config2.default.host + '/' + courseId + '/' + previous.id + '/',
+        className: s.nav
+      },
       _react2.default.createElement(_ArrowBack2.default, { className: s.icon }),
       _react2.default.createElement(
         'div',
@@ -4288,7 +4331,7 @@ var Navigation = function Navigation(_ref) {
     ),
     !next ? _react2.default.createElement('div', { className: s.placeholder }) : _react2.default.createElement(
       _reactStatic.Link,
-      { to: '/' + courseId + '/' + next.id, className: s.nav },
+      { to: _config2.default.host + '/' + courseId + '/' + next.id + '/', className: s.nav },
       _react2.default.createElement(
         'div',
         { className: s.next },
@@ -4311,7 +4354,7 @@ var Navigation = function Navigation(_ref) {
 exports.default = (0, _styles.withStyles)(styles)(Navigation);
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4325,7 +4368,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SvgIcon = __webpack_require__(24);
+var _SvgIcon = __webpack_require__(25);
 
 var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
 
@@ -4338,21 +4381,6 @@ exports.default = function (props) {
     _react2.default.createElement('path', { d: 'M0 0h24v24H0z', fill: 'none' }),
     _react2.default.createElement('path', { d: 'M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z' })
   );
-};
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  docRepo: '/Users/peter/nervos/ncourse',
-  gitHubRepo: 'https://github.com/happypeter/ncourse/blob/master'
 };
 
 /***/ }),
@@ -4484,15 +4512,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(7);
+var _reactRedux = __webpack_require__(8);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
 var _Layout = __webpack_require__(85);
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
-var _actions = __webpack_require__(25);
+var _actions = __webpack_require__(26);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4578,7 +4606,7 @@ var _styles = __webpack_require__(1);
 
 var _recompose = __webpack_require__(87);
 
-var _withWidth = __webpack_require__(28);
+var _withWidth = __webpack_require__(29);
 
 var _withWidth2 = _interopRequireDefault(_withWidth);
 
@@ -4590,7 +4618,7 @@ var _Toolbar = __webpack_require__(89);
 
 var _Toolbar2 = _interopRequireDefault(_Toolbar);
 
-var _IconButton = __webpack_require__(22);
+var _IconButton = __webpack_require__(23);
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
 
@@ -4606,9 +4634,13 @@ var _AppSearch = __webpack_require__(91);
 
 var _AppSearch2 = _interopRequireDefault(_AppSearch);
 
-var _Logo = __webpack_require__(18);
+var _Logo = __webpack_require__(19);
 
 var _Logo2 = _interopRequireDefault(_Logo);
+
+var _config = __webpack_require__(5);
+
+var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4670,7 +4702,7 @@ var Header = function Header(_ref) {
         ) : null,
         _react2.default.createElement(
           _reactStatic.Link,
-          { to: '/', className: s.home },
+          { to: _config2.default.host, className: s.home },
           _react2.default.createElement(_Logo2.default, { width: (0, _withWidth.isWidthUp)('md', width) ? 100 : 80 })
         )
       ),
@@ -4736,11 +4768,11 @@ var _reactEventListener = __webpack_require__(94);
 
 var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _withWidth = __webpack_require__(28);
+var _withWidth = __webpack_require__(29);
 
 var _withWidth2 = _interopRequireDefault(_withWidth);
 
@@ -4758,7 +4790,7 @@ var _styles = __webpack_require__(1);
 
 var _GlobalStyle = __webpack_require__(3);
 
-var _routerUtils = __webpack_require__(11);
+var _routerUtils = __webpack_require__(12);
 
 var _routerUtils2 = _interopRequireDefault(_routerUtils);
 
@@ -5099,4 +5131,4 @@ module.exports = require("@material-ui/core/colors/red");
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.c3810bb8.js.map
+//# sourceMappingURL=static.2b865727.js.map
