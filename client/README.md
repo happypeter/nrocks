@@ -10,8 +10,8 @@ config.js 文件的内容如下
 
 ```
 export default {
-  docRepo: '/Users/peter/nervos/ncourse',
-  gitHubRepo: 'https://github.com/happypeter/ncourse/blob/master'
+  docRepo: '/Users/peter/nervos/ncourse', // 指定课程目录
+  gitHubRepo: 'https://github.com/happypeter/ncourse/blob/master' // 课程 GitHub 地址
 }
 ```
 
