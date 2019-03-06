@@ -2704,7 +2704,7 @@ var Hero = function Hero(_ref) {
           _react2.default.createElement(
             _Typography2.default,
             { className: s.caption, variant: 'body2' },
-            'Nervos AppChain \u662F\u4E00\u4E2A\u5E2E\u52A9\u4F01\u4E1A\u642D\u5EFA\u5E94\u7528\u7684\u94FE\uFF0C\u672C\u7AD9\u89C6\u9891\u8BFE\u7A0B\u670D\u52A1\u5F00\u53D1\u8005\uFF0C\u76EE\u7684\u5728\u4E8E\u5E2E\u52A9\u5927\u5BB6\u8FC5\u901F\u638C\u63E1\u533A\u5757\u94FE\u57FA\u7840\u77E5\u8BC6\u5E76\u4E0A\u624B AppChain \u76F8\u5173\u5E94\u7528\u5F00\u53D1\u3002'
+            '\u672C\u7AD9\u89C6\u9891\u8BFE\u7A0B\u670D\u52A1\u5F00\u53D1\u8005\uFF0C\u76EE\u7684\u5728\u4E8E\u5E2E\u52A9\u5927\u5BB6\u8FC5\u901F\u638C\u63E1\u533A\u5757\u94FE\u57FA\u7840\u77E5\u8BC6\u5E76\u4E0A\u624B Nervos \u76F8\u5173\u5E94\u7528\u5F00\u53D1\u3002'
           )
         )
       ),
@@ -5131,4 +5131,4 @@ module.exports = require("@material-ui/core/colors/red");
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.baa814bf.js.map
+//# sourceMappingURL=static.016e2113.js.map
