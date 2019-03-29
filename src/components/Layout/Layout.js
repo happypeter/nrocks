@@ -1,18 +1,8 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
-import patchDOMForGoogleTranslate from 'utils/patchDOMForGoogleTranslate';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Flex from 'components/Flex';
 import Footer from 'components/LayoutFooter';
 import Header from 'components/LayoutHeader';
-import {media} from 'theme';
-
-patchDOMForGoogleTranslate();
+import { media } from 'theme';
 
 type Props = {
   children: Function,
@@ -21,7 +11,7 @@ type Props = {
 
 class Template extends Component<Props> {
   render() {
-    const {children, location} = this.props;
+    const { children, location } = this.props;
 
     // TODO - is there a better way to check if we need we have a sidebar?
     let layoutHasSidebar = false;

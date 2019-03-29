@@ -1,20 +1,12 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
+import React from 'react';
 import Container from 'components/Container';
-import ExternalFooterLink from './ExternalFooterLink';
-import FooterLink from './FooterLink';
+import { Link } from 'gatsby';
 import FooterNav from './FooterNav';
 import MetaTitle from 'templates/components/MetaTitle';
-import React from 'react';
 import { colors, media } from 'theme';
-import ossLogoPng from 'images/oss_logo.png';
+import LogoLight from 'svg/LogoLight';
 
-const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => (
+const Footer = ({ layoutHasSidebar = false }) => (
   <footer
     css={{
       backgroundColor: colors.darker,
@@ -58,28 +50,10 @@ const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => 
             },
           }}>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>Channels</MetaTitle>
-            <ExternalFooterLink
-              href="https://github.com/facebook/react"
-              target="_blank"
-              rel="noopener">
-              GitHub
-            </ExternalFooterLink>
-            <ExternalFooterLink
-              href="https://twitter.com/reactjs"
-              target="_blank"
-              rel="noopener">
-              Twitter
-            </ExternalFooterLink>
-          </FooterNav>
-          <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>More</MetaTitle>
-            <ExternalFooterLink
-              href="https://facebook.github.io/react-native/"
-              target="_blank"
-              rel="noopener">
-              React Native
-            </ExternalFooterLink>
+            <MetaTitle onDark={true}>更多</MetaTitle>
+            <Link to="/about">
+              关于
+            </Link>
           </FooterNav>
         </div>
         <section
@@ -101,26 +75,8 @@ const Footer = ({ layoutHasSidebar = false }: { layoutHasSidebar: boolean }) => 
               paddingTop: 40,
             },
           }}>
-          <a
-            href="https://code.facebook.com/projects/"
-            target="_blank"
-            rel="noopener">
-            <img
-              alt="Facebook Open Source"
-              css={{
-                maxWidth: 160,
-                height: 'auto',
-              }}
-              src={ossLogoPng}
-            />
-          </a>
-          <p
-            css={{
-              color: colors.subtleOnDark,
-              paddingTop: 15,
-            }}>
-            {`Copyright © ${new Date().getFullYear()} Facebook Inc.`}
-          </p>
+
+          <LogoLight width={80} />
         </section>
       </div>
     </Container>

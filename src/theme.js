@@ -1,14 +1,3 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @providesModule theme
- * @flow
- */
-
-/**
- * Theme contains variables shared by styles of multiple components.
- */
-
 import hex2rgba from 'hex2rgba';
 
 const colors = {
@@ -25,22 +14,23 @@ const colors = {
   error: '#ff6464', // yellow
   white: '#ffffff',
   black: '#000000',
+  header: '#eff3f6'
 };
 
 const SIZES = {
-  xsmall: {min: 0, max: 599},
-  small: {min: 600, max: 779},
-  medium: {min: 780, max: 979},
-  large: {min: 980, max: 1279},
-  xlarge: {min: 1280, max: 1339},
-  xxlarge: {min: 1340, max: Infinity},
+  xsmall: { min: 0, max: 599 },
+  small: { min: 600, max: 779 },
+  medium: { min: 780, max: 979 },
+  large: { min: 980, max: 1279 },
+  xlarge: { min: 1280, max: 1339 },
+  xxlarge: { min: 1340, max: Infinity },
 
   // Sidebar/nav related tweakpoints
-  largerSidebar: {min: 1100, max: 1339},
-  sidebarFixed: {min: 2000, max: Infinity},
+  largerSidebar: { min: 1100, max: 1339 },
+  sidebarFixed: { min: 2000, max: Infinity },
 
   // Topbar related tweakpoints
-  expandedSearch: {min: 1180, max: Infinity},
+  expandedSearch: { min: 1180, max: Infinity },
 };
 
 type Size = $Keys<typeof SIZES>;
@@ -50,14 +40,14 @@ const media = {
     if (excludeLarge) {
       return `@media (min-width: ${
         SIZES[smallKey].min
-      }px) and (max-width: ${SIZES[largeKey].min - 1}px)`;
+        }px) and (max-width: ${SIZES[largeKey].min - 1}px)`;
     } else {
       if (SIZES[largeKey].max === Infinity) {
         return `@media (min-width: ${SIZES[smallKey].min}px)`;
       } else {
         return `@media (min-width: ${SIZES[smallKey].min}px) and (max-width: ${
           SIZES[largeKey].max
-        }px)`;
+          }px)`;
       }
     }
   },
@@ -413,4 +403,4 @@ const sharedStyles = {
   },
 };
 
-export {colors, fonts, media, sharedStyles};
+export { colors, fonts, media, sharedStyles };

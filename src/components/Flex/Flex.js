@@ -1,13 +1,6 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
+import { createElement } from 'glamor/react';
 
-import {createElement} from 'glamor/react';
-
-import type {Node} from 'react';
+import type { Node } from 'react';
 
 type Props = {
   basis: string,

@@ -1,20 +1,11 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
-
+import React, { Component } from 'react';
 import ButtonLink from 'components/ButtonLink';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import Container from 'components/Container';
-import PropTypes from 'prop-types';
-import React, {Component} from 'react';
-import {graphql} from 'gatsby';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
-import {colors, media, sharedStyles} from 'theme';
+import { colors, media, sharedStyles } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
-import logoWhiteSvg from 'icons/logo-white.svg';
 import courses from '../../content/index.yml';
 
 class Home extends Component {
@@ -23,11 +14,11 @@ class Home extends Component {
   };
 
   render() {
-    const {location} = this.props;
+    const { location } = this.props;
     return (
       <Layout location={location}>
         <TitleAndMetaTags title="yes" ogUrl={createOgUrl('index.html')} />
-        <div css={{width: '100%'}}>
+        <div css={{ width: '100%' }}>
           <header
             css={{
               backgroundColor: colors.dark,
@@ -50,19 +41,6 @@ class Home extends Component {
                   marginLeft: 'auto',
                   marginRight: 'auto',
                   position: 'relative',
-                  '::before': {
-                    content: ' ',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    bottom: 0,
-                    right: 0,
-                    backgroundImage: `url(${logoWhiteSvg})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: '100% 100px',
-                    backgroundSize: '50% auto',
-                    opacity: 0.05,
-                  },
                 },
               }}>
               <div
@@ -147,7 +125,7 @@ class Home extends Component {
                       whiteSpace: 'nowrap',
                     },
                   }}>
-                  {courses.map(({id, title, image, date}) => (
+                  {courses.map(({ id, title, image, date }) => (
                     <div
                       key={id}
                       css={{
@@ -227,7 +205,7 @@ class Home extends Component {
   }
 }
 
-const CtaItem = ({children, primary = false}) => (
+const CtaItem = ({ children, primary = false }) => (
   <div
     css={{
       width: '100%',

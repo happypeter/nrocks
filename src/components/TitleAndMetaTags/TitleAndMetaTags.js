@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 import Helmet from 'react-helmet';
 import React from 'react';
 
@@ -16,7 +9,7 @@ type Props = {
   ogUrl: string,
 };
 
-const TitleAndMetaTags = ({title, ogDescription, ogUrl}: Props) => {
+const TitleAndMetaTags = ({ title, ogDescription, ogUrl }: Props) => {
   return (
     <Helmet title={title}>
       <meta property="og:title" content={title} />

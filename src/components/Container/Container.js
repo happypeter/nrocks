@@ -1,21 +1,12 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 import React from 'react';
 
-import {media} from 'theme';
-
-import type {Node} from 'react';
+import { media } from 'theme';
 
 /**
  * This component wraps page content sections (eg header, footer, main).
  * It provides consistent margin and max width behavior.
  */
-const Container = ({children}: {children: Node}) => (
+const Container = ({ children }) => (
   <div
     css={{
       paddingLeft: 20,
