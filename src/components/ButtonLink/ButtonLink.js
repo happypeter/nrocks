@@ -1,14 +1,8 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
-
-import {Link} from 'gatsby';
 import React from 'react';
-import {colors, media} from 'theme';
+import { Link } from 'gatsby';
+import { colors, media } from 'theme';
 
-const ArrowSvg = ({cssProps = {}}) => (
+const ArrowSvg = ({ cssProps = {} }) => (
   <svg
     css={cssProps}
     height="12"
@@ -25,7 +19,7 @@ const ArrowSvg = ({cssProps = {}}) => (
   </svg>
 );
 
-const ButtonLink = ({children, type, ...rest}) => {
+const ButtonLink = ({ children, type, ...rest }) => {
   let typeStyle;
   switch (type) {
     case 'primary':
@@ -34,12 +28,14 @@ const ButtonLink = ({children, type, ...rest}) => {
     case 'secondary':
       typeStyle = secondaryStyle;
       break;
+    default:
+      break;
   }
 
   return (
     <Link {...rest} css={[style, typeStyle]}>
       {children}
-      {type === 'secondary' && <ArrowSvg cssProps={{marginLeft: 10}} />}
+      {type === 'secondary' && <ArrowSvg cssProps={{ marginLeft: 10 }} />}
     </Link>
   );
 };

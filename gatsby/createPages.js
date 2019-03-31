@@ -1,15 +1,7 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
+const { resolve } = require('path');
 
-'use strict';
-
-const {resolve} = require('path');
-
-module.exports = async ({graphql, actions}) => {
-  const {createPage, createRedirect} = actions;
+module.exports = async ({ graphql, actions }) => {
+  const { createPage, createRedirect } = actions;
 
   // Used to detect and prevent duplicate redirects
   const redirectToSlugMap = {};

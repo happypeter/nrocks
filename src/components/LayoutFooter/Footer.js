@@ -1,16 +1,14 @@
 import React from 'react';
 import Container from 'components/Container';
 import { Link } from 'gatsby';
-import FooterNav from './FooterNav';
-import MetaTitle from 'templates/components/MetaTitle';
 import { colors, media } from 'theme';
-import LogoLight from 'svg/LogoLight';
+import LogoIcon from 'svg/Logo';
 
 const Footer = ({ layoutHasSidebar = false }) => (
   <footer
     css={{
-      backgroundColor: colors.darker,
-      color: colors.white,
+      backgroundColor: colors.white,
+      color: colors.black,
       paddingTop: 10,
       paddingBottom: 50,
 
@@ -23,7 +21,7 @@ const Footer = ({ layoutHasSidebar = false }) => (
         css={{
           display: 'flex',
           flexDirection: 'row',
-          flexWrap: 'wrap',
+          justifyContent: 'space-between',
 
           [media.between('small', 'medium')]: {
             paddingRight: layoutHasSidebar ? 240 : null,
@@ -36,51 +34,49 @@ const Footer = ({ layoutHasSidebar = false }) => (
             paddingRight: layoutHasSidebar ? 380 : null,
           },
         }}>
-        <div
-          css={{
-            flexWrap: 'wrap',
-            display: 'flex',
-
-            [media.lessThan('large')]: {
-              width: '100%',
-            },
-            [media.greaterThan('xlarge')]: {
-              width: 'calc(100% / 3 * 2)',
-              paddingLeft: 40,
-            },
-          }}>
-          <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>更多</MetaTitle>
-            <Link to="/about">
-              关于
-            </Link>
-          </FooterNav>
-        </div>
         <section
           css={{
             paddingTop: 40,
-            display: 'block !important', // Override 'Installation' <style> specifics
-
-            [media.greaterThan('xlarge')]: {
-              width: 'calc(100% / 3)',
-              order: -1,
-            },
-            [media.greaterThan('large')]: {
-              order: -1,
-              width: layoutHasSidebar ? null : 'calc(100% / 3)',
-            },
-            [media.lessThan('large')]: {
-              textAlign: 'center',
-              width: '100%',
-              paddingTop: 40,
-            },
+            display: 'block !important',
+            maxWidth: 300
           }}>
 
-          <LogoLight width={80} />
+          <LogoIcon width={120} />
+          <p
+            css={{
+              color: colors.text,
+              paddingTop: 15,
+              opacity: 0.7,
+              fontSize: 12
+            }}>
+            欢迎来到 Nervos
+            学习站，除非另行特定说明，本站所有文字内容，以及相关视频按照{' '}
+            <a
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              css={{
+                color: colors.primary
+              }}
+            >
+              CC-SA 协议
+            </a>
+            发布。
+          </p>
         </section>
+        <div css={{ flexShrink: 0, paddingTop: 40 }}>
+          <Link to="/about" css={{
+            display: 'block',
+            textDecoration: 'none',
+            color: colors.primary,
+            fontWeight: 500,
+            height: '46.86px',
+            lineHeight: '46.86px'
+          }}>
+            关于
+          </Link>
+        </div>
       </div>
     </Container>
-  </footer>
+  </footer >
 );
 
 export default Footer;

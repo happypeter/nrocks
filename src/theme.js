@@ -1,20 +1,21 @@
 import hex2rgba from 'hex2rgba';
 
 const colors = {
-  lighter: '#373940', // light blue
-  dark: '#282c34', // dark blue
-  darker: '#20232a', // really dark blue
-  brand: '#00bcd4', // electric blue
+  lighter: '#373940',
+  dark: '#282c34',
+  darker: '#20232a',
+  brand: '#00bcd4',
   brandLight: '#00bcd4',
-  text: '#1a1a1a', // very dark grey / black substitute
-  subtle: '#6d6d6d', // light grey for text
+  subtle: '#6d6d6d',
   subtleOnDark: '#999',
-  divider: '#ececec', // very light grey
-  note: '#ffe564', // yellow
-  error: '#ff6464', // yellow
+  divider: '#ececec',
+  note: '#ffe564',
+  error: '#ff6464',
   white: '#ffffff',
   black: '#000000',
-  header: '#eff3f6'
+  header: '#eff3f6',
+  primary: '#45c289',
+  text: '#212121'
 };
 
 const SIZES = {
