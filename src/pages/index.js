@@ -4,9 +4,10 @@ import { Link } from 'gatsby';
 import Container from 'components/Container';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
-import { colors, media, sharedStyles } from 'theme';
+import { colors, media } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
 import courses from '../../content/index.yml';
+import HlTitle from 'components/HlTitle'
 
 class Home extends Component {
   state = {
@@ -17,7 +18,7 @@ class Home extends Component {
     const { location } = this.props;
     return (
       <Layout location={location}>
-        <TitleAndMetaTags title="yes" ogUrl={createOgUrl('index.html')} />
+        <TitleAndMetaTags title="Nervos Learning" ogUrl={createOgUrl('index.html')} />
         <div css={{ width: '100%' }}>
           <header
             css={{
@@ -37,7 +38,7 @@ class Home extends Component {
                 [media.greaterThan('xlarge')]: {
                   paddingTop: 95,
                   paddingBottom: 85,
-                  maxWidth: 1500, // Positioning of background logo
+                  maxWidth: 1500,
                   marginLeft: 'auto',
                   marginRight: 'auto',
                   position: 'relative',
@@ -45,7 +46,6 @@ class Home extends Component {
               }}>
               <div
                 css={{
-                  // Content should be above absolutely-positioned hero image
                   position: 'relative',
                 }}>
                 <Container>
@@ -98,97 +98,76 @@ class Home extends Component {
           </header>
 
           <Container>
-            <div css={sharedStyles.markdown}>
-              <section
-                css={[
-                  sectionStyles,
-                  {
-                    [media.lessThan('medium')]: {
-                      marginTop: 0,
-                      marginBottom: 0,
-                      overflowX: 'auto',
-                      paddingTop: 30,
-                      WebkitOverflowScrolling: 'touch',
-                      position: 'relative',
-                      maskImage:
-                        'linear-gradient(to right, transparent, white 10px, white 90%, transparent)',
-                    },
-                  },
-                ]}>
-                <div
-                  css={{
-                    display: 'flex',
-                    flexDirection: 'row',
-
-                    [media.lessThan('medium')]: {
-                      display: 'block',
-                      whiteSpace: 'nowrap',
-                    },
-                  }}>
-                  {courses.map(({ id, title, image, date }) => (
-                    <div
-                      key={id}
-                      css={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        flex: '0 1 33%',
-                        marginLeft: 40,
-
-                        '&:first-of-type': {
-                          marginLeft: 0,
-
-                          [media.lessThan('medium')]: {
-                            marginLeft: 10,
-                          },
-                        },
-
-                        [media.lessThan('medium')]: {
-                          display: 'inline-block',
-                          verticalAlign: 'top',
-                          marginLeft: 0,
-                          whiteSpace: 'normal',
-                          width: '75%',
-                          marginRight: 20,
-                          paddingBottom: 40,
-
-                          '&:first-of-type': {
-                            marginTop: 0,
-                          },
-                        },
-                      }}>
-                      <h3
-                        css={[
-                          headingStyles,
-                          {
-                            '&&': {
-                              // Make specificity higher than the site-wide h3 styles.
-                              color: colors.subtle,
-                              paddingTop: 0,
-                              fontWeight: 300,
-                              fontSize: 20,
-
-                              [media.greaterThan('xlarge')]: {
-                                fontSize: 24,
-                              },
-                            },
-                          },
-                        ]}>
-                        {image} {date}
-                      </h3>
-                      <Link to={`/${id}/0-intro.html`}>{title}</Link>
-                    </div>
-                  ))}
-                </div>
-              </section>
-              <hr
+            <section
+              css={{
+                marginTop: 48,
+                marginBottom: 15,
+                marginRight: '-20px',
+                marginLeft: '-20px',
+                [media.greaterThan('medium')]: {
+                  marginTop: 60,
+                  marginBottom: 65,
+                }
+              }}>
+              <HlTitle>最新课程</HlTitle>
+              <div
                 css={{
-                  height: 1,
-                  marginBottom: -1,
-                  border: 'none',
-                  borderBottom: `1 solid ${colors.divider}`,
-                }}
-              />
-            </div>
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '100%',
+                  [media.greaterThan('small')]: {
+                    flexDirection: 'row',
+                    flexWrap: 'wrap'
+                  },
+                }}>
+                {courses.map(({ id, title, image, date, desc }) => (
+                  <Link to={`/${id}/0-intro.html`}
+                    key={id}
+                    css={{
+                      display: 'block',
+                      width: `calc(100% - 40px)`,
+                      margin: 20,
+                      boxShadow: `rgba(0, 0, 0, 0.07) 0px 4px 6px`,
+                      borderRadius: '0 0 8px 8px',
+                      [media.greaterThan('small')]: {
+                        width: `calc(50% - 40px)`
+                      },
+                      [media.greaterThan('medium')]: {
+                        width: `calc(33.3333% - 40px)`
+                      },
+                      [media.greaterThan('xxlarge')]: {
+                        width: `calc(25% - 40px)`
+                      },
+                    }}>
+                    <img src={image} css={{ display: 'block', width: '100%' }} alt="cover" />
+                    <div css={{ padding: 8 }}>
+                      <h3 css={{
+                        color: colors.text,
+                        fontWeight: 400,
+                        fontSize: 16,
+                        padding: '8px 0'
+                      }}>
+                        {title}
+                      </h3>
+                      <p css={{
+                        color: colors.subtle,
+                        fontSize: 12,
+                        padding: '4px 0 8px'
+                      }}>
+                        {desc}
+                      </p>
+                      <div css={{
+                        color: colors.subtle,
+                        textAlign: 'right',
+                        fontSize: 12
+                      }}>
+                        {date}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
           </Container>
 
           <section
@@ -217,19 +196,3 @@ const CtaItem = ({ children, primary = false }) => (
 );
 
 export default Home;
-
-const sectionStyles = {
-  marginTop: 20,
-  marginBottom: 15,
-
-  [media.greaterThan('medium')]: {
-    marginTop: 60,
-    marginBottom: 65,
-  },
-};
-
-const headingStyles = {
-  '&&': {
-    marginBottom: 20,
-  },
-};

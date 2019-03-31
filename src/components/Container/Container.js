@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { media } from 'theme';
 
 /**
@@ -13,7 +12,6 @@ const Container = ({ children }) => (
       paddingRight: 20,
       marginLeft: 'auto',
       marginRight: 'auto',
-
       [media.greaterThan('medium')]: {
         width: '90%',
       },
