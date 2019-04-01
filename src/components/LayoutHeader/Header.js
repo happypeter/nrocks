@@ -9,7 +9,7 @@ const Header = () => (
   <header
     css={{
       backgroundColor: colors.header,
-      color: colors.black,
+      color: colors.text,
       position: 'fixed',
       zIndex: 1,
       width: '100%',
@@ -36,12 +36,6 @@ const Header = () => (
             marginRight: 10,
             height: '100%',
             alignItems: 'center',
-            color: colors.white,
-
-            ':focus': {
-              outline: 0,
-              color: colors.white,
-            },
 
             [media.greaterThan('small')]: {
               width: 'calc(100% / 6)',
@@ -51,7 +45,16 @@ const Header = () => (
             },
           }}
           to="/">
-          <LogoIcon width={100} />
+          <LogoIcon
+            css={{
+              width: 90,
+              [media.between('small', 'large')]: {
+                width: 70,
+              },
+              [media.lessThan('small')]: {
+                width: 50,
+              },
+            }} />
         </Link>
 
         <DocSearch />
