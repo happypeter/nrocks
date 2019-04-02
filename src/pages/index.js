@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ButtonLink from 'components/ButtonLink';
 import { Link } from 'gatsby';
 import Container from 'components/Container';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
@@ -10,10 +9,6 @@ import courses from '../../content/index.yml';
 import HlTitle from 'components/HlTitle'
 
 class Home extends Component {
-  state = {
-    babelLoaded: false,
-  };
-
   render() {
     const { location } = this.props;
     return (

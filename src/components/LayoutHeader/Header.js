@@ -22,6 +22,7 @@ const Header = () => (
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between',
           height: 60,
           [media.between('small', 'large')]: {
             height: 50,
