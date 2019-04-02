@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Container from 'components/Container';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
@@ -10,8 +9,6 @@ import HeroDiv from 'svg/HeroDiv'
 import GitHub from 'svg/GitHub'
 import ZhiHu from 'svg/ZhiHu'
 import Twitter from 'svg/Twitter'
-import courses from '../../content/index.yml';
-
 
 const About = ({ location }) => {
   return (
@@ -23,7 +20,7 @@ const About = ({ location }) => {
             position: 'relative',
             backgroundColor: colors.dark,
             color: colors.white,
-            paddingTop: 45,
+            paddingTop: 32,
             paddingBottom: 20,
           }}>
           <Container>
@@ -38,28 +35,18 @@ const About = ({ location }) => {
             }}>
               <div css={{
                 width: '100%',
-                [media.greaterThan('small')]: {
+                marginBottom: 24,
+                [media.greaterThan('medium')]: {
                   width: '50%'
                 }
               }}>
-                <div css={{ display: 'flex' }}>
-                  <div css={{
-                    fontSize: 22,
-                    margin: '0 0 32px',
-                    color: '#fff',
-                    '::after': {
-                      content: '""',
-                      display: 'block',
-                      width: 36,
-                      height: 16,
-                      borderBottom: `3px solid #fff`
-                    }
-                  }}>关于作者</div>
+                <div css={{ display: 'flex', alignItems: 'center', marginBottom: 32 }}>
+                  <HlTitle center={false} color="#fff" marginBottom={0}>关于作者</HlTitle>
                   <a
                     href="https://github.com/happypeter"
-                    css={{ textDecoration: 'none' }}
+                    css={{ textDecoration: 'none', display: 'block' }}
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     <GitHub css={{
                       fill: '#fff',
@@ -68,7 +55,7 @@ const About = ({ location }) => {
                   </a>
                   <a
                     href="https://zhihu.com/people/peterlovemoney"
-                    css={{ textDecoration: 'none' }}
+                    css={{ textDecoration: 'none', display: 'block' }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -79,7 +66,7 @@ const About = ({ location }) => {
                   </a>
                   <a
                     href="https://twitter.com/happypeter1983"
-                    css={{ textDecoration: 'none' }}
+                    css={{ textDecoration: 'none', display: 'block' }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -106,13 +93,16 @@ const About = ({ location }) => {
               </div>
 
               <div css={{
-                width: '50%'
+                width: '100%',
+                [media.greaterThan('medium')]: {
+                  width: '50%',
+                  flexShrink: 0
+                }
               }}>
                 <img
                   css={{
                     display: 'block',
-                    width: '100%',
-                    padding: 8
+                    width: '100%'
                   }}
                   src='/peter.png'
                   alt="avatar"
@@ -131,8 +121,82 @@ const About = ({ location }) => {
         </header>
 
         <Container>
-          <section>
+          <section css={{
+            marginTop: 24,
+            marginBottom: 24,
+            [media.greaterThan('medium')]: {
+              marginTop: 48,
+              marginBottom: 48
+            }
+          }}>
             <HlTitle>本站动态</HlTitle>
+            <div css={{
+              height: '100%',
+              padding: '24px 0',
+              position: 'relative',
+              '::before': {
+                content: '" "',
+                position: 'absolute',
+                width: 2,
+                top: 0,
+                bottom: 0,
+                left: '50%',
+                marginLeft: -1,
+                background: '#ececec'
+              }
+            }}>
+              <div css={{
+                display: 'flex',
+                alignItems: 'center',
+                margin: '0 auto 32px',
+                fontSize: 14,
+                opacity: 0.7
+              }}>
+                <div css={{
+                  padding: 16,
+                  width: '50%',
+                  textAlign: 'right',
+                  lineHeight: 2,
+                  color: colors.primary
+                }}>2018-09-21</div>
+                <div css={{
+                  padding: 16,
+                  width: '50%',
+                  lineHeight: 2,
+                  position: 'relative',
+                  '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    width: 10,
+                    height: 10,
+                    border: '2px solid #fff',
+                    borderRadius: '50%',
+                    left: -5,
+                    top: '50%',
+                    marginTop: -4,
+                    background: colors.primary
+                  }
+                }}>网站正式上线</div>
+              </div>
+              <div css={s.item}>
+                <div css={s.left}>
+                  发布课程《基于 Nervos AppChain 的 DApp 开发》
+                </div>
+                <div css={[s.right, s.date]}>2018-9-24</div>
+              </div>
+              <div css={s.item}>
+                <div css={[s.left, s.date]}>2018-10-24</div>
+                <div css={s.right}>发布课程《区块链背后的密码学》</div>
+              </div>
+              <div css={s.item}>
+                <div css={s.left}>发布课程《React 破冰之旅》</div>
+                <div css={[s.right, s.date]}>2018-11-22</div>
+              </div>
+              <div css={s.item}>
+                <div css={[s.left, s.date]} />
+                <div css={s.right}>持续更新中...</div>
+              </div>
+            </div>
           </section>
         </Container>
 
@@ -149,4 +213,40 @@ const About = ({ location }) => {
   );
 }
 
+const s = {
+  item: {
+    display: 'flex',
+    alignItems: 'center',
+    margin: '0 auto 32px',
+    fontSize: 14,
+    opacity: 0.7
+  },
+  date: {
+    color: colors.primary
+  },
+  left: {
+    padding: 16,
+    width: '50%',
+    textAlign: 'right',
+    lineHeight: 2
+  },
+  right: {
+    padding: 16,
+    width: '50%',
+    lineHeight: 2,
+    position: 'relative',
+    '::before': {
+      content: '""',
+      position: 'absolute',
+      width: 10,
+      height: 10,
+      border: '2px solid #fff',
+      borderRadius: '50%',
+      left: -5,
+      top: '50%',
+      marginTop: -4,
+      background: colors.primary
+    }
+  }
+}
 export default About;

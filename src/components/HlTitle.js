@@ -7,16 +7,19 @@ const HlTitle = ({
   color = colors.text,
   borderColor = colors.primary,
   type = 'div',
+  center = true,
+  fontSize = 20,
+  marginBottom = 32,
   ...rest
 }) =>
   createElement(
     type,
     {
       css: {
-        fontSize: 20,
+        fontSize: fontSize,
         color: color,
         opacity: .7,
-        marginBottom: 32,
+        marginBottom: marginBottom,
         fontWeight: 500,
         textAlign: 'center',
         position: 'relative',
@@ -24,10 +27,10 @@ const HlTitle = ({
           content: ' ',
           width: lineWidth,
           position: 'absolute',
-          border: `2px solid ${borderColor}`,
+          borderBottom: `4px solid ${borderColor}`,
           bottom: '-12px',
-          left: '50%',
-          marginLeft: `-${lineWidth / 2}px`
+          left: center ? '50%' : 0,
+          marginLeft: center ? `-${lineWidth / 2}px` : 0
         }
       },
       ...rest,
