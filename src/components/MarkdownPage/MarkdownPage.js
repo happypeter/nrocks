@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 import Container from 'components/Container';
 import Flex from 'components/Flex';
 import MarkdownHeader from 'components/MarkdownHeader';
@@ -13,10 +6,10 @@ import React from 'react';
 import StickyResponsiveSidebar from 'components/StickyResponsiveSidebar';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import toCommaSeparatedList from 'utils/toCommaSeparatedList';
-import {sharedStyles} from 'theme';
+import { sharedStyles } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
 
-import type {Node} from 'types';
+import type { Node } from 'types';
 
 type Props = {
   authors: Array<string>,
@@ -72,14 +65,14 @@ const MarkdownPage = ({
         ogUrl={createOgUrl(markdownRemark.fields.slug)}
         title={`${titlePrefix}${titlePostfix}`}
       />
-      <div css={{flex: '1 0 auto'}}>
+      <div css={{ flex: '1 0 auto' }}>
         <Container>
           <div css={sharedStyles.articleLayout.container}>
             <Flex type="article" direction="column" grow="1" halign="stretch">
               <MarkdownHeader title={titlePrefix} />
 
               {(date || hasAuthors) && (
-                <div css={{marginTop: 15}}>
+                <div css={{ marginTop: 15 }}>
                   {date}{' '}
                   {hasAuthors && (
                     <span>
@@ -100,16 +93,16 @@ const MarkdownPage = ({
               <div css={sharedStyles.articleLayout.content}>
                 <div
                   css={[sharedStyles.markdown]}
-                  dangerouslySetInnerHTML={{__html: markdownRemark.html}}
+                  dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
                 />
 
                 {markdownRemark.fields.path && (
-                  <div css={{marginTop: 80}}>
+                  <div css={{ marginTop: 80 }}>
                     <a
                       css={sharedStyles.articleLayout.editLink}
                       href={`https://github.com/reactjs/reactjs.org/tree/master/${
                         markdownRemark.fields.path
-                      }`}>
+                        }`}>
                       Edit this page
                     </a>
                   </div>
