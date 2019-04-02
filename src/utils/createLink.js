@@ -1,16 +1,9 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import React from 'react';
 import slugify from 'utils/slugify';
-import {colors, media} from 'theme';
+import { colors, media } from 'theme';
 
-import type {Node} from 'react';
+import type { Node } from 'react';
 
 type CreateLinkBaseProps = {
   isActive: boolean,
@@ -18,7 +11,7 @@ type CreateLinkBaseProps = {
   section: Object,
 };
 
-const createLinkDocs = ({isActive, item}: CreateLinkBaseProps): Node => {
+const createLinkDocs = ({ isActive, item }: CreateLinkBaseProps): Node => {
   return (
     <Link
       css={[linkCss, isActive && activeLinkCss]}
@@ -36,7 +29,7 @@ const activeLinkCss = {
 const activeLinkBefore = {
   width: 4,
   height: 25,
-  borderLeft: `4px solid ${colors.brand}`,
+  borderLeft: `4px solid ${colors.primary}`,
   paddingLeft: 16,
   position: 'absolute',
   left: 0,
@@ -59,4 +52,4 @@ const linkCss = {
   },
 };
 
-export {createLinkDocs};
+export { createLinkDocs };

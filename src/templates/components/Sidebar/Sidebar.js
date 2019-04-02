@@ -1,13 +1,7 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
-
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Flex from 'components/Flex';
 import Section from './Section';
-import {media} from 'theme';
+import { media } from 'theme';
 
 class Sidebar extends Component {
   constructor(props, context) {
@@ -19,7 +13,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    const {closeParentMenu, createLink, location, itemList} = this.props;
+    const { closeParentMenu, createLink, location, itemList } = this.props;
 
     return (
       <Flex

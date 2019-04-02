@@ -1,15 +1,9 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
-
 import React from 'react';
 import isItemActive from 'utils/isItemActive';
 
 class Section extends React.Component {
   render() {
-    const {createLink, location, onLinkClick, item} = this.props;
+    const { createLink, location, onLinkClick, item } = this.props;
     return (
       <div>
         <ul
