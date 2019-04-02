@@ -51,7 +51,7 @@ class Home extends Component {
                 <Container>
                   <h1
                     css={{
-                      color: colors.brand,
+                      color: colors.primary,
                       textAlign: 'center',
                       margin: 0,
                       fontSize: 45,
@@ -87,11 +87,21 @@ class Home extends Component {
                     }}>
                     Nervos Rocks
                   </p>
-                  <CtaItem>
-                    <ButtonLink to="/docs/peter-first" type="primary">
-                      Get Started
-                    </ButtonLink>
-                  </CtaItem>
+                  <div
+                    css={{
+                      width: '100%',
+                      margin: '24px auto',
+                      lineHeight: 1.8,
+                      textAlign: 'center',
+                      fontSize: 12,
+                      [media.greaterThan('small')]: {
+                        fontSize: 16,
+                        width: '66%',
+                        maxWidth: 600
+                      },
+                    }}>
+                    Nervos AppChain 是一个帮助企业搭建应用的链，本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手 AppChain 相关应用开发。
+                  </div>
                 </Container>
               </div>
             </div>
@@ -183,16 +193,5 @@ class Home extends Component {
     );
   }
 }
-
-const CtaItem = ({ children, primary = false }) => (
-  <div
-    css={{
-      width: '100%',
-      textAlign: 'center',
-      paddingTop: 20,
-    }}>
-    {children}
-  </div>
-);
 
 export default Home;
