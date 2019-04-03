@@ -1,3 +1,11 @@
+---
+id: 12-react
+title: 基于 React 开发 DApp
+permalink: nerv-first/12-react.html
+prev: 11-gas.html
+next: 13-neuron.html
+---
+
 之前完成了使用 Nodejs 脚本的形式跟合约进行交互，但是实际上用户还是希望能有一个美观的 UI 可以用的。所以这节咱们就来基于 react 技术开发 DApp ，实现跟合约的交互。本节的最终代码都在 Github 仓库中的 dapp1 文件夹中：https://github.com/happypeter/NervFirst/tree/master/dapp1 。下面我们来说说具体的开发思路。
 
 
