@@ -76,7 +76,7 @@ const media = {
 
 const fonts = {
   header: {
-    fontSize: 60,
+    fontSize: 40,
     lineHeight: '65px',
     fontWeight: 700,
 
@@ -86,7 +86,7 @@ const fonts = {
     },
 
     [media.lessThan('medium')]: {
-      fontSize: 40,
+      fontSize: 30,
       lineHeight: '45px',
     },
   },
@@ -291,7 +291,7 @@ const sharedStyles = {
         fontSize: 20,
       },
       [media.greaterThan('xlarge')]: {
-        fontSize: 35,
+        fontSize: 30,
       },
     },
 
