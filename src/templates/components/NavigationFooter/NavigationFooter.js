@@ -1,17 +1,11 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
-
 import Container from 'components/Container';
 import Flex from 'components/Flex';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {colors, fonts, media} from 'theme';
+import { colors, fonts, media } from 'theme';
 
-const NavigationFooter = ({next, prev, location}) => {
+const NavigationFooter = ({ next, prev, location }) => {
   return (
     <div
       css={{
@@ -92,7 +86,7 @@ NavigationFooter.propTypes = {
 
 export default NavigationFooter;
 
-const PrimaryLink = ({children, to, location}) => {
+const PrimaryLink = ({ children, to, location }) => {
   // quick fix
   // TODO: replace this with better method of getting correct full url
   const updatedUrl =
@@ -103,7 +97,7 @@ const PrimaryLink = ({children, to, location}) => {
         display: 'inline',
         borderColor: colors.subtle,
         transition: 'border-color 0.2s ease',
-        fontSize: 30,
+        fontSize: 26,
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
 
@@ -123,10 +117,10 @@ const PrimaryLink = ({children, to, location}) => {
   );
 };
 
-const SecondaryLabel = ({children}) => (
+const SecondaryLabel = ({ children }) => (
   <div
     css={{
-      color: colors.brand,
+      color: colors.primary,
       ...fonts.small,
     }}>
     {children}
