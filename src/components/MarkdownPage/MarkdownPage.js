@@ -1,20 +1,18 @@
+import React from 'react';
 import Container from 'components/Container';
 import Flex from 'components/Flex';
 import MarkdownHeader from 'components/MarkdownHeader';
 import NavigationFooter from 'templates/components/NavigationFooter';
-import React from 'react';
 import StickyResponsiveSidebar from 'components/StickyResponsiveSidebar';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
-import toCommaSeparatedList from 'utils/toCommaSeparatedList';
-import { sharedStyles } from 'theme';
+import { sharedStyles, colors } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
+import PlayCircleIcon from 'svg/PlayCircle'
 
 import type { Node } from 'types';
 
 type Props = {
-  authors: Array<string>,
   createLink: Function, // TODO: Add better flow type once we Flow-type createLink
-  date?: string,
   enableScrollSync?: boolean,
   ogDescription: string,
   location: Location,
@@ -32,9 +30,7 @@ const getPageById = (itemList: Array<Object>, templateFile: ?string) => {
 };
 
 const MarkdownPage = ({
-  authors = [],
   createLink,
-  date,
   enableScrollSync,
   ogDescription,
   location,
@@ -42,11 +38,11 @@ const MarkdownPage = ({
   itemList,
   titlePostfix = '',
 }: Props) => {
-  const hasAuthors = authors.length > 0;
   const titlePrefix = markdownRemark.frontmatter.title || '';
 
   const prev = getPageById(itemList, markdownRemark.frontmatter.prev);
   const next = getPageById(itemList, markdownRemark.frontmatter.next);
+  const videoLink = itemList.filter(item => item.title === markdownRemark.frontmatter.title)
 
   return (
     <Flex
@@ -71,25 +67,23 @@ const MarkdownPage = ({
             <Flex type="article" direction="column" grow="1" halign="stretch">
               <MarkdownHeader title={titlePrefix} />
 
-              {(date || hasAuthors) && (
-                <div css={{ marginTop: 15 }}>
-                  {date}{' '}
-                  {hasAuthors && (
-                    <span>
-                      by{' '}
-                      {toCommaSeparatedList(authors, author => (
-                        <a
-                          css={sharedStyles.link}
-                          href={author.frontmatter.url}
-                          key={author.frontmatter.name}>
-                          {author.frontmatter.name}
-                        </a>
-                      ))}
-                    </span>
-                  )}
-                </div>
-              )}
-
+              <a href={videoLink[0].video} css={{
+                display: 'flex',
+                alignItems: 'center',
+                marginTop: 32,
+                textDecoration: 'none',
+                '& span': {
+                  marginLeft: 8
+                }
+              }}>
+                <PlayCircleIcon css={{ width: 32, fill: colors.primary }} />
+                <span
+                  css={{
+                    lineHeight: 1.8,
+                    color: colors.primary,
+                    borderBottom: `1px solid ${colors.primary}`
+                  }}>到 B 站观看视频</span>
+              </a>
               <div css={sharedStyles.articleLayout.content}>
                 <div
                   css={[sharedStyles.markdown]}

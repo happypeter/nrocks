@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 // $FlowExpectedError
 // // $FlowExpectedError
 import navCrypto from '../../content/crypto-block/nav.yml';
@@ -33,4 +26,4 @@ const itemListByLocation = location => {
   return itemList1;
 };
 
-export {itemListByLocation};
+export { itemListByLocation };
