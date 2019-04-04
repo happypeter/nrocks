@@ -76,7 +76,7 @@ const media = {
 
 const fonts = {
   header: {
-    fontSize: 40,
+    fontSize: 30,
     lineHeight: '65px',
     fontWeight: 700,
 
@@ -86,7 +86,7 @@ const fonts = {
     },
 
     [media.lessThan('medium')]: {
-      fontSize: 30,
+      fontSize: 25,
       lineHeight: '45px',
     },
   },
@@ -199,12 +199,12 @@ const sharedStyles = {
     '& a:not(.anchor):not(.gatsby-resp-image-link)': linkStyle,
 
     '& > p:first-child': {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 300,
       color: colors.subtle,
 
       [media.greaterThan('xlarge')]: {
-        fontSize: 24,
+        fontSize: 18,
       },
 
       '& a, & strong': {
@@ -263,15 +263,11 @@ const sharedStyles = {
       lineHeight: 1.2,
 
       [media.size('xsmall')]: {
-        fontSize: 30,
+        fontSize: 25,
       },
 
       [media.between('small', 'large')]: {
-        fontSize: 45,
-      },
-
-      [media.greaterThan('xlarge')]: {
-        fontSize: 60,
+        fontSize: 30,
       },
     },
 
@@ -291,7 +287,7 @@ const sharedStyles = {
         fontSize: 20,
       },
       [media.greaterThan('xlarge')]: {
-        fontSize: 30,
+        fontSize: 25,
       },
     },
 

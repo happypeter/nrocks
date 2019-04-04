@@ -97,12 +97,12 @@ const PrimaryLink = ({ children, to, location }) => {
         display: 'inline',
         borderColor: colors.subtle,
         transition: 'border-color 0.2s ease',
-        fontSize: 26,
+        fontSize: 22,
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
 
         [media.lessThan('large')]: {
-          fontSize: 24,
+          fontSize: 20,
         },
         [media.size('xsmall')]: {
           fontSize: 16,
