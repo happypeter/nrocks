@@ -68,23 +68,27 @@ const MarkdownPage = ({
             <Flex type="article" direction="column" grow="1" halign="stretch">
               <MarkdownHeader title={titlePrefix} />
 
-              <a href={videoLink[0].video} css={{
-                display: 'flex',
-                alignItems: 'center',
-                marginTop: 32,
-                textDecoration: 'none',
-                '& span': {
-                  marginLeft: 8
-                }
-              }}>
-                <PlayCircleIcon css={{ width: 32, fill: colors.primary }} />
-                <span
-                  css={{
-                    lineHeight: 1.8,
-                    color: colors.primary,
-                    borderBottom: `1px solid ${colors.primary}`
-                  }}>到 B 站观看视频</span>
-              </a>
+              {
+                videoLink.length && (
+                  <a href={videoLink[0].video} css={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginTop: 32,
+                    textDecoration: 'none',
+                    '& span': {
+                      marginLeft: 8
+                    }
+                  }}>
+                    <PlayCircleIcon css={{ width: 32, fill: colors.primary }} />
+                    <span
+                      css={{
+                        lineHeight: 1.8,
+                        color: colors.primary,
+                        borderBottom: `1px solid ${colors.primary}`
+                      }}>到 B 站观看视频</span>
+                  </a>
+                )
+              }
               <div css={sharedStyles.articleLayout.content}>
                 <div
                   css={[sharedStyles.markdown]}
