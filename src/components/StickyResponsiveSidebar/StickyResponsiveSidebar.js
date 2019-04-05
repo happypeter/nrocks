@@ -1,14 +1,7 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 import Container from 'components/Container';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Sidebar from 'templates/components/Sidebar';
-import {colors, media} from 'theme';
+import { colors, media } from 'theme';
 import ChevronSvg from 'templates/components/ChevronSvg';
 
 type State = {
@@ -33,15 +26,15 @@ class StickyResponsiveSidebar extends Component<Props, State> {
   }
 
   _openNavMenu = () => {
-    this.setState({open: !this.state.open});
+    this.setState({ open: !this.state.open });
   };
 
   _closeNavMenu = () => {
-    this.setState({open: false});
+    this.setState({ open: false });
   };
 
   render() {
-    const {open} = this.state;
+    const { open } = this.state;
     const smallScreenSidebarStyles = {
       top: 0,
       left: 0,
@@ -142,7 +135,7 @@ class StickyResponsiveSidebar extends Component<Props, State> {
           css={{
             backgroundColor: colors.darker,
             bottom: 44, // iOS Safari's inert "bottom 44px"
-            color: colors.brand,
+            color: colors.primary,
             display: 'none', // gets overriden at small screen sizes
             cursor: 'pointer',
             position: 'fixed',
@@ -184,6 +177,7 @@ class StickyResponsiveSidebar extends Component<Props, State> {
                 <ChevronSvg
                   size={15}
                   cssProps={{
+                    color: colors.primary,
                     transform: `translate(2px, ${iconOffset}px) rotate(180deg)`,
                     transition: 'transform 0.2s ease',
                   }}
@@ -191,6 +185,7 @@ class StickyResponsiveSidebar extends Component<Props, State> {
                 <ChevronSvg
                   size={15}
                   cssProps={{
+                    color: colors.primary,
                     transform: `translate(2px, ${0 - iconOffset}px)`,
                     transition: 'transform 0.2s ease',
                   }}

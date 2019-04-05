@@ -163,18 +163,10 @@ const sharedStyles = {
     },
 
     editLink: {
-      color: colors.subtle,
-      borderColor: colors.divider,
-      transition: 'all 0.2s ease',
-      transitionPropery: 'color, border-color',
+      color: colors.primary,
       whiteSpace: 'nowrap',
-      borderBottomWidth: 1,
-      borderBottomStyle: 'solid',
-
-      ':hover': {
-        color: colors.text,
-        borderColor: colors.text,
-      },
+      display: 'flex',
+      alignItems: 'center'
     },
   },
 

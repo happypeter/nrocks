@@ -8,16 +8,17 @@ import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import { sharedStyles, colors } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
 import PlayCircleIcon from 'svg/PlayCircle'
+import CreateIcon from 'svg/Create'
 
 import type { Node } from 'types';
 
 type Props = {
-  createLink: Function, // TODO: Add better flow type once we Flow-type createLink
+  createLink: Function,
   enableScrollSync?: boolean,
   ogDescription: string,
   location: Location,
   markdownRemark: Node,
-  itemList: Array<Object>, // TODO: Add better flow type once we have the Section component
+  itemList: Array<Object>,
   titlePostfix: string,
 };
 
@@ -97,7 +98,7 @@ const MarkdownPage = ({
                       href={`https://github.com/reactjs/reactjs.org/tree/master/${
                         markdownRemark.fields.path
                         }`}>
-                      Edit this page
+                      <CreateIcon css={{ width: 20, fill: colors.primary }} /> Edit this page on GitHub
                     </a>
                   </div>
                 )}
