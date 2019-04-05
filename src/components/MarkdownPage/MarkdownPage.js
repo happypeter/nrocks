@@ -10,19 +10,7 @@ import createOgUrl from 'utils/createOgUrl';
 import PlayCircleIcon from 'svg/PlayCircle'
 import CreateIcon from 'svg/Create'
 
-import type { Node } from 'types';
-
-type Props = {
-  createLink: Function,
-  enableScrollSync?: boolean,
-  ogDescription: string,
-  location: Location,
-  markdownRemark: Node,
-  itemList: Array<Object>,
-  titlePostfix: string,
-};
-
-const getPageById = (itemList: Array<Object>, templateFile: ?string) => {
+const getPageById = (itemList, templateFile) => {
   if (!templateFile) {
     return null;
   }
@@ -38,7 +26,7 @@ const MarkdownPage = ({
   markdownRemark,
   itemList,
   titlePostfix = '',
-}: Props) => {
+}) => {
   const titlePrefix = markdownRemark.frontmatter.title || '';
 
   const prev = getPageById(itemList, markdownRemark.frontmatter.prev);
