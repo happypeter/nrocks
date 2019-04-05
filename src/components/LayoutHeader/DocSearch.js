@@ -58,6 +58,11 @@ class DocSearch extends Component {
             backgroundPositionY: 'center',
             backgroundPositionX: '6px',
             borderRadius: '0.25rem',
+            '&::placeholder': {
+              color: colors.white,
+              paddingLeft: 4,
+              opacity: .7
+            },
             ':focus': {
               outline: 0,
               backgroundColor: colors.lighter,
