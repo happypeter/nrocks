@@ -13,7 +13,7 @@ class Home extends Component {
     const { location } = this.props;
     return (
       <Layout location={location}>
-        <TitleAndMetaTags title="Nervos Learning" ogUrl={createOgUrl('index.html')} />
+        <TitleAndMetaTags title="Nervos 学习站" ogUrl={createOgUrl('index.html')} />
         <div css={{ width: '100%' }}>
           <header
             css={{

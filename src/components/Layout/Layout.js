@@ -4,18 +4,11 @@ import Footer from 'components/LayoutFooter';
 import Header from 'components/LayoutHeader';
 import { media } from 'theme';
 
-type Props = {
-  children: Function,
-  location: Location,
-};
-
-class Template extends Component<Props> {
+class Template extends Component {
   render() {
     const { children, location } = this.props;
 
-    // TODO - is there a better way to check if we need we have a sidebar?
-    let layoutHasSidebar = false;
-    if (location.pathname.match(/^\/(docs)/)) {
+    if (location.pathname.match(/\.html$/)) {
       layoutHasSidebar = true;
     }
 
