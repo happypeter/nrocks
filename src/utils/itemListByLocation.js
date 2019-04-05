@@ -1,18 +1,15 @@
-// $FlowExpectedError
-// // $FlowExpectedError
 import navCrypto from '../../content/crypto-block/nav.yml';
 import navNerv from '../../content/nerv-first/nav.yml';
-// $FlowExpectedError
 
 const itemList1 = navCrypto.map(
-  (item: Object): Object => ({
+  item => ({
     ...item,
     directory: 'crypto-block',
   }),
 );
 
 const itemList2 = navNerv.map(
-  (item: Object): Object => ({
+  item => ({
     ...item,
     directory: 'nerv-first',
   }),

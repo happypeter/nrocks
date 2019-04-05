@@ -7,7 +7,7 @@ import { media } from 'theme';
 class Template extends Component {
   render() {
     const { children, location } = this.props;
-
+    let layoutHasSidebar = false;
     if (location.pathname.match(/\.html$/)) {
       layoutHasSidebar = true;
     }
