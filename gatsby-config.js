@@ -1,17 +1,6 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
-
-'use strict';
-
 module.exports = {
   siteMetadata: {
-    title: 'React: A JavaScript library for building user interfaces',
-    siteUrl: 'https://reactjs.org',
-    rssFeedTitle: 'React',
-    rssFeedDescription: 'A JavaScript library for building user interfaces',
+    title: 'Learning nervos site'
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
