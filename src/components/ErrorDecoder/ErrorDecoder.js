@@ -1,17 +1,10 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 import React from 'react';
 
-import type {Node} from 'react';
+import type { Node } from 'react';
 
 function replaceArgs(msg: string, argList: Array<string>): string {
   let argIdx = 0;
-  return msg.replace(/%s/g, function() {
+  return msg.replace(/%s/g, function () {
     const arg = argList[argIdx++];
     return arg === undefined ? '[missing argument]' : arg;
   });
@@ -40,29 +33,29 @@ function urlify(str: string): Node {
 // or `// ?invariant=123&args[0]=foo&args[1]=bar`
 function parseQueryString(
   search: string,
-): ?{|code: string, args: Array<string>|} {
+): ?{| code: string, args: Array<string>|} {
   const rawQueryString = search.substring(1);
-  if (!rawQueryString) {
+  if(!rawQueryString) {
     return null;
   }
 
   let code = '';
-  let args = [];
+  let args =[];
 
   const queries = rawQueryString.split('&');
-  for (let i = 0; i < queries.length; i++) {
-    const query = decodeURIComponent(queries[i]);
-    if (query.indexOf('invariant=') === 0) {
-      code = query.slice(10);
-    } else if (query.indexOf('args[') === 0) {
-      args.push(query.slice(query.indexOf(']=') + 2));
-    }
+  for(let i = 0; i<queries.length; i++) {
+  const query = decodeURIComponent(queries[i]);
+  if (query.indexOf('invariant=') === 0) {
+    code = query.slice(10);
+  } else if (query.indexOf('args[') === 0) {
+    args.push(query.slice(query.indexOf(']=') + 2));
   }
-
-  return {args, code};
 }
 
-function ErrorResult(props: {|code: ?string, msg: string|}) {
+return { args, code };
+}
+
+function ErrorResult(props: {| code: ?string, msg: string |}) {
   const code = props.code;
   const errorMsg = props.msg;
 
@@ -89,7 +82,7 @@ function ErrorResult(props: {|code: ?string, msg: string|}) {
 
 function ErrorDecoder(props: {|
   errorCodesString: string,
-  location: {search: string},
+  location: { search: string },
 |}) {
   let code = null;
   let msg = '';

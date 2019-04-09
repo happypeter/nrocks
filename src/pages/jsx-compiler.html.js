@@ -1,21 +1,14 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import Header from 'components/Header';
 import React from 'react';
-import {sharedStyles} from 'theme';
+import { sharedStyles } from 'theme';
 
 type Props = {
   location: Location,
 };
 
-const JsxCompiler = ({location}: Props) => (
+const JsxCompiler = ({ location }: Props) => (
   <Layout location={location}>
     <Container>
       <div css={sharedStyles.articleLayout.container}>

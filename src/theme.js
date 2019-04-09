@@ -9,7 +9,7 @@ const colors = {
   subtle: '#6d6d6d',
   subtleOnDark: '#999',
   divider: '#ececec',
-  note: '#ffe564',
+  note: '#ececec',
   error: '#ff6464',
   white: '#ffffff',
   black: '#000000',
@@ -205,6 +205,8 @@ const sharedStyles = {
     },
 
     '& p': {
+      color: colors.text,
+      opacity: .8,
       marginTop: 30,
       fontSize: 17,
       lineHeight: 1.7,
@@ -357,9 +359,9 @@ const sharedStyles = {
     },
 
     '& blockquote': {
-      backgroundColor: hex2rgba('#ffe564', 0.3),
-      borderLeftColor: colors.note,
-      borderLeftWidth: 9,
+      backgroundColor: hex2rgba(colors.note, 0.3),
+      borderLeftColor: colors.primary,
+      borderLeftWidth: 6,
       borderLeftStyle: 'solid',
       padding: '20px 45px 20px 26px',
       marginBottom: 30,
@@ -376,7 +378,8 @@ const sharedStyles = {
         marginTop: 15,
 
         '&:first-of-type': {
-          fontWeight: 700,
+          opacity: 1,
+          fontWeight: 400,
           marginTop: 0,
         },
 

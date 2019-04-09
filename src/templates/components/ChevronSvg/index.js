@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
 import React from 'react';
 
 type Props = {
@@ -12,7 +5,7 @@ type Props = {
   cssProps: Object,
 };
 
-const ChevronSvg = ({size = 10, cssProps = {}}: Props) => (
+const ChevronSvg = ({ size = 10, cssProps = {} }: Props) => (
   <svg
     css={cssProps}
     viewBox="0 0 926.23699 573.74994"

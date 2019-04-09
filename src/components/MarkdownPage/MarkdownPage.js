@@ -7,8 +7,9 @@ import StickyResponsiveSidebar from 'components/StickyResponsiveSidebar';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import { sharedStyles, colors } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
-import PlayCircleIcon from 'svg/PlayCircle'
-import CreateIcon from 'svg/Create'
+import PlayCircleIcon from 'svg/PlayCircle';
+import CreateIcon from 'svg/Create';
+import { gitHubRepo } from 'site-constants';
 
 const getPageById = (itemList, templateFile) => {
   if (!templateFile) {
@@ -87,7 +88,7 @@ const MarkdownPage = ({
                   <div css={{ marginTop: 80 }}>
                     <a
                       css={sharedStyles.articleLayout.editLink}
-                      href={`https://github.com/reactjs/reactjs.org/tree/master/${
+                      href={`${gitHubRepo}/${
                         markdownRemark.fields.path
                         }`}>
                       <CreateIcon css={{ width: 20, fill: colors.primary }} /> Edit this page on GitHub

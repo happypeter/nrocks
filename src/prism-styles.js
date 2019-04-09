@@ -1,12 +1,5 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
-
-import {css} from 'glamor';
-import {colors} from 'theme';
+import { css } from 'glamor';
+import { colors } from 'theme';
 
 const prismColors = {
   char: '#D8DEE9',

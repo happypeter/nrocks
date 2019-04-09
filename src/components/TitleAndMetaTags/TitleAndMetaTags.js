@@ -1,7 +1,7 @@
 import Helmet from 'react-helmet';
 import React from 'react';
 
-const defaultDescription = 'Nervos Learning Site';
+const defaultDescription = 'Learning Nervos Site';
 
 
 const TitleAndMetaTags = ({ title, ogDescription, ogUrl }) => {
