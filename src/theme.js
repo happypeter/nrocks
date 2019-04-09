@@ -204,8 +204,8 @@ const sharedStyles = {
     },
 
     '& p': {
-      color: colors.text,
-      opacity: .8,
+      color: '#555',
+      opacity: .9,
       marginTop: 30,
       fontSize: 17,
       lineHeight: 1.7,
@@ -358,7 +358,7 @@ const sharedStyles = {
     },
 
     '& blockquote': {
-      backgroundColor: hex2rgba(colors.note, 0.3),
+      backgroundColor: hex2rgba(colors.primary, 0.05),
       borderLeftColor: colors.primary,
       borderLeftWidth: 6,
       borderLeftStyle: 'solid',
@@ -377,7 +377,6 @@ const sharedStyles = {
         marginTop: 15,
 
         '&:first-of-type': {
-          opacity: 1,
           fontWeight: 400,
           marginTop: 0,
         },

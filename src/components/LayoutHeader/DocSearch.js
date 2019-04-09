@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { colors, media } from 'theme';
+import hex2rgba from 'hex2rgba'
 
 class DocSearch extends Component {
   state = {
@@ -44,7 +45,7 @@ class DocSearch extends Component {
           css={{
             width: '100%',
             appearance: 'none',
-            background: colors.primary,
+            background: hex2rgba(colors.primary, 0.7),
             border: 0,
             color: colors.white,
             fontSize: 18,
@@ -65,7 +66,7 @@ class DocSearch extends Component {
             },
             ':focus': {
               outline: 0,
-              backgroundColor: colors.lighter,
+              backgroundColor: colors.primary,
             },
 
             [media.lessThan('expandedSearch')]: {

@@ -280,7 +280,7 @@
 
 .algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--wrapper {
   background: #f1f1f1;
-  box-shadow: inset -2px 0 0 #61dafb;
+  box-shadow: inset -2px 0 0 #45c289;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
@@ -394,7 +394,7 @@
   padding: 8px 0;
   text-align: center;
   font-size: 1.2em;
-  background-color: #373940;
+  background-color: #45c289;
   margin-top: -8px;
 }
 
