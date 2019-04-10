@@ -30,7 +30,7 @@ const SIZES = {
   sidebarFixed: { min: 2000, max: Infinity },
 
   // Topbar related tweakpoints
-  expandedSearch: { min: 1180, max: Infinity },
+  expandedSearch: { min: 1180, max: Infinity }
 };
 
 type Size = $Keys<typeof SIZES>;
@@ -40,14 +40,14 @@ const media = {
     if (excludeLarge) {
       return `@media (min-width: ${
         SIZES[smallKey].min
-        }px) and (max-width: ${SIZES[largeKey].min - 1}px)`;
+      }px) and (max-width: ${SIZES[largeKey].min - 1}px)`;
     } else {
       if (SIZES[largeKey].max === Infinity) {
         return `@media (min-width: ${SIZES[smallKey].min}px)`;
       } else {
         return `@media (min-width: ${SIZES[smallKey].min}px) and (max-width: ${
           SIZES[largeKey].max
-          }px)`;
+        }px)`;
       }
     }
   },
@@ -70,7 +70,7 @@ const media = {
     } else {
       return media.between(key, key);
     }
-  },
+  }
 };
 
 const fonts = {
@@ -81,17 +81,17 @@ const fonts = {
 
     [media.lessThan('small')]: {
       overflowWrap: 'break-word',
-      wordBreak: 'break-word',
+      wordBreak: 'break-word'
     },
 
     [media.lessThan('medium')]: {
       fontSize: 25,
-      lineHeight: '45px',
-    },
+      lineHeight: '45px'
+    }
   },
   small: {
-    fontSize: 14,
-  },
+    fontSize: 14
+  }
 };
 
 // Shared styles are generally better as components,
@@ -104,8 +104,8 @@ const linkStyle = {
   ':hover': {
     backgroundColor: colors.primary,
     color: colors.white,
-    borderBottomColor: colors.primary,
-  },
+    borderBottomColor: colors.primary
+  }
 };
 const sharedStyles = {
   link: linkStyle,
@@ -117,19 +117,19 @@ const sharedStyles = {
       [media.greaterThan('sidebarFixed')]: {
         maxWidth: 840,
         marginLeft: 'auto',
-        marginRight: 'auto',
+        marginRight: 'auto'
       },
       [media.lessThan('small')]: {
-        flexDirection: 'column',
-      },
+        flexDirection: 'column'
+      }
     },
     content: {
       marginTop: 40,
       marginBottom: 120,
 
       [media.greaterThan('medium')]: {
-        marginTop: 50,
-      },
+        marginTop: 50
+      }
     },
     sidebar: {
       display: 'flex',
@@ -137,28 +137,28 @@ const sharedStyles = {
 
       [media.between('small', 'sidebarFixed')]: {
         borderLeft: '1px solid #ececec',
-        marginLeft: 80,
+        marginLeft: 80
       },
 
       [media.between('small', 'largerSidebar')]: {
         flex: '0 0 200px',
-        marginLeft: 80,
+        marginLeft: 80
       },
 
       [media.between('small', 'medium')]: {
-        marginLeft: 40,
+        marginLeft: 40
       },
 
       [media.greaterThan('largerSidebar')]: {
-        flex: '0 0 300px',
+        flex: '0 0 300px'
       },
 
       [media.greaterThan('sidebarFixed')]: {
         position: 'fixed',
         right: 0,
         width: 300,
-        zIndex: 2,
-      },
+        zIndex: 2
+      }
     },
 
     editLink: {
@@ -166,7 +166,7 @@ const sharedStyles = {
       whiteSpace: 'nowrap',
       display: 'flex',
       alignItems: 'center'
-    },
+    }
   },
 
   markdown: {
@@ -183,8 +183,8 @@ const sharedStyles = {
       [media.lessThan('small')]: {
         marginLeft: -20,
         marginRight: -20,
-        borderRadius: 0,
-      },
+        borderRadius: 0
+      }
     },
 
     '& a:not(.anchor):not(.gatsby-resp-image-link)': linkStyle,
@@ -195,49 +195,49 @@ const sharedStyles = {
       color: colors.subtle,
 
       [media.greaterThan('xlarge')]: {
-        fontSize: 18,
+        fontSize: 18
       },
 
       '& a, & strong': {
-        fontWeight: 400,
-      },
+        fontWeight: 400
+      }
     },
 
     '& p': {
       color: '#555',
-      opacity: .9,
+      opacity: 0.9,
       marginTop: 30,
       fontSize: 17,
       lineHeight: 1.7,
       maxWidth: '42em',
 
       '&:first-of-type': {
-        marginTop: 15,
+        marginTop: 15
       },
 
       '&:first-child': {
-        marginTop: 0,
+        marginTop: 0
       },
 
       [media.lessThan('large')]: {
         fontSize: 16,
-        marginTop: 25,
-      },
+        marginTop: 25
+      }
     },
 
     '& h3 + p, & h3 + p:first-of-type': {
-      marginTop: 20,
+      marginTop: 20
     },
 
     '& p > code, & li > code': {
       background: hex2rgba(colors.note, 0.2),
-      color: colors.text,
+      color: colors.text
     },
 
     '& p > code, & li > code, & p > a > code, & li > a > code': {
       padding: '0 3px',
       fontSize: '0.94em', // 16px on 17px text, smaller in smaller text
-      wordBreak: 'break-word',
+      wordBreak: 'break-word'
     },
 
     '& hr': {
@@ -248,20 +248,20 @@ const sharedStyles = {
       marginTop: 40,
 
       ':first-child': {
-        marginTop: 0,
-      },
+        marginTop: 0
+      }
     },
 
     '& h1': {
       lineHeight: 1.2,
 
       [media.size('xsmall')]: {
-        fontSize: 25,
+        fontSize: 25
       },
 
       [media.between('small', 'large')]: {
-        fontSize: 30,
-      },
+        fontSize: 30
+      }
     },
 
     '& h2': {
@@ -273,20 +273,20 @@ const sharedStyles = {
       ':first-child': {
         borderTop: 0,
         marginTop: 0,
-        paddingTop: 0,
+        paddingTop: 0
       },
 
       [media.lessThan('large')]: {
-        fontSize: 20,
+        fontSize: 20
       },
       [media.greaterThan('xlarge')]: {
-        fontSize: 25,
-      },
+        fontSize: 25
+      }
     },
 
     '& hr + h2': {
       borderTop: 0,
-      marginTop: 0,
+      marginTop: 0
     },
 
     '& h3': {
@@ -294,17 +294,17 @@ const sharedStyles = {
 
       [media.lessThan('small')]: {
         overflowWrap: 'break-word',
-        wordBreak: 'break-word',
+        wordBreak: 'break-word'
       },
 
       [media.greaterThan('xlarge')]: {
         fontSize: 25,
-        lineHeight: 1.3,
-      },
+        lineHeight: 1.3
+      }
     },
 
     '& h2 + h3, & h2 + h3:first-of-type': {
-      paddingTop: 30,
+      paddingTop: 30
     },
 
     '& h4': {
@@ -312,11 +312,11 @@ const sharedStyles = {
       color: colors.subtle,
       lineHeight: 1.3,
       marginTop: 50,
-      fontWeight: 400,
+      fontWeight: 400
     },
 
     '& h4 + p': {
-      marginTop: 20,
+      marginTop: 20
     },
 
     '& ol, & ul': {
@@ -328,33 +328,33 @@ const sharedStyles = {
       '& p, & p:first-of-type': {
         fontSize: 16,
         marginTop: 0,
-        lineHeight: 1.2,
+        lineHeight: 1.2
       },
 
       '& li': {
-        marginTop: 10,
+        marginTop: 10
       },
 
       '& li.button-newapp': {
-        marginTop: 0,
+        marginTop: 0
       },
 
       '& ol, & ul': {
         marginLeft: 20,
-        marginTop: 10,
-      },
+        marginTop: 10
+      }
     },
 
     '& img': {
-      maxWidth: '100%',
+      maxWidth: '100%'
     },
 
     '& ol': {
-      listStyle: 'decimal',
+      listStyle: 'decimal'
     },
 
     '& ul': {
-      listStyle: 'disc',
+      listStyle: 'disc'
     },
 
     '& blockquote': {
@@ -370,7 +370,7 @@ const sharedStyles = {
 
       [media.lessThan('small')]: {
         marginLeft: -20,
-        marginRight: -20,
+        marginRight: -20
       },
 
       '& p': {
@@ -378,19 +378,19 @@ const sharedStyles = {
 
         '&:first-of-type': {
           fontWeight: 400,
-          marginTop: 0,
+          marginTop: 0
         },
 
         '&:nth-of-type(2)': {
-          marginTop: 0,
-        },
-      },
+          marginTop: 0
+        }
+      }
     },
 
     '& .gatsby-highlight + blockquote': {
-      marginTop: 40,
-    },
-  },
+      marginTop: 40
+    }
+  }
 };
 
 export { colors, fonts, media, sharedStyles };

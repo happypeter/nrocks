@@ -5,7 +5,7 @@ import { media } from 'theme';
  * This component wraps page content sections (eg header, footer, main).
  * It provides consistent margin and max width behavior.
  */
-const Container = ({ children }) => (
+const Container = ({ children, style }) => (
   <div
     css={{
       paddingLeft: 20,
@@ -13,13 +13,15 @@ const Container = ({ children }) => (
       marginLeft: 'auto',
       marginRight: 'auto',
       [media.greaterThan('medium')]: {
-        width: '90%',
+        width: '90%'
       },
 
       [media.size('xxlarge')]: {
-        maxWidth: 1260,
+        maxWidth: 1260
       },
-    }}>
+      ...style
+    }}
+  >
     {children}
   </div>
 );

@@ -6,100 +6,26 @@ import Layout from 'components/Layout';
 import { colors, media } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
 import courses from '../../content/index.yml';
-import HlTitle from 'components/HlTitle'
+import HlTitle from 'components/HlTitle';
+import Hero from 'components/Hero';
 
 class Home extends Component {
   render() {
     const { location } = this.props;
     return (
       <Layout location={location}>
-        <TitleAndMetaTags title="Nervos 学习站" ogUrl={createOgUrl('index.html')} />
+        <TitleAndMetaTags
+          title="Nervos 学习站"
+          ogUrl={createOgUrl('index.html')}
+        />
         <div css={{ width: '100%' }}>
           <header
             css={{
-              backgroundColor: colors.dark,
-              color: colors.white,
-            }}>
-            <div
-              css={{
-                paddingTop: 45,
-                paddingBottom: 20,
-
-                [media.greaterThan('small')]: {
-                  paddingTop: 60,
-                  paddingBottom: 70,
-                },
-
-                [media.greaterThan('xlarge')]: {
-                  paddingTop: 95,
-                  paddingBottom: 85,
-                  maxWidth: 1500,
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  position: 'relative',
-                },
-              }}>
-              <div
-                css={{
-                  position: 'relative',
-                }}>
-                <Container>
-                  <h1
-                    css={{
-                      color: colors.primary,
-                      textAlign: 'center',
-                      margin: 0,
-                      fontSize: 45,
-                      letterSpacing: '0.01em',
-                      [media.size('xsmall')]: {
-                        fontSize: 30,
-                      },
-                      [media.greaterThan('xlarge')]: {
-                        fontSize: 60,
-                      },
-                    }}>
-                    Nervos 学习站
-                  </h1>
-                  <p
-                    css={{
-                      paddingTop: 15,
-                      textAlign: 'center',
-                      fontSize: 24,
-                      letterSpacing: '0.01em',
-                      fontWeight: 200,
-
-                      [media.size('xsmall')]: {
-                        fontSize: 16,
-                        maxWidth: '12em',
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                      },
-
-                      [media.greaterThan('xlarge')]: {
-                        paddingTop: 20,
-                        fontSize: 30,
-                      },
-                    }}>
-                    Nervos Rocks
-                  </p>
-                  <div
-                    css={{
-                      width: '100%',
-                      margin: '24px auto',
-                      lineHeight: 1.8,
-                      textAlign: 'center',
-                      fontSize: 12,
-                      [media.greaterThan('small')]: {
-                        fontSize: 16,
-                        width: '66%',
-                        maxWidth: 600
-                      },
-                    }}>
-                    Nervos AppChain 是一个帮助企业搭建应用的链，本站视频课程服务开发者，目的在于帮助大家迅速掌握区块链基础知识并上手 AppChain 相关应用开发。
-                  </div>
-                </Container>
-              </div>
-            </div>
+              width: '100%',
+              [media.lessThan('medium')]: { display: 'none' }
+            }}
+          >
+            <Hero />
           </header>
 
           <Container>
@@ -111,9 +37,10 @@ class Home extends Component {
                 marginLeft: '-20px',
                 [media.greaterThan('medium')]: {
                   marginTop: 60,
-                  marginBottom: 65,
+                  marginBottom: 65
                 }
-              }}>
+              }}
+            >
               <HlTitle>最新课程</HlTitle>
               <div
                 css={{
@@ -123,10 +50,12 @@ class Home extends Component {
                   [media.greaterThan('small')]: {
                     flexDirection: 'row',
                     flexWrap: 'wrap'
-                  },
-                }}>
+                  }
+                }}
+              >
                 {courses.map(({ id, title, image, date, desc }) => (
-                  <Link to={`/${id}/0-intro.html`}
+                  <Link
+                    to={`/${id}/0-intro.html`}
                     key={id}
                     css={{
                       display: 'block',
@@ -142,30 +71,41 @@ class Home extends Component {
                       },
                       [media.greaterThan('xxlarge')]: {
                         width: `calc(25% - 40px)`
-                      },
-                    }}>
-                    <img src={image} css={{ display: 'block', width: '100%' }} alt="cover" />
+                      }
+                    }}
+                  >
+                    <img
+                      src={image}
+                      css={{ display: 'block', width: '100%' }}
+                      alt="cover"
+                    />
                     <div css={{ padding: 8 }}>
-                      <h3 css={{
-                        color: colors.text,
-                        fontWeight: 400,
-                        fontSize: 16,
-                        padding: '8px 0'
-                      }}>
+                      <h3
+                        css={{
+                          color: colors.text,
+                          fontWeight: 400,
+                          fontSize: 16,
+                          padding: '8px 0'
+                        }}
+                      >
                         {title}
                       </h3>
-                      <p css={{
-                        color: colors.subtle,
-                        fontSize: 12,
-                        padding: '4px 0 8px'
-                      }}>
+                      <p
+                        css={{
+                          color: colors.subtle,
+                          fontSize: 12,
+                          padding: '4px 0 8px'
+                        }}
+                      >
                         {desc}
                       </p>
-                      <div css={{
-                        color: colors.subtle,
-                        textAlign: 'right',
-                        fontSize: 12
-                      }}>
+                      <div
+                        css={{
+                          color: colors.subtle,
+                          textAlign: 'right',
+                          fontSize: 12
+                        }}
+                      >
                         {date}
                       </div>
                     </div>
@@ -180,7 +120,7 @@ class Home extends Component {
               background: colors.dark,
               color: colors.white,
               paddingTop: 45,
-              paddingBottom: 45,
+              paddingBottom: 45
             }}
           />
         </div>
