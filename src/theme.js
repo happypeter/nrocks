@@ -12,7 +12,7 @@ const colors = {
   error: '#ff6464',
   white: '#ffffff',
   black: '#000000',
-  header: '#eff3f6',
+  header: '#ececec',
   primary: '#45c289',
   text: '#212121'
 };
