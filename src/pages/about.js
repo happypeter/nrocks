@@ -4,11 +4,12 @@ import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
 import { colors, media } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
-import HlTitle from 'components/HlTitle'
-import HeroDiv from 'svg/HeroDiv'
-import GitHub from 'svg/GitHub'
-import ZhiHu from 'svg/ZhiHu'
-import Twitter from 'svg/Twitter'
+import HlTitle from 'components/HlTitle';
+import HeroDiv from 'svg/HeroDiv';
+import GitHub from 'svg/GitHub';
+import ZhiHu from 'svg/ZhiHu';
+import Twitter from 'svg/Twitter';
+import Divider from 'components/Divider';
 
 const About = ({ location }) => {
   return (
@@ -21,37 +22,52 @@ const About = ({ location }) => {
             backgroundColor: colors.dark,
             color: colors.white,
             paddingTop: 32,
-            paddingBottom: 20,
-          }}>
+            paddingBottom: 20
+          }}
+        >
           <Container>
-            <div css={{
-              paddingTop: 32,
-              display: 'flex',
-              flexDirection: 'column',
-              [media.greaterThan('small')]: {
-                flexDirection: 'row',
-                alignItems: 'center'
-              }
-            }}>
-              <div css={{
-                width: '100%',
-                marginBottom: 24,
-                [media.greaterThan('medium')]: {
-                  width: '50%'
+            <div
+              css={{
+                paddingTop: 32,
+                display: 'flex',
+                flexDirection: 'column',
+                [media.greaterThan('small')]: {
+                  flexDirection: 'row',
+                  alignItems: 'center'
                 }
-              }}>
-                <div css={{ display: 'flex', alignItems: 'center', marginBottom: 32 }}>
-                  <HlTitle center={false} color="#fff" marginBottom={0}>关于作者</HlTitle>
+              }}
+            >
+              <div
+                css={{
+                  width: '100%',
+                  marginBottom: 24,
+                  [media.greaterThan('medium')]: {
+                    width: '50%'
+                  }
+                }}
+              >
+                <div
+                  css={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: 32
+                  }}
+                >
+                  <HlTitle center={false} color="#fff" marginBottom={0}>
+                    关于作者
+                  </HlTitle>
                   <a
                     href="https://github.com/happypeter"
                     css={{ textDecoration: 'none', display: 'block' }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <GitHub css={{
-                      fill: '#fff',
-                      marginLeft: 16
-                    }} />
+                    <GitHub
+                      css={{
+                        fill: '#fff',
+                        marginLeft: 16
+                      }}
+                    />
                   </a>
                   <a
                     href="https://zhihu.com/people/peterlovemoney"
@@ -59,10 +75,12 @@ const About = ({ location }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ZhiHu css={{
-                      fill: '#fff',
-                      marginLeft: 16
-                    }} />
+                    <ZhiHu
+                      css={{
+                        fill: '#fff',
+                        marginLeft: 16
+                      }}
+                    />
                   </a>
                   <a
                     href="https://twitter.com/happypeter1983"
@@ -70,17 +88,21 @@ const About = ({ location }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Twitter css={{
-                      fill: '#fff',
-                      marginLeft: 16
-                    }} />
+                    <Twitter
+                      css={{
+                        fill: '#fff',
+                        marginLeft: 16
+                      }}
+                    />
                   </a>
                 </div>
-                <div css={{
-                  lineHeight: 2.6,
-                  fontSize: 14,
-                  color: '#fff'
-                }}>
+                <div
+                  css={{
+                    lineHeight: 2.6,
+                    fontSize: 14,
+                    color: '#fff'
+                  }}
+                >
                   王广忠，网名 happypeter，硕士，2006年开始进行 Linux Kernel
                   开发，是开源运动的坚定支持者。Git
                   版本控制工具的早期布道者，目前他的 GIthub 上有3.6K的 follower
@@ -92,91 +114,109 @@ const About = ({ location }) => {
                 </div>
               </div>
 
-              <div css={{
-                width: '100%',
-                [media.greaterThan('medium')]: {
-                  width: '50%',
-                  flexShrink: 0
-                }
-              }}>
+              <div
+                css={{
+                  width: '100%',
+                  [media.greaterThan('medium')]: {
+                    width: '50%',
+                    flexShrink: 0
+                  }
+                }}
+              >
                 <img
                   css={{
                     display: 'block',
                     width: '100%'
                   }}
-                  src='/peter.png'
+                  src="/peter.png"
                   alt="avatar"
                 />
               </div>
             </div>
           </Container>
-          <HeroDiv css={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            height: 'auto',
-            marginBottom: -1,
-            width: '100%'
-          }} />
+          <HeroDiv
+            css={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              height: 'auto',
+              marginBottom: -1,
+              width: '100%'
+            }}
+          />
         </header>
 
         <Container>
-          <section css={{
-            marginTop: 24,
-            marginBottom: 24,
-            [media.greaterThan('medium')]: {
-              marginTop: 48,
-              marginBottom: 48
-            }
-          }}>
-            <HlTitle>本站动态</HlTitle>
-            <div css={{
-              height: '100%',
-              padding: '24px 0',
-              position: 'relative',
-              '::before': {
-                content: '" "',
-                position: 'absolute',
-                width: 2,
-                top: 0,
-                bottom: 0,
-                left: '50%',
-                marginLeft: -1,
-                background: '#ececec'
+          <section
+            css={{
+              marginTop: 24,
+              marginBottom: 24,
+              [media.greaterThan('medium')]: {
+                marginTop: 48,
+                marginBottom: 48
               }
-            }}>
-              <div css={{
-                display: 'flex',
-                alignItems: 'center',
-                margin: '0 auto 32px',
-                fontSize: 14,
-                opacity: 0.7
-              }}>
-                <div css={{
-                  padding: 16,
-                  width: '50%',
-                  textAlign: 'right',
-                  lineHeight: 2,
-                  color: colors.primary
-                }}>2018-09-21</div>
-                <div css={{
-                  padding: 16,
-                  width: '50%',
-                  lineHeight: 2,
-                  position: 'relative',
-                  '::before': {
-                    content: '""',
-                    position: 'absolute',
-                    width: 10,
-                    height: 10,
-                    border: '2px solid #fff',
-                    borderRadius: '50%',
-                    left: -5,
-                    top: '50%',
-                    marginTop: -4,
-                    background: colors.primary
-                  }
-                }}>网站正式上线</div>
+            }}
+          >
+            <HlTitle>本站动态</HlTitle>
+            <div
+              css={{
+                height: '100%',
+                padding: '24px 0',
+                position: 'relative',
+                '::before': {
+                  content: '" "',
+                  position: 'absolute',
+                  width: 2,
+                  top: 0,
+                  bottom: 0,
+                  left: '50%',
+                  marginLeft: -1,
+                  background: '#ececec'
+                }
+              }}
+            >
+              <div
+                css={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  margin: '0 auto 32px',
+                  fontSize: 14,
+                  opacity: 0.7
+                }}
+              >
+                <div
+                  css={{
+                    padding: 16,
+                    width: '50%',
+                    textAlign: 'right',
+                    lineHeight: 2,
+                    color: colors.primary
+                  }}
+                >
+                  2018-09-21
+                </div>
+                <div
+                  css={{
+                    padding: 16,
+                    width: '50%',
+                    lineHeight: 2,
+                    position: 'relative',
+                    '::before': {
+                      content: '""',
+                      position: 'absolute',
+                      width: 10,
+                      height: 10,
+                      border: '2px solid #fff',
+                      borderRadius: '50%',
+                      left: -5,
+                      top: '50%',
+                      marginTop: -4,
+                      background: colors.primary
+                    }
+                  }}
+                >
+                  网站正式上线
+                </div>
               </div>
               <div css={s.item}>
                 <div css={s.left}>
@@ -200,18 +240,11 @@ const About = ({ location }) => {
           </section>
         </Container>
 
-        <section
-          css={{
-            background: colors.dark,
-            color: colors.white,
-            paddingTop: 45,
-            paddingBottom: 45,
-          }}
-        />
+        <Divider />
       </div>
     </Layout>
   );
-}
+};
 
 const s = {
   item: {
@@ -248,5 +281,5 @@ const s = {
       background: colors.primary
     }
   }
-}
+};
 export default About;

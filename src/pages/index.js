@@ -9,6 +9,7 @@ import courses from '../../content/index.yml';
 import HlTitle from 'components/HlTitle';
 import Hero from 'components/Hero';
 import CatIcons from 'components/CatIcons';
+import Divider from 'components/Divider';
 
 class Home extends Component {
   render() {
@@ -70,9 +71,6 @@ class Home extends Component {
                         },
                         [media.greaterThan('medium')]: {
                           width: `calc(33.3333% - 40px)`
-                        },
-                        [media.greaterThan('xxlarge')]: {
-                          width: `calc(25% - 40px)`
                         }
                       }}
                     >
@@ -118,14 +116,7 @@ class Home extends Component {
             </Container>
           </div>
 
-          <section
-            css={{
-              background: colors.dark,
-              color: colors.white,
-              paddingTop: 45,
-              paddingBottom: 45
-            }}
-          />
+          <Divider />
         </div>
       </Layout>
     );
