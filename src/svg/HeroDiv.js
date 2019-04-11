@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const HeroDiv = props => (
   <svg
@@ -18,6 +18,6 @@ const HeroDiv = props => (
       />
     </g>
   </svg>
-)
+);
 
-export default HeroDiv
+export default HeroDiv;

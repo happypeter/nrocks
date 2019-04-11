@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Chain = props => (
   <svg viewBox="0 0 100 100" {...props}>
@@ -12,6 +12,6 @@ const Chain = props => (
       />
     </g>
   </svg>
-)
+);
 
-export default Chain
+export default Chain;

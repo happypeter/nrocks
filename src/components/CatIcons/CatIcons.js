@@ -4,16 +4,18 @@ import DAppIcon from 'svg/DApp';
 import CryptoIcon from 'svg/Crypto';
 import ContractIcon from 'svg/Contract';
 import Container from 'components/Container';
-import { media } from 'theme';
+import { media, colors } from 'theme';
 
 const s = {
   root: {
+    backgroundColor: colors.lighter,
     width: '100%',
     textAlign: 'center',
-    paddingTop: 48,
+    paddingTop: 32,
+    paddingBottom: 32,
     [media.greaterThan('medium')]: {
-      paddingTop: 0,
-      paddingBottom: 32
+      paddingTop: 48,
+      paddingBottom: 48
     }
   },
   content: {
@@ -23,7 +25,6 @@ const s = {
   title: {
     opacity: 0.7,
     marginTop: 16,
-    marginBottom: 16,
     fontSize: 16
   },
   icon: {

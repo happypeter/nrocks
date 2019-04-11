@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Crypto = props => (
   <svg viewBox="0 0 100 100" {...props}>
@@ -11,6 +11,6 @@ const Crypto = props => (
       </g>
     </g>
   </svg>
-)
+);
 
-export default Crypto
+export default Crypto;

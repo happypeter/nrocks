@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const DApp = props => (
   <svg viewBox="0 0 100 100" {...props}>
@@ -12,6 +12,6 @@ const DApp = props => (
       />
     </g>
   </svg>
-)
+);
 
-export default DApp
+export default DApp;

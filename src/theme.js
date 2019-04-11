@@ -1,7 +1,7 @@
 import hex2rgba from 'hex2rgba';
 
 const colors = {
-  lighter: '#373940',
+  lighter: '#F2F7F4',
   dark: '#282c34',
   darker: '#20232a',
   brand: '#45c289',

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const LogoOnly = props => (
   <svg viewBox="0 0 375 431.15" {...props}>
@@ -15,6 +15,6 @@ const LogoOnly = props => (
       </g>
     </g>
   </svg>
-)
+);
 
-export default LogoOnly
+export default LogoOnly;

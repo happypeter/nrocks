@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const LogoLight = props => (
   <svg viewBox="0 0 1103.8 431.15" {...props}>
@@ -27,6 +27,6 @@ const LogoLight = props => (
       </g>
     </g>
   </svg>
-)
+);
 
-export default LogoLight
+export default LogoLight;
