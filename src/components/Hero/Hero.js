@@ -80,7 +80,7 @@ const s = {
     }
   },
   content: {
-    zIndex: 1000,
+    zIndex: 99,
     display: 'flex',
     justifyContent: 'space-between',
     position: 'absolute',

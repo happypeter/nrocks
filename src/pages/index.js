@@ -8,6 +8,7 @@ import createOgUrl from 'utils/createOgUrl';
 import courses from '../../content/index.yml';
 import HlTitle from 'components/HlTitle';
 import Hero from 'components/Hero';
+import CatIcons from 'components/CatIcons';
 
 class Home extends Component {
   render() {
@@ -27,7 +28,7 @@ class Home extends Component {
           >
             <Hero />
           </header>
-
+          <CatIcons />
           <Container>
             <section
               css={{

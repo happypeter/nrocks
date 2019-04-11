@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { colors, media } from 'theme';
 import Container from 'components/Container';
-import LogoIcon from 'svg/Logo'
+import LogoIcon from 'svg/Logo';
 import DocSearch from './DocSearch';
 
 const Header = () => (
@@ -11,7 +11,7 @@ const Header = () => (
       backgroundColor: colors.header,
       color: colors.text,
       position: 'fixed',
-      zIndex: 1,
+      zIndex: 100,
       width: '100%',
       top: 0,
       left: 0,
@@ -21,8 +21,9 @@ const Header = () => (
         0px 4px 5px 0px rgba(0,0,0,0.14),
         0px 1px 10px 0px rgba(0,0,0,0.12)
         `
-      },
-    }}>
+      }
+    }}
+  >
     <Container>
       <div
         css={{
@@ -32,12 +33,13 @@ const Header = () => (
           justifyContent: 'space-between',
           height: 60,
           [media.between('small', 'large')]: {
-            height: 50,
+            height: 50
           },
           [media.lessThan('small')]: {
-            height: 45,
-          },
-        }}>
+            height: 45
+          }
+        }}
+      >
         <Link
           css={{
             display: 'flex',
@@ -46,23 +48,25 @@ const Header = () => (
             alignItems: 'center',
 
             [media.greaterThan('small')]: {
-              width: 'calc(100% / 6)',
+              width: 'calc(100% / 6)'
             },
             [media.lessThan('small')]: {
-              flex: '0 0 auto',
-            },
+              flex: '0 0 auto'
+            }
           }}
-          to="/">
+          to="/"
+        >
           <LogoIcon
             css={{
               width: 90,
               [media.between('small', 'large')]: {
-                width: 70,
+                width: 70
               },
               [media.lessThan('small')]: {
-                width: 50,
-              },
-            }} />
+                width: 50
+              }
+            }}
+          />
         </Link>
 
         <DocSearch />
