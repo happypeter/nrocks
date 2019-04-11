@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { colors, media } from 'theme';
-import hex2rgba from 'hex2rgba'
+import hex2rgba from 'hex2rgba';
 
 class DocSearch extends Component {
   state = {
-    enabled: true,
+    enabled: true
   };
 
   componentDidMount() {
@@ -12,8 +12,9 @@ class DocSearch extends Component {
       window.docsearch({
         apiKey: '91fce6c04d7f68bbb346278719149541',
         indexName: 'nervos',
-        inputSelector: '#docsearch-input'
-      })
+        inputSelector: '#docsearch-input',
+        debug: true
+      });
     } else {
       console.warn('Search has failed to load and now is being disabled');
       this.setState({ enabled: false });
@@ -38,9 +39,10 @@ class DocSearch extends Component {
           },
 
           [media.greaterThan('expandedSearch')]: {
-            minWidth: 100,
-          },
-        }}>
+            minWidth: 100
+          }
+        }}
+      >
         <input
           css={{
             width: '100%',
@@ -62,11 +64,11 @@ class DocSearch extends Component {
             '&::placeholder': {
               color: colors.white,
               paddingLeft: 4,
-              opacity: .7
+              opacity: 0.7
             },
             ':focus': {
               outline: 0,
-              backgroundColor: colors.primary,
+              backgroundColor: colors.primary
             },
 
             [media.lessThan('expandedSearch')]: {
@@ -76,10 +78,10 @@ class DocSearch extends Component {
               paddingLeft: 24,
               ':focus': {
                 paddingLeft: 29,
-                width: '8rem',
-                outline: 'none',
-              },
-            },
+                width: '9rem',
+                outline: 'none'
+              }
+            }
           }}
           id="docsearch-input"
           type="search"

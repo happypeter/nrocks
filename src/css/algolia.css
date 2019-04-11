@@ -197,11 +197,11 @@
   content: '';
   width: 14px;
   height: 14px;
-  background: #45c289;
+  background: #fff;
   z-index: 1000;
   top: -7px;
-  border-top: 1px solid #45c289;
-  border-right: 1px solid #45c289;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   border-radius: 2px;
@@ -209,6 +209,7 @@
 
 .algolia-autocomplete .ds-dropdown-menu {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
 @media (min-width: 601px) {
@@ -225,13 +226,13 @@
     position: relative;
     top: -6px;
     border-radius: 4px;
-    margin: 6px 0 0;
+    margin: 8px 0 0;
     padding: 0;
     text-align: left;
     height: auto;
     position: relative;
-    background: transparent;
-    border: none;
+    background: #fff;
+    border: 1px solid #ddd;
     z-index: 999;
     max-width: 600px;
     min-width: 500px;
@@ -242,7 +243,7 @@
   .algolia-autocomplete .ds-dropdown-menu {
     z-index: 100;
     position: fixed !important;
-    top: 40px !important;
+    top: 47px !important;
     left: auto !important;
     right: 1rem !important;
     width: 600px;
@@ -280,11 +281,14 @@
   position: relative;
   padding: 0;
   overflow: hidden;
+  background-color: #fff;
 }
 
-.algolia-autocomplete .ds-cursor .algolia-docsearch-suggestion--wrapper {
+.algolia-autocomplete
+  .ds-cursor
+  .algolia-docsearch-suggestion--wrapper
+  .algolia-docsearch-suggestion--content {
   background: #f1f1f1;
-  box-shadow: inset -2px 0 0 #45c289;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
@@ -337,20 +341,19 @@
   position: relative;
   display: none;
   font-size: 14px;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  background-color: #373940;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0;
-  padding: 5px 8px;
+  background-color: #fff;
+  border-bottom: 1px solid #ececec;
+  color: #212121;
+  margin: 0 16px;
+  padding: 16px 0 8px;
+  line-height: 1.5;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--wrapper {
   background-color: #fff;
   width: 100%;
   float: left;
-  padding: 8px 0 0 0;
+  padding: 8px 16px;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
@@ -362,7 +365,7 @@
   position: relative;
   padding: 5.33333px 10.66667px;
   color: #777;
-  font-size: 0.9em;
+  font-size: 0.8em;
   word-wrap: break-word;
 }
 
@@ -390,16 +393,16 @@
 
 .algolia-autocomplete .algolia-docsearch-suggestion--title {
   margin-bottom: 4px;
-  color: #02060c;
+  color: #212121;
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--text {
   display: block;
-  line-height: 1.2em;
-  font-size: 0.85em;
-  color: #63676d;
+  line-height: 1.8em;
+  font-size: 0.8em;
+  color: #666;
   padding-right: 2px;
 }
 
