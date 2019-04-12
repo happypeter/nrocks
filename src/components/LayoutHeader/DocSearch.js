@@ -12,8 +12,7 @@ class DocSearch extends Component {
       window.docsearch({
         apiKey: '91fce6c04d7f68bbb346278719149541',
         indexName: 'nervos',
-        inputSelector: '#docsearch-input',
-        debug: true
+        inputSelector: '#docsearch-input'
       });
     } else {
       console.warn('Search has failed to load and now is being disabled');

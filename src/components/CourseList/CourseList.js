@@ -12,10 +12,7 @@ const CourseList = ({ title }) => {
         marginBottom: 15,
         marginRight: '-20px',
         marginLeft: '-20px',
-        [media.greaterThan('medium')]: {
-          marginTop: 60,
-          marginBottom: 65
-        }
+        [media.greaterThan('medium')]: { marginTop: 60, marginBottom: 65 }
       }}
     >
       <HlTitle>{title}</HlTitle>
@@ -34,11 +31,8 @@ const CourseList = ({ title }) => {
           <div
             key={id}
             css={{
-              display: 'block',
               width: `calc(100% - 40px)`,
               margin: 20,
-              boxShadow: `rgba(0, 0, 0, 0.07) 0px 4px 6px`,
-              borderRadius: '0 0 8px 8px',
               [media.greaterThan('small')]: {
                 width: `calc(50% - 40px)`
               },
@@ -61,7 +55,14 @@ const CourseList = ({ title }) => {
             >
               {date}
             </div>
-            <Link to={`/${id}/0-intro.html`}>
+            <Link
+              to={`/${id}/0-intro.html`}
+              css={{
+                display: 'block',
+                boxShadow: `rgba(0, 0, 0, 0.07) 0px 4px 6px`,
+                borderRadius: '0 0 8px 8px'
+              }}
+            >
               <img
                 src={image}
                 css={{ display: 'block', width: '100%' }}
