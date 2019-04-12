@@ -3,7 +3,7 @@ module.exports = {
     title: 'Learning nervos site'
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
+    'MarkdownRemark.frontmatter.author': 'AuthorYaml'
   },
   plugins: [
     'gatsby-source-react-error-codes',
@@ -15,22 +15,22 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: '#61dafb',
-      },
+        color: '#61dafb'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/src/pages`,
-      },
+        path: `${__dirname}/src/pages`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/content/`,
-      },
+        path: `${__dirname}/content/`
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -40,31 +40,31 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 840,
-            },
+              maxWidth: 840
+            }
           },
           'gatsby-remark-header-custom-ids',
           'gatsby-remark-use-jsx',
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
-              classPrefix: 'gatsby-code-',
-            },
+              classPrefix: 'gatsby-code-'
+            }
           },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-        ],
-      },
+          'gatsby-remark-smartypants'
+        ]
+      }
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-41298772-1',
-      },
+        trackingId: 'UA-126744557-1'
+      }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-catch-links',
-  ],
+    'gatsby-plugin-catch-links'
+  ]
 };
