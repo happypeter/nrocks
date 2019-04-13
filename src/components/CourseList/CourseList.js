@@ -56,7 +56,7 @@ const CourseList = ({ title }) => {
               {date}
             </div>
             <Link
-              to={`/${id}/0-intro.html`}
+              to={`/${id}`}
               css={{
                 display: 'block',
                 boxShadow: `rgba(0, 0, 0, 0.07) 0px 4px 6px`,

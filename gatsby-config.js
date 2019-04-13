@@ -2,16 +2,9 @@ module.exports = {
   siteMetadata: {
     title: 'Learning nervos site'
   },
-  mapping: {
-    'MarkdownRemark.frontmatter.author': 'AuthorYaml'
-  },
   plugins: [
-    'gatsby-source-react-error-codes',
-    'gatsby-transformer-authors-yaml',
-    'gatsby-transformer-home-example-code',
-    'gatsby-plugin-netlify',
+    'gatsby-transformer-course-yaml',
     'gatsby-plugin-glamor',
-    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {

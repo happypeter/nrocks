@@ -19,7 +19,8 @@ const About = ({ location }) => {
         <header
           css={{
             position: 'relative',
-            backgroundColor: colors.dark,
+            backgroundColor: colors.primary,
+            backgroundImage: `linear-gradient(60deg, #4bda99, #3da274)`,
             color: colors.white,
             paddingTop: 32,
             paddingBottom: 20
@@ -53,7 +54,12 @@ const About = ({ location }) => {
                     marginBottom: 32
                   }}
                 >
-                  <HlTitle center={false} color="#fff" marginBottom={0}>
+                  <HlTitle
+                    center={false}
+                    color="#fff"
+                    borderColor="#fff"
+                    marginBottom={0}
+                  >
                     关于作者
                   </HlTitle>
                   <a
@@ -153,7 +159,7 @@ const About = ({ location }) => {
               marginBottom: 24,
               [media.greaterThan('medium')]: {
                 marginTop: 48,
-                marginBottom: 48
+                marginBottom: 64
               }
             }}
           >

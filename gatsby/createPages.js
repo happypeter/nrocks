@@ -7,12 +7,42 @@ module.exports = async ({ graphql, actions }) => {
   const redirectToSlugMap = {};
 
   const docsTemplate = resolve(__dirname, '../src/templates/docs.js');
+  const courseTemplate = resolve(__dirname, '../src/templates/course.js');
 
   // Redirect /index.html to root.
   createRedirect({
     fromPath: '/index.html',
     redirectInBrowser: true,
-    toPath: '/',
+    toPath: '/'
+  });
+
+  const allCourse = await graphql(`
+    {
+      allCourseYaml {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  if (allCourse.errors) {
+    console.error(allCourse.errors);
+    throw Error(allCourse.errors);
+  }
+
+  allCourse.data.allCourseYaml.edges.forEach(edge => {
+    const slug = edge.node.id;
+    console.log('create pages slug...', slug);
+    createPage({
+      path: `/${slug}`,
+      component: courseTemplate,
+      context: {
+        slug
+      }
+    });
   });
 
   const allMarkdown = await graphql(
@@ -29,7 +59,7 @@ module.exports = async ({ graphql, actions }) => {
           }
         }
       }
-    `,
+    `
   );
 
   if (allMarkdown.errors) {
@@ -40,20 +70,17 @@ module.exports = async ({ graphql, actions }) => {
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(edge => {
     const slug = edge.node.fields.slug;
-    let template = docsTemplate;
 
     const createArticlePage = path =>
       createPage({
         path: path,
-        component: template,
+        component: docsTemplate,
         context: {
-          slug,
-        },
+          slug
+        }
       });
 
     // Register primary URL.
     createArticlePage(slug);
-
-    // Register redirects as well if the markdown specifies them.
   });
 };

@@ -43,7 +43,7 @@ const Footer = ({ layoutHasSidebar = false }) => (
             maxWidth: 300
           }}
         >
-          <LogoIcon width={120} />
+          <LogoIcon width={110} />
           <p
             css={{
               color: colors.text,
