@@ -6,7 +6,7 @@ import { media } from 'theme';
 
 class Template extends Component {
   render() {
-    const { children, location } = this.props;
+    const { children, location, hideFooter } = this.props;
     let layoutHasSidebar = false;
     if (location.pathname.match(/\.html$/)) {
       layoutHasSidebar = true;
@@ -17,8 +17,9 @@ class Template extends Component {
         css={{
           display: 'flex',
           flexDirection: 'column',
-          minHeight: 'calc(100vh - 40px)',
-        }}>
+          minHeight: 'calc(100vh - 40px)'
+        }}
+      >
         <Header location={location} />
         <Flex
           direction="column"
@@ -29,15 +30,16 @@ class Template extends Component {
             flex: '1 0 auto',
             marginTop: 60,
             [media.between('medium', 'large')]: {
-              marginTop: 50,
+              marginTop: 50
             },
             [media.lessThan('medium')]: {
-              marginTop: 40,
-            },
-          }}>
+              marginTop: 40
+            }
+          }}
+        >
           {children}
         </Flex>
-        <Footer layoutHasSidebar={layoutHasSidebar} />
+        {hideFooter ? null : <Footer layoutHasSidebar={layoutHasSidebar} />}
       </div>
     );
   }

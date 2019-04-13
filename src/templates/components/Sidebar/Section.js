@@ -6,21 +6,20 @@ class Section extends React.Component {
     const { createLink, location, onLinkClick, item } = this.props;
     return (
       <div>
-        <ul
-          css={{
-            fontFeatureSettings: "'tnum'",
-            marginBottom: 10,
-          }}>
+        <ul css={{ fontFeatureSettings: "'tnum'", marginBottom: 10 }}>
           <li
             key={item.id}
             css={{
               marginTop: 5,
-            }}>
+              fontSize: '0.875rem',
+              color: 'rgba(0, 0, 0, 0.87)'
+            }}
+          >
             {createLink({
               isActive: isItemActive(location, item),
               item,
               location,
-              onLinkClick,
+              onLinkClick
             })}
           </li>
         </ul>

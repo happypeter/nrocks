@@ -2,7 +2,7 @@ import Flex from 'components/Flex';
 import React from 'react';
 import { colors, fonts, media } from 'theme';
 
-const MarkdownHeader = ({ title }: { title: string }) => (
+const MarkdownHeader = ({ title }) => (
   <Flex type="header" halign="space-between" valign="baseline">
     <h1
       css={{
@@ -12,13 +12,10 @@ const MarkdownHeader = ({ title }: { title: string }) => (
         ...fonts.header,
 
         [media.size('medium')]: {
-          marginTop: 60,
-        },
-
-        [media.greaterThan('large')]: {
-          marginTop: 80,
-        },
-      }}>
+          marginTop: 60
+        }
+      }}
+    >
       {title}
     </h1>
   </Flex>

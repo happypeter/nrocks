@@ -33,10 +33,8 @@ const SIZES = {
   expandedSearch: { min: 1180, max: Infinity }
 };
 
-type Size = $Keys<typeof SIZES>;
-
 const media = {
-  between(smallKey: Size, largeKey: Size, excludeLarge: boolean = false) {
+  between(smallKey, largeKey, excludeLarge) {
     if (excludeLarge) {
       return `@media (min-width: ${
         SIZES[smallKey].min
@@ -52,15 +50,15 @@ const media = {
     }
   },
 
-  greaterThan(key: Size) {
+  greaterThan(key) {
     return `@media (min-width: ${SIZES[key].min}px)`;
   },
 
-  lessThan(key: Size) {
+  lessThan(key) {
     return `@media (max-width: ${SIZES[key].min - 1}px)`;
   },
 
-  size(key: Size) {
+  size(key) {
     const size = SIZES[key];
 
     if (size.min == null) {
@@ -100,12 +98,7 @@ const fonts = {
 const linkStyle = {
   borderBottom: `1px solid ${hex2rgba(colors.primary, 0.2)}`,
   color: colors.primary,
-  wordBreak: 'break-word',
-  ':hover': {
-    backgroundColor: colors.primary,
-    color: colors.white,
-    borderBottomColor: colors.primary
-  }
+  wordBreak: 'break-word'
 };
 const sharedStyles = {
   link: linkStyle,
@@ -114,18 +107,14 @@ const sharedStyles = {
     container: {
       display: 'flex',
       minHeight: 'calc(100vh - 60px)',
-      [media.greaterThan('sidebarFixed')]: {
-        maxWidth: 840,
-        marginLeft: 'auto',
-        marginRight: 'auto'
-      },
-      [media.lessThan('small')]: {
-        flexDirection: 'column'
-      }
+      width: '100%',
+      maxWidth: 640,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     content: {
       marginTop: 40,
-      marginBottom: 120,
+      marginBottom: 80,
 
       [media.greaterThan('medium')]: {
         marginTop: 50
@@ -134,38 +123,16 @@ const sharedStyles = {
     sidebar: {
       display: 'flex',
       flexDirection: 'column',
-
-      [media.between('small', 'sidebarFixed')]: {
-        borderLeft: '1px solid #ececec',
-        marginLeft: 80
-      },
-
-      [media.between('small', 'largerSidebar')]: {
-        flex: '0 0 200px',
-        marginLeft: 80
-      },
-
-      [media.between('small', 'medium')]: {
-        marginLeft: 40
-      },
-
-      [media.greaterThan('largerSidebar')]: {
-        flex: '0 0 300px'
-      },
-
-      [media.greaterThan('sidebarFixed')]: {
-        position: 'fixed',
-        right: 0,
-        width: 300,
-        zIndex: 2
-      }
+      borderRight: '1px solid green',
+      marginRight: 80
     },
 
     editLink: {
       color: colors.primary,
       whiteSpace: 'nowrap',
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      fontSize: '0.875rem'
     }
   },
 
@@ -174,43 +141,23 @@ const sharedStyles = {
 
     '& .gatsby-highlight': {
       marginTop: 25,
-      marginLeft: -30,
-      marginRight: -30,
       marginBottom: 25,
       paddingLeft: 15,
       paddingRight: 15,
 
       [media.lessThan('small')]: {
-        marginLeft: -20,
-        marginRight: -20,
         borderRadius: 0
       }
     },
 
     '& a:not(.anchor):not(.gatsby-resp-image-link)': linkStyle,
 
-    '& > p:first-child': {
-      fontSize: 16,
-      fontWeight: 300,
-      color: colors.subtle,
-
-      [media.greaterThan('xlarge')]: {
-        fontSize: 18
-      },
-
-      '& a, & strong': {
-        fontWeight: 400
-      }
-    },
-
     '& p': {
-      color: '#555',
-      opacity: 0.9,
+      color: 'rgba(0, 0, 0, 0.75)',
       marginTop: 30,
       fontSize: 17,
-      lineHeight: 1.7,
-      maxWidth: '42em',
-
+      lineHeight: 2.2,
+      wordBreak: 'break-word',
       '&:first-of-type': {
         marginTop: 15
       },
@@ -365,13 +312,6 @@ const sharedStyles = {
       padding: '20px 45px 20px 26px',
       marginBottom: 30,
       marginTop: 20,
-      marginLeft: -30,
-      marginRight: -30,
-
-      [media.lessThan('small')]: {
-        marginLeft: -20,
-        marginRight: -20
-      },
 
       '& p': {
         marginTop: 15,

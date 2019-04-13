@@ -8,7 +8,7 @@ class Sidebar extends Component {
     super(props, context);
 
     this.state = {
-      activeSection: props.defaultActiveSection,
+      activeSection: props.defaultActiveSection
     };
   }
 
@@ -26,13 +26,14 @@ class Sidebar extends Component {
           position: 'relative',
 
           [media.greaterThan('largerSidebar')]: {
-            paddingLeft: 40,
+            paddingLeft: 40
           },
 
           [media.lessThan('small')]: {
-            paddingBottom: 100,
-          },
-        }}>
+            paddingBottom: 100
+          }
+        }}
+      >
         {itemList.map((item, index) => (
           <Section
             createLink={createLink}
@@ -49,7 +50,7 @@ class Sidebar extends Component {
 
   _toggleSection(section) {
     this.setState(state => ({
-      activeSection: state.activeSection === section ? null : section,
+      activeSection: state.activeSection === section ? null : section
     }));
   }
 }

@@ -17,7 +17,7 @@ const Container = ({ children, style }) => (
       },
 
       [media.size('xxlarge')]: {
-        maxWidth: 1260
+        maxWidth: 1200
       },
       ...style
     }}
