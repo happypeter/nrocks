@@ -46,7 +46,13 @@ class StickyResponsiveSidebar extends Component {
     const menuOffset = open ? 0 : 40;
 
     return (
-      <div>
+      <div
+        css={{
+          [media.greaterThan('medium')]: {
+            width: 298
+          }
+        }}
+      >
         <div
           style={{
             opacity: menuOpacity,
@@ -54,13 +60,13 @@ class StickyResponsiveSidebar extends Component {
             backgroundColor: '#fff'
           }}
           css={{
-            [media.lessThan('small')]: smallScreenSidebarStyles,
+            [media.lessThan('medium')]: smallScreenSidebarStyles,
             [media.between('medium', 'sidebarFixed', true)]: {
               position: 'fixed',
               zIndex: 2,
               height: '100%'
             },
-            [media.greaterThan('small')]: {
+            [media.greaterThan('medium')]: {
               position: 'fixed',
               zIndex: 2,
               height: 'calc(100vh - 60px)',
@@ -68,13 +74,7 @@ class StickyResponsiveSidebar extends Component {
               WebkitOverflowScrolling: 'touch',
               backgroundColor: '#f7f7f7',
               opacity: '1 !important',
-              width: 298
-            },
-            [media.size('small')]: { height: 'calc(100vh - 40px)' },
-            [media.between('medium', 'large')]: {
-              height: 'calc(100vh - 50px)'
-            },
-            [media.greaterThan('sidebarFixed')]: {
+              width: 298,
               borderRight: '1px solid #ececec'
             }
           }}
@@ -87,7 +87,7 @@ class StickyResponsiveSidebar extends Component {
             css={{
               marginTop: 60,
               [media.size('xsmall')]: { marginTop: 40 },
-              [media.between('small', 'medium')]: { marginTop: 0 },
+              [media.between('small', 'medium')]: { marginTop: 50 },
               [media.between('medium', 'large')]: { marginTop: 50 },
               [media.greaterThan('small')]: { transform: 'none !important' }
             }}
@@ -109,7 +109,7 @@ class StickyResponsiveSidebar extends Component {
               borderRadius: '50%',
               border: '1px solid rgba(255, 255, 255, 0.1)',
               boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)',
-              [media.lessThan('small')]: smallScreenBottomBarStyles
+              [media.lessThan('medium')]: smallScreenBottomBarStyles
             } // iOS Safari's inert "bottom 44px" // gets overriden at small screen sizes
           }
           onClick={this._openNavMenu}

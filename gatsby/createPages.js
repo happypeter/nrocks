@@ -35,7 +35,6 @@ module.exports = async ({ graphql, actions }) => {
 
   allCourse.data.allCourseYaml.edges.forEach(edge => {
     const slug = edge.node.id;
-    console.log('create pages slug...', slug);
     createPage({
       path: `/${slug}`,
       component: courseTemplate,

@@ -4,7 +4,7 @@ import MarkdownHeader from 'components/MarkdownHeader';
 import NavigationFooter from 'templates/components/NavigationFooter';
 import StickyResponsiveSidebar from 'components/StickyResponsiveSidebar';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
-import { sharedStyles, colors } from 'theme';
+import { sharedStyles, colors, media } from 'theme';
 import createOgUrl from 'utils/createOgUrl';
 import PlayCircleIcon from 'svg/PlayCircle';
 import CreateIcon from 'svg/Create';
@@ -41,7 +41,7 @@ const MarkdownPage = ({
 
   return (
     <Flex
-      direction="column"
+      direction="row"
       grow="1"
       shrink="0"
       halign="stretch"
@@ -61,7 +61,15 @@ const MarkdownPage = ({
       />
 
       <div
-        css={{ paddingLeft: 20, paddingRight: 20, backgroundColor: '#fafafa' }}
+        css={{
+          paddingLeft: 20,
+          paddingRight: 20,
+          backgroundColor: '#fafafa',
+          width: '100%',
+          [media.greaterThan('medium')]: {
+            width: `calc(100% - 298px)`
+          }
+        }}
       >
         <div css={sharedStyles.articleLayout.container}>
           <Flex type="article" direction="column">

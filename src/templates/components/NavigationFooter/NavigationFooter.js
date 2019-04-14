@@ -1,46 +1,39 @@
-import Flex from 'components/Flex';
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import { colors } from 'theme';
 import ArrowBackIcon from 'svg/ArrowBack';
 import ArrowForwardIcon from 'svg/ArrowForward';
 
 const NavigationFooter = ({ next, prev, location }) => {
   return (
-    <div css={{ color: colors.text, paddingTop: 50, paddingBottom: 50 }}>
-      <Flex type="ul" halign="space-between">
-        <Flex basis="50%" type="li" css={{ textAlign: 'right' }}>
-          {prev && (
-            <PrimaryLink location={location} to={`${prev.id}.html`}>
-              <ArrowBackIcon css={{ fill: 'rgba(33,33,33,.8)' }} />
-              <div>
-                <SecondaryLabel>Previous</SecondaryLabel>
-                <PrimaryLabel css={{ paddingTop: 10 }}>
-                  {prev.title}
-                </PrimaryLabel>
-              </div>
-            </PrimaryLink>
-          )}
-        </Flex>
-        {next && (
-          <Flex
-            halign="flex-end"
-            basis="50%"
-            type="li"
-            css={{ textAlign: 'left' }}
-          >
-            <PrimaryLink location={location} to={`${next.id}.html`}>
-              <div>
-                <SecondaryLabel>Next</SecondaryLabel>
-                <PrimaryLabel css={{ paddingTop: 10 }}>
-                  {next.title}
-                </PrimaryLabel>
-              </div>
-              <ArrowForwardIcon css={{ fill: 'rgba(33,33,33,.8)' }} />
-            </PrimaryLink>
-          </Flex>
-        )}
-      </Flex>
+    <div
+      css={{
+        color: colors.text,
+        paddingTop: 50,
+        paddingBottom: 50,
+        display: 'flex',
+        justifyContent: 'space-between'
+      }}
+    >
+      {prev && (
+        <PrimaryLink location={location} to={`${prev.id}.html`}>
+          <ArrowBackIcon css={{ fill: 'rgba(33,33,33,.8)' }} />
+          <div>
+            <SecondaryLabel>Previous</SecondaryLabel>
+            <PrimaryLabel css={{ paddingTop: 10 }}>{prev.title}</PrimaryLabel>
+          </div>
+        </PrimaryLink>
+      )}
+
+      {next && (
+        <PrimaryLink location={location} to={`${next.id}.html`}>
+          <div>
+            <SecondaryLabel>Next</SecondaryLabel>
+            <PrimaryLabel css={{ paddingTop: 10 }}>{next.title}</PrimaryLabel>
+          </div>
+          <ArrowForwardIcon css={{ fill: 'rgba(33,33,33,.8)' }} />
+        </PrimaryLink>
+      )}
     </div>
   );
 };
@@ -59,7 +52,7 @@ const PrimaryLink = ({ children, to, location }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         textDecoration: 'none',
-        width: '90%',
+        width: 'calc(50% - 16px)',
         border: '1px solid #E6ECF1',
         boxShadow: `0 3px 8px 0 rgba(116, 129, 141, 0.1)`,
         padding: 16,
