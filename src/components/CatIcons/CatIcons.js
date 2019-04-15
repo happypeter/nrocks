@@ -8,7 +8,6 @@ import { media, colors } from 'theme';
 
 const s = {
   root: {
-    backgroundColor: colors.lighter,
     width: '100%',
     textAlign: 'center',
     paddingTop: 32,

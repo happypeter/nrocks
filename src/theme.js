@@ -153,7 +153,7 @@ const sharedStyles = {
     '& p': {
       color: 'rgba(0, 0, 0, 0.75)',
       marginTop: 30,
-      fontSize: 17,
+      fontSize: 16,
       lineHeight: 2.2,
       wordBreak: 'break-word',
       '&:first-of-type': {
@@ -165,7 +165,6 @@ const sharedStyles = {
       },
 
       [media.lessThan('large')]: {
-        fontSize: 16,
         marginTop: 25
       }
     },

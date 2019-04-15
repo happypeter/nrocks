@@ -14,7 +14,7 @@ const prismColors = {
   function: '#dd4a68',
   className: '#d29314',
   bg: '#fff',
-  text: '#333'
+  text: '#525252'
 };
 
 css.global('.gatsby-highlight', {
@@ -35,7 +35,8 @@ css.global(
     padding: '1rem',
     fontSize: 14,
     lineHeight: 1.8,
-    overflow: 'auto'
+    overflow: 'auto',
+    whiteSpace: 'pre'
   }
 );
 
