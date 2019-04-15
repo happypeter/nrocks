@@ -33,7 +33,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 840
+              maxWidth: 640
             }
           },
           'gatsby-remark-header-custom-ids',

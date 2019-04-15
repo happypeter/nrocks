@@ -142,8 +142,6 @@ const sharedStyles = {
     '& .gatsby-highlight': {
       marginTop: 25,
       marginBottom: 25,
-      paddingLeft: 15,
-      paddingRight: 15,
 
       [media.lessThan('small')]: {
         borderRadius: 0

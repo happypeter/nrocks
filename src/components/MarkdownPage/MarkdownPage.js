@@ -72,7 +72,7 @@ const MarkdownPage = ({
         }}
       >
         <div css={sharedStyles.articleLayout.container}>
-          <Flex type="article" direction="column">
+          <div css={{ width: '100%' }}>
             <Link
               to={`/${courseId}`}
               css={{ display: 'flex', alignItems: 'center', marginTop: 24 }}
@@ -146,7 +146,7 @@ const MarkdownPage = ({
                 </div>
               )}
             </div>
-          </Flex>
+          </div>
         </div>
       </div>
     </Flex>
