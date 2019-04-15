@@ -11,11 +11,7 @@ const s = {
     width: '100%',
     textAlign: 'center',
     paddingTop: 32,
-    paddingBottom: 32,
-    [media.greaterThan('medium')]: {
-      paddingTop: 48,
-      paddingBottom: 48
-    }
+    paddingBottom: 32
   },
   content: {
     display: 'flex',

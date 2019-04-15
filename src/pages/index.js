@@ -31,7 +31,7 @@ class Home extends Component {
 
           <CatIcons />
 
-          <section css={{ padding: '32px 0' }}>
+          <section css={{ paddingBottom: 32 }}>
             <Container>
               <CourseList title="最新课程" />
             </Container>
