@@ -44,12 +44,12 @@ const CourseList = ({ title }) => {
             <div
               css={{
                 fontSize: 12,
-                color: colors.primary,
+                color: colors.white,
                 width: 88,
                 margin: '0 auto 8px',
                 textAlign: 'center',
-                backgroundColor: colors.lighter,
-                padding: '2px 0',
+                backgroundColor: '#ccc',
+                padding: '4px 0',
                 borderRadius: 4
               }}
             >

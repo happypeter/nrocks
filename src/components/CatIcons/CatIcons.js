@@ -4,7 +4,7 @@ import DAppIcon from 'svg/DApp';
 import CryptoIcon from 'svg/Crypto';
 import ContractIcon from 'svg/Contract';
 import Container from 'components/Container';
-import { media, colors } from 'theme';
+import { media } from 'theme';
 
 const s = {
   root: {

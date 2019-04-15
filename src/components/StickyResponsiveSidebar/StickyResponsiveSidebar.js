@@ -98,16 +98,15 @@ class StickyResponsiveSidebar extends Component {
         <div
           css={
             {
-              backgroundColor: colors.darker,
+              backgroundColor: colors.primary,
               bottom: 44,
-              color: colors.primary,
+              color: colors.white,
               display: 'none',
               cursor: 'pointer',
               position: 'fixed',
               right: 20,
               zIndex: 3,
               borderRadius: '50%',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
               boxShadow: '0 0 20px rgba(0, 0, 0, 0.3)',
               [media.lessThan('medium')]: smallScreenBottomBarStyles
             } // iOS Safari's inert "bottom 44px" // gets overriden at small screen sizes
@@ -137,14 +136,13 @@ class StickyResponsiveSidebar extends Component {
                   height: 20,
                   alignSelf: 'center',
                   display: 'flex',
-                  flexDirection: 'column',
-                  color: colors.brand
+                  flexDirection: 'column'
                 }}
               >
                 <ChevronSvg
                   size={15}
                   cssProps={{
-                    color: colors.primary,
+                    color: colors.white,
                     transform: `translate(2px, ${iconOffset}px) rotate(180deg)`,
                     transition: 'transform 0.2s ease'
                   }}
@@ -152,7 +150,7 @@ class StickyResponsiveSidebar extends Component {
                 <ChevronSvg
                   size={15}
                   cssProps={{
-                    color: colors.primary,
+                    color: colors.white,
                     transform: `translate(2px, ${0 - iconOffset}px)`,
                     transition: 'transform 0.2s ease'
                   }}

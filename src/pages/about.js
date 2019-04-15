@@ -151,7 +151,25 @@ const About = ({ location }) => {
             }}
           />
         </header>
-
+        <Container>
+          <section
+            css={{
+              marginTop: 24,
+              marginBottom: 48,
+              [media.greaterThan('medium')]: {
+                marginTop: 48,
+                marginBottom: 88
+              }
+            }}
+          >
+            <HlTitle>关于本站</HlTitle>
+            <p css={{ color: '#666', fontSize: 14, lineHeight: 2 }}>
+              这里是 Nervos 学习站。不仅提供 Nervos 相关的视频教程，也提供区块链
+              DApp 开发相关的各种基础编程教程，涵盖密码学、React 和 JS
+              开发、Unix 命令行和 Git 版本控制等。
+            </p>
+          </section>
+        </Container>
         <Container>
           <section
             css={{

@@ -14,7 +14,10 @@ const Header = () => (
       zIndex: 100,
       width: '100%',
       top: 0,
-      left: 0
+      left: 0,
+      [media.lessThan('small')]: {
+        boxShadow: `0 4px 12px 0 rgba(0,0,0,.15)`
+      }
     }}
   >
     <Container>
@@ -56,7 +59,7 @@ const Header = () => (
                 width: 70
               },
               [media.lessThan('small')]: {
-                width: 50
+                width: 60
               }
             }}
           />

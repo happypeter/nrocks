@@ -1,10 +1,9 @@
 import hex2rgba from 'hex2rgba';
 
 const colors = {
-  lighter: '#F2F7F4',
+  lighter: '#f2f7f4',
   dark: '#282c34',
   darker: '#20232a',
-  brand: '#45c289',
   subtle: '#6d6d6d',
   subtleOnDark: '#999',
   divider: '#ececec',
@@ -198,7 +197,7 @@ const sharedStyles = {
 
     '& h1': {
       lineHeight: 1.2,
-
+      color: '#2c3e50',
       [media.size('xsmall')]: {
         fontSize: 25
       },
@@ -213,7 +212,7 @@ const sharedStyles = {
       marginTop: 44,
       paddingTop: 40,
       lineHeight: 1.2,
-
+      color: '#2c3e50',
       ':first-child': {
         borderTop: 0,
         marginTop: 0,
@@ -235,7 +234,7 @@ const sharedStyles = {
 
     '& h3': {
       paddingTop: 45,
-
+      color: '#2c3e50',
       [media.lessThan('small')]: {
         overflowWrap: 'break-word',
         wordBreak: 'break-word'
@@ -253,10 +252,10 @@ const sharedStyles = {
 
     '& h4': {
       fontSize: 20,
-      color: colors.subtle,
       lineHeight: 1.3,
       marginTop: 50,
-      fontWeight: 400
+      fontWeight: 400,
+      color: '#2c3e50'
     },
 
     '& h4 + p': {
