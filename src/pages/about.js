@@ -174,7 +174,7 @@ const About = ({ location }) => {
           <section
             css={{
               marginTop: 24,
-              marginBottom: 24,
+              marginBottom: 48,
               [media.greaterThan('medium')]: {
                 marginTop: 48,
                 marginBottom: 64

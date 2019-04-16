@@ -301,7 +301,7 @@ const sharedStyles = {
     },
 
     '& blockquote': {
-      backgroundColor: hex2rgba(colors.primary, 0.05),
+      backgroundColor: colors.white,
       borderLeftColor: colors.primary,
       borderLeftWidth: 6,
       borderLeftStyle: 'solid',
