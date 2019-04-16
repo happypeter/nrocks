@@ -1,14 +1,10 @@
 import hex2rgba from 'hex2rgba';
 
 const colors = {
-  lighter: '#f2f7f4',
   dark: '#282c34',
-  darker: '#20232a',
   subtle: '#6d6d6d',
   subtleOnDark: '#999',
-  divider: '#ececec',
-  note: '#ececec',
-  error: '#ff6464',
+  gray: '#ececec',
   white: '#ffffff',
   black: '#000000',
   header: '#ececec',
@@ -173,7 +169,7 @@ const sharedStyles = {
     },
 
     '& p > code, & li > code': {
-      background: hex2rgba(colors.note, 0.2),
+      background: hex2rgba(colors.gray, 0.2),
       color: colors.text
     },
 
@@ -187,7 +183,7 @@ const sharedStyles = {
       height: 1,
       marginBottom: -1,
       border: 'none',
-      borderBottom: `1px solid ${colors.divider}`,
+      borderBottom: `1px solid ${colors.gray}`,
       marginTop: 40,
 
       ':first-child': {
@@ -208,7 +204,7 @@ const sharedStyles = {
     },
 
     '& h2': {
-      borderTop: `1px solid ${colors.divider}`,
+      borderTop: `1px solid ${colors.gray}`,
       marginTop: 44,
       paddingTop: 40,
       lineHeight: 1.2,
