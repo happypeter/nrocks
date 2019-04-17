@@ -84,67 +84,77 @@ const MarkdownPage = ({
                 返回
               </span>
             </Link>
-            <MarkdownHeader title={titlePrefix} />
+            <div className="docSearch-content">
+              <MarkdownHeader title={titlePrefix} />
 
-            {videoLink.length && (
-              <a
-                href={videoLink[0].video}
-                css={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginTop: 32,
-                  textDecoration: 'none',
-                  '& span': { marginLeft: 8 }
-                }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <PlayCircleIcon css={{ width: 32, fill: colors.primary }} />
-                <span
+              {videoLink.length && (
+                <a
+                  href={videoLink[0].video}
                   css={{
-                    lineHeight: 1.8,
-                    color: colors.primary,
-                    borderBottom: `1px solid ${colors.primary}`
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginTop: 32,
+                    textDecoration: 'none',
+                    '& span': { marginLeft: 8 }
                   }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  到 B 站观看视频
-                </span>
-              </a>
-            )}
-            <div css={sharedStyles.articleLayout.content}>
-              <div
-                css={[sharedStyles.markdown]}
-                dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
-              />
-
-              {(next || prev) && (
-                <NavigationFooter location={location} next={next} prev={prev} />
-              )}
-
-              {markdownRemark.fields.path && (
-                <div>
-                  <hr
+                  <PlayCircleIcon css={{ width: 32, fill: colors.primary }} />
+                  <span
                     css={{
-                      height: 1,
-                      border: 'none',
-                      marginTop: 24,
-                      marginBottom: 24,
-                      backgroundColor: '#f5f3f7'
+                      lineHeight: 1.8,
+                      color: colors.primary,
+                      borderBottom: `1px solid ${colors.primary}`
                     }}
-                  />
-                  <a
-                    css={sharedStyles.articleLayout.editLink}
-                    href={`${gitHubRepo}/${markdownRemark.fields.path}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
-                    <CreateIcon
-                      css={{ width: 20, fill: colors.primary, marginRight: 4 }}
-                    />
-                    edit this page on GitHub
-                  </a>
-                </div>
+                    到 B 站观看视频
+                  </span>
+                </a>
               )}
+              <div css={sharedStyles.articleLayout.content}>
+                <div
+                  css={[sharedStyles.markdown]}
+                  dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+                />
+
+                {(next || prev) && (
+                  <NavigationFooter
+                    location={location}
+                    next={next}
+                    prev={prev}
+                  />
+                )}
+
+                {markdownRemark.fields.path && (
+                  <div>
+                    <hr
+                      css={{
+                        height: 1,
+                        border: 'none',
+                        marginTop: 24,
+                        marginBottom: 24,
+                        backgroundColor: '#f5f3f7'
+                      }}
+                    />
+                    <a
+                      css={sharedStyles.articleLayout.editLink}
+                      href={`${gitHubRepo}/${markdownRemark.fields.path}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <CreateIcon
+                        css={{
+                          width: 20,
+                          fill: colors.primary,
+                          marginRight: 4
+                        }}
+                      />
+                      edit this page on GitHub
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
