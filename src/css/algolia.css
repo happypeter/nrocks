@@ -230,8 +230,8 @@
     text-align: left;
     height: auto;
     position: relative;
-    background: transparent;
-    border: none;
+    background: #fff;
+    border: 1px solid #ddd;
     z-index: 999;
     max-width: 600px;
     min-width: 500px;
@@ -248,16 +248,12 @@
     width: 600px;
     max-width: calc(100% - 2rem);
     max-height: calc(100% - 5rem);
-    height: 100%;
     display: block;
+    overflow: auto; /* make its child not overflow */
   }
 
   .algolia-autocomplete .ds-dropdown-menu:before {
     right: 6rem;
-  }
-
-  .algolia-autocomplete .ds-dropdown-menu [class^='ds-dataset-'] {
-    height: 100%;
   }
 }
 
