@@ -22,8 +22,7 @@ const About = ({ location }) => {
             backgroundColor: colors.primary,
             backgroundImage: `linear-gradient(60deg, #4bda99, #3da274)`,
             color: colors.white,
-            paddingTop: 32,
-            paddingBottom: 20
+            paddingTop: 32
           }}
         >
           <Container>
@@ -151,6 +150,7 @@ const About = ({ location }) => {
             }}
           />
         </header>
+
         <Container>
           <section
             css={{
@@ -226,7 +226,7 @@ const About = ({ location }) => {
                     lineHeight: 2,
                     position: 'relative',
                     '::before': {
-                      content: '""',
+                      content: ' ',
                       position: 'absolute',
                       width: 10,
                       height: 10,
@@ -293,7 +293,7 @@ const s = {
     lineHeight: 2,
     position: 'relative',
     '::before': {
-      content: '""',
+      content: ' ',
       position: 'absolute',
       width: 10,
       height: 10,
